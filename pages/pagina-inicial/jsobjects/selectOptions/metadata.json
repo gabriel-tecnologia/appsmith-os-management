@@ -1,0 +1,28 @@
+{
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_38290c63-43bc-4200-9ed6-668bca7e922b",
+  "id": "pagina-inicial_selectOptions",
+  "unpublishedCollection": {
+    "name": "selectOptions",
+    "pageId": "pagina-inicial",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "PARTNER",
+        "value": "[\"[EXT] C&K\", \"[EXT] Multivoltz\", \"[EXT] CAVI Tecnologia\", \"[EXT] Icatel\", \"[EXT] JLB SOLUÇÕES\", \"[EXT] MDJ Solutions\", \"[EXT] Power.com\", \"[EXT] T7 Solutions\", \"[EXT] Telebit\"]"
+      },
+      {
+        "name": "OS_STATUS",
+        "value": "[\"Agendamento de Serviço\", \"Fila de Serviço\", \"Serviço em Andamento\", \"Controle de Qualidade\", \"Ajuste\", \"Improdutiva\", \"Concluído\", \"Reagendamento de Serviço\"]"
+      },
+      {
+        "name": "OS_TYPE",
+        "value": "[\"Adesão\", \"Aditivo\", \"Manutenção\", \"Desinstalação\"]"
+      },
+      {
+        "name": "PERIODS",
+        "value": "[\"Manhã\", \"08h\", \"09h\", \"10h\", \"11h\", \"Tarde\", \"12h\", \"13h\", \"14h\", \"15h\", \"16h\", \"17h\", \"18h\", \"Horário comercial\"]"
+      }
+    ]
+  }
+}

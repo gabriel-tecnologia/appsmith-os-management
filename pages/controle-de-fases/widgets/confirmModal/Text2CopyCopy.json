@@ -1,0 +1,53 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 17,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "a9o1xk92s3",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "originalBottomRow": 19,
+  "originalTopRow": 6,
+  "overflow": "NONE",
+  "parentId": "u5bg9emr82",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "shouldTruncate": false,
+  "text": "Campos da tabela atualizados! \nDeseja mudar a fase da OS?\n\n{{appsmith.store.selectedOS.Fase == \"Agendamento de Serviço\" ?\"Agendamento ➞ Fila de Serviço\" : \"\"}}\n{{appsmith.store.selectedOS.Fase == \"Controle de Qualidade\" ?\"Controle de Qualidade ➞ \": \"\"}} {{appsmith.store.selectedOS[\"Motivo do Ajuste\"] != undefined  && appsmith.store.selectedOS.Fase == \"Controle de Qualidade\" ? \"Ajuste\" : \"\" }}\n{{appsmith.store.selectedOS[\"Motivo de Improdutiva\"] != undefined  && appsmith.store.selectedOS.Fase == \"Controle de Qualidade\" ? \"Improdutiva\" : \"\" }}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 6,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "8y91rbb3mu",
+  "widgetName": "Text2CopyCopy"
+}

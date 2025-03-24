@@ -1,0 +1,5 @@
+{
+	"fields": {
+		"Termo de Finalização": {{appsmith.store.termUrl}}
+	}
+}

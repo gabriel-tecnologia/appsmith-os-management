@@ -1,0 +1,94 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 39,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store.selectedOS[\"Período\"]))(selectPeriod.options, selectPeriod.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "labelTooltip"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "labelText"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "labelStyle"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "labelStyle"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": "{{appsmith.store.selectedOS.Fase != \"Agendamento de Serviço\" &&\nappsmith.store.selectedOS.Fase != \"Fila de Serviço\" &&\nappsmith.store.selectedOS.Fase != \"Ajuste\" &&\nappsmith.store.selectedOS.Fase != \"Reagendamento de Serviço\"}}",
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "561pea48k0",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "{{inputFormatter.onDiffBold(\nselectPeriod.selectedOptionLabel,\nappsmith.store.selectedOS.Período,\nselectPeriod.isValid\n)}}",
+  "labelText": "{{inputFormatter.onDiffIcon(\nselectPeriod.selectedOptionLabel,\tappsmith.store.selectedOS.Período,\t\nselectPeriod.isValid\n)}}\n\nPeríodo",
+  "labelTextColor": "{{inputFormatter.onDiffColor(\nselectPeriod.selectedOptionLabel,\nappsmith.store.selectedOS.Período,\nselectPeriod.isValid\n)}}",
+  "labelTextSize": "0.875rem",
+  "labelTooltip": "{{selectPeriod.isDisabled ? \"Campo desativado se a fase da OS for diferente de Agendamento ou Fila de Serviço\" : \"\"}}",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 3,
+  "mobileRightColumn": 23,
+  "mobileTopRow": 8,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "code",
+  "originalBottomRow": 39,
+  "originalTopRow": 32,
+  "parentColumnSpace": 8.28125,
+  "parentId": "vcxpa7yivg",
+  "parentRowSpace": 10,
+  "placeholderText": "Selecione o Período",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "serverSideFiltering": false,
+  "sourceData": "{{renderFunctions.renderPeriod()}}",
+  "topRow": 32,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "faowsj2l98",
+  "widgetName": "selectPeriod"
+}

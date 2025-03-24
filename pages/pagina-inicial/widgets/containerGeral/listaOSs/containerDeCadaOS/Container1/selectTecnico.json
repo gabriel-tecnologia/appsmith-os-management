@@ -1,0 +1,88 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( currentItem.fields[\"Técnico Responsável\"]))(selectTecnico.options, selectTecnico.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "labelTooltip"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "labelTextSize"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": "{{currentItem.fields.Fase != \"Fila de Serviço\" && currentItem.fields.Fase != \"Agendamento de Serviço\" && currentItem.fields.Fase != \"Reagendamento de Serviço\"}}",
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "0o325fsrsl",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "BOLD",
+  "labelText": "Técnico Parceiro",
+  "labelTextColor": "#000000",
+  "labelTextSize": "0.7rem",
+  "labelTooltip": "{{currentItem.fields.Fase != \"Fila de Serviço\" && currentItem.fields.Fase != \"Agendamento de Serviço\" ? \"Desabilitado se a OS não estiver em Agendamento ou Fila de Serviço\" : \"\"}}",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 32,
+  "mobileLeftColumn": 43,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 25,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{storeValue('selectedOS', currentItem.fields);\nstoreValue('tecnico', selectTecnico.selectedOptionLabel);\nshowModal(modalConfirmacaoTecnico.name);}}",
+  "optionLabel": "name",
+  "optionValue": "code",
+  "parentColumnSpace": 1.6171875,
+  "parentId": "zitcmg6mjw",
+  "parentRowSpace": 10,
+  "placeholderText": "-- Selecionar --",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "serverSideFiltering": false,
+  "sourceData": "{{selectOptions.PARTNER.map(element => ({name: element, code: element}))}}",
+  "topRow": 0,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "kulvfh8a73",
+  "widgetName": "selectTecnico"
+}

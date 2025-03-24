@@ -1,0 +1,102 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 164,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store.selectedOS[\"Motivo do Ajuste\"]??\"\"))(selectAdjustReason.options, selectAdjustReason.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "labelTooltip"
+    },
+    {
+      "key": "labelText"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "labelStyle"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "onOptionChange"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "labelStyle"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": "{{appsmith.store.selectedOS.Fase != \"Controle de Qualidade\" ||\nselectImproductiveReason.selectedOptionLabel != \"\"}}",
+  "isFilterable": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "s11t1py54n",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "{{inputFormatter.onDiffBold(\nselectAdjustReason.selectedOptionLabel,\nappsmith.store.selectedOS[\"Motivo do Ajuste\"],\nselectAdjustReason.isValid\n)}}",
+  "labelText": "{{inputFormatter.onDiffIcon(\nselectAdjustReason.selectedOptionLabel,\nappsmith.store.selectedOS[\"Motivo do Ajuste\"],\nselectAdjustReason.isValid\n)}}\n\nMotivo Ajuste",
+  "labelTextColor": "{{inputFormatter.onDiffColor(\nselectAdjustReason.selectedOptionLabel,\nappsmith.store.selectedOS[\"Motivo do Ajuste\"],\nselectAdjustReason.isValid\n)}}",
+  "labelTextSize": "0.875rem",
+  "labelTooltip": "{{selectAdjustReason.isDisabled ? \"Campo desativado se o Motivo de Improdutiva estiver preenchido\" : \"\"}}",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 19,
+  "mobileLeftColumn": 32,
+  "mobileRightColumn": 52,
+  "mobileTopRow": 12,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{storeValue('adjustReason', selectAdjustReason.selectedOptionValue);}}",
+  "optionLabel": "name",
+  "optionValue": "code",
+  "originalBottomRow": 162,
+  "originalTopRow": 155,
+  "parentColumnSpace": 10.16278076171875,
+  "parentId": "vcxpa7yivg",
+  "parentRowSpace": 10,
+  "placeholderText": "-- Selecionar Motivo Ajuste --",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "serverSideFiltering": false,
+  "sourceData": "{{renderFunctions.renderAdjustReasons()}}",
+  "topRow": 157,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "j9rg4r8azg",
+  "widgetName": "selectAdjustReason"
+}

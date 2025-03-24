@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_439395d3-f867-4075-a2a0-ed5bc1e86f1d",
+  "id": "pagina-inicial_loadPage",
+  "unpublishedCollection": {
+    "name": "loadPage",
+    "pageId": "pagina-inicial",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

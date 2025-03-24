@@ -1,0 +1,105 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "boxShadow": "none",
+  "configureMenuItems": {
+    "config": {
+      "id": "config",
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Menu Item"
+    },
+    "id": "config",
+    "label": "Configure menu items"
+  },
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "menuItems.menuItem2.onClick"
+    },
+    {
+      "key": "menuItems.menuItem3.onClick"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "menuItems.menuIteme6zd83xcs8.onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "menuItems.menuItem1.onClick"
+    },
+    {
+      "key": "menuItems.menuItem3.onClick"
+    },
+    {
+      "key": "menuItems.menuIteme6zd83xcs8.onClick"
+    }
+  ],
+  "isCompact": false,
+  "isDisabled": "{{appsmith.store.selectedOS.Fase != \"Ajuste\"}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "3pxu9q063n",
+  "label": "Alterar Fase",
+  "leftColumn": 1,
+  "menuColor": "#00ce7c",
+  "menuItems": {
+    "menuItem1": {
+      "id": "menuItem1",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Concluído",
+      "onClick": "{{changePhaseFunctions.handleMoveToConcluded();}}",
+      "widgetId": ""
+    },
+    "menuItem3": {
+      "id": "menuItem3",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Cancelar OS",
+      "onClick": "{{changePhaseFunctions.handleCancelOS();}}",
+      "widgetId": ""
+    },
+    "menuIteme6zd83xcs8": {
+      "id": "menuIteme6zd83xcs8",
+      "index": 2,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Reagendamento de Serviço",
+      "onClick": "{{changePhaseFunctions.handleMoveToReschedule()}}",
+      "widgetId": "yoljki16tn"
+    }
+  },
+  "menuItemsSource": "STATIC",
+  "menuVariant": "PRIMARY",
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 9.181002587080002,
+  "parentId": "whkunja2jt",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "sourceData": [],
+  "topRow": 1,
+  "type": "MENU_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "vc7trdo1x5",
+  "widgetName": "botaoAlterarFaseCopy"
+}

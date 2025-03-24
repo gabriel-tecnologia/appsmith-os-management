@@ -1,0 +1,87 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowCurrencyChange": false,
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 143,
+  "boxShadow": "none",
+  "decimals": 2,
+  "defaultCurrencyCode": "BRL",
+  "defaultText": "{{appsmith.store.selectedOS[\"Valor a Pagar (ao Terceiro)\"]??\"\"}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "validation"
+    },
+    {
+      "key": "tooltip"
+    },
+    {
+      "key": "label"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "labelStyle"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "labelStyle"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "zg01v6dm12",
+  "label": "{{inputFormatter.onDiffIcon(\nvalorAPagarParceiro.value,\nappsmith.store.selectedOS[\"Valor a Pagar (ao Terceiro)\"],\nvalorAPagarParceiro.isValid\n)}}\n\nValor a Pagar (ao Terceiro)",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "{{inputFormatter.onDiffBold(\nvalorAPagarParceiro.value,\nappsmith.store.selectedOS[\"Valor a Pagar (ao Terceiro)\"],\nvalorAPagarParceiro.isValid\n)}}",
+  "labelTextColor": "{{inputFormatter.onDiffColor(\nvalorAPagarParceiro.value,\nappsmith.store.selectedOS[\"Valor a Pagar (ao Terceiro)\"],\nvalorAPagarParceiro.isValid\n)}}",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 6,
+  "mobileRightColumn": 26,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "originalBottomRow": 141,
+  "originalTopRow": 134,
+  "parentColumnSpace": 19.8125,
+  "parentId": "vcxpa7yivg",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 29,
+  "showStepArrows": false,
+  "tooltip": "{{valorAPagarParceiro.isDisabled ? \"Campo desativado se a OS não estiver em 'Controle de Qualidade'\" : \"\"}}",
+  "topRow": 136,
+  "type": "CURRENCY_INPUT_WIDGET",
+  "validation": "{{valorAPagarParceiro.value >= 0 || valorAPagarParceiro.value == undefined}}",
+  "version": 1,
+  "widgetId": "hfhzlcks3c",
+  "widgetName": "valorAPagarParceiro"
+}

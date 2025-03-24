@@ -1,0 +1,5 @@
+{
+	"fields": [
+		"record_id"
+	]
+}

@@ -1,0 +1,6 @@
+{
+	"sort": [{field: "Data Agendada para o Serviço", direction: "asc"}, {field: "Período", direction: "asc"}],
+	"filterByFormula": {{this.params.filterByFormula}},
+	"maxRecords": {{this.params.maxRecords || ''}},
+	"offset": "{{this.params.offset || ''}}"
+}

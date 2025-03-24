@@ -1,0 +1,5 @@
+{
+		"fields":{
+			"Empresa": {{selectPartner.selectedOptionLabel}}
+		}
+}

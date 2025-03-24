@@ -1,0 +1,5 @@
+{
+		"fields":{
+			"Técnico Responsável": {{appsmith.store.tecnico}}
+		}
+}

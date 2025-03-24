@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_4cbe08b4-71af-4e65-beae-b6d65cc1e970",
+  "id": "controle-de-fases_stockManagment",
+  "unpublishedCollection": {
+    "name": "stockManagment",
+    "pageId": "controle-de-fases",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "stock",
+        "value": "[]"
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 46,
+  "bottomRowBeforeCollapse": 24,
+  "boxShadow": "none",
+  "buttonColor": "#00ce7c",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "onClick"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconAlign": "left",
+  "iconName": "map",
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{listaOSs.listData.length === 0}}",
+  "isLoading": false,
+  "isVisible": "{{listaOSs.listData.length > 0}}",
+  "key": "f6wrrxqqao",
+  "leftColumn": 37,
+  "minWidth": 120,
+  "mobileBottomRow": 10,
+  "mobileLeftColumn": 49,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "onClick": "{{showModal(modalMapa.name)}}",
+  "originalBottomRow": 46,
+  "originalTopRow": 41,
+  "parentColumnSpace": 15.6852046251297,
+  "parentId": "01cj2m2lu3",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 49,
+  "text": "Mapa",
+  "topRow": 41,
+  "topRowBeforeCollapse": 18,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "tq4ai0sfwe",
+  "widgetName": "botaoMapa"
+}

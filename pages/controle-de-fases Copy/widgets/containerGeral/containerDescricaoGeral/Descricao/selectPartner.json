@@ -1,0 +1,94 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 39,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store.selectedOS[\"Técnico Responsável\"]))(selectPartner.options, selectPartner.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "labelTooltip"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "labelText"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "labelStyle"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "labelStyle"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": "{{appsmith.store.selectedOS.Fase != \"Agendamento de Serviço\" && appsmith.store.selectedOS.Fase != \"Fila de Serviço\" &&\nappsmith.store.selectedOS.Fase != \"Ajuste\" &&\nappsmith.store.selectedOS.Fase != \"Reagendamento de Serviço\"}}",
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "s11t1py54n",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "{{inputFormatter.onDiffBold(\nselectPartner.selectedOptionLabel,\nappsmith.store.selectedOS[\"Técnico Responsável\"],\nselectPartner.isValid\n)}}",
+  "labelText": "{{inputFormatter.onDiffIcon(\nselectPartner.selectedOptionLabel,\nappsmith.store.selectedOS[\"Técnico Responsável\"],\nselectPartner.isValid\n)}}\n\n\nTécnico Parceiro",
+  "labelTextColor": "{{inputFormatter.onDiffColor(\nselectPartner.selectedOptionLabel,\nappsmith.store.selectedOS[\"Técnico Responsável\"],\nselectPartner.isValid\n)}}",
+  "labelTextSize": "0.875rem",
+  "labelTooltip": "{{selectPartner.isDisabled ? \"Campo desativado se a fase da OS for diferente de Agendamento ou Fila de Serviço\" : \"\"}}",
+  "labelWidth": 5,
+  "leftColumn": 32,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 19,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 12,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "code",
+  "originalBottomRow": 39,
+  "originalTopRow": 32,
+  "parentColumnSpace": 10.16278076171875,
+  "parentId": "vcxpa7yivg",
+  "parentRowSpace": 10,
+  "placeholderText": "Selecione o Técnico Parceiro",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "serverSideFiltering": false,
+  "sourceData": "{{renderFunctions.renderAvailablePartners.data}}",
+  "topRow": 32,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "3g0m94d6b0",
+  "widgetName": "selectPartner"
+}
