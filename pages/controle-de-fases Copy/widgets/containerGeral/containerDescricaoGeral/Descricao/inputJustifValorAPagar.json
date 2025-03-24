@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 146,
+  "bottomRow": 190,
   "boxShadow": "none",
   "defaultText": "{{appsmith.store.selectedOS[\"Justificativa de Valor a Pagar Divergente\"]??\"\"}}",
   "dynamicBindingPathList": [
@@ -80,7 +80,7 @@
   "shouldAllowAutofill": false,
   "showStepArrows": false,
   "tooltip": "{{inputJustifValorAPagar.isDisabled ? \"Campo desativado se a OS não estiver em 'Controle de Qualidade'\" : \"\"}}",
-  "topRow": 136,
+  "topRow": 176,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "l6bw7pxzci",

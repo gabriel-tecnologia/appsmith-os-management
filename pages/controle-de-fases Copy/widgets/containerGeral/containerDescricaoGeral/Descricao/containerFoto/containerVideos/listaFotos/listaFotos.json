@@ -9,7 +9,7 @@
   "animateLoading": true,
   "backgroundColor": "white",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 72,
+  "bottomRow": 70,
   "boxShadow": "none",
   "children": [
     {
@@ -122,7 +122,7 @@
   "selectedItemView": "{{{}}}",
   "serverSidePagination": false,
   "templateHeight": 160,
-  "topRow": 7,
+  "topRow": 5,
   "triggeredItemView": "{{{}}}",
   "type": "LIST_WIDGET_V2",
   "widgetId": "hpfjaoboqo",

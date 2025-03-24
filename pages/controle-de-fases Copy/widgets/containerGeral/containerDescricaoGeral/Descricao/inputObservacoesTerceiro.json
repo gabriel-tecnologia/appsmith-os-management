@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 84,
+  "bottomRow": 126,
   "boxShadow": "none",
   "defaultText": "{{appsmith.store.selectedOS[\"Observações (do Terceiro para Gabriel)\"]??\"\"}}",
   "dynamicBindingPathList": [
@@ -74,7 +74,7 @@
   "shouldAllowAutofill": false,
   "showStepArrows": false,
   "tooltip": "",
-  "topRow": 74,
+  "topRow": 88,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "31njhqp14b",

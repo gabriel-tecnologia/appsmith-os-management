@@ -4,7 +4,7 @@ export default {
 			showAlert("Falta incluir Fotos do Serviço", "error")
 			return;
 		}
-		if (!appsmith.store.selectedOS["Termo de Finalização"] && (appsmith.store.selectedOS["Tipo de Ordem de Serviço"] == "Adesão" || appsmith.store.selectedOS["Tipo de Ordem de Serviço"] == "Desinstalação" || appsmith.store.selectedOS["Tipo de Ordem de Serviço"] == "Aditivo")){
+		if (!appsmith.store.selectedOS["Termo de Finalização"] && (appsmith.store.selectedOS["Tipo de Ordem de Serviço"] == "Adesão" || appsmith.store.selectedOS["Tipo de Ordem de Serviço"] == "Desinstalação")){ // No futuro, adicionar Aditivo
 			showAlert("Falta incluir Termo de Finalização", "error")
 			return;
 		}
