@@ -6,19 +6,8 @@ export default {
 		return result
 	},
 
-	renderListFiltered(){
-		let data = appsmith.store.allRecords;
 
-		// Filtro por search
-		data = data.filter(record => this.normalizeString(record.fields['Título']).includes(this.normalizeString(selecaoTitulo.text)));
 
-		return data
-	},
-	
-	normalizeString(value){
-		return value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-	},
-	
 	handleTextColorTechnician(tecnico) {
 		switch (tecnico) {
 			case "[EXT] Power.com": return "#dbeafe";
@@ -64,15 +53,15 @@ export default {
 		}
 	},
 	renderPartners(empresa) {
-    const data = Leitura_parceiros_por_empresa.data.records
-		
+		const data = Leitura_parceiros_por_empresa.data.records
+
 		const filteredData = data.filter(rec => rec.fields.Empresa === empresa)
-		
+
 		const formattedData = filteredData.map(rec => {
-        const { Nome, CPF } = rec.fields;
-        return `${Nome} - ${CPF}` 
-    }).join("\n");
-		
-    return formattedData
+			const { Nome, CPF } = rec.fields;
+			return `${Nome} - ${CPF}` 
+		}).join("\n");
+
+		return formattedData
 	}
 }

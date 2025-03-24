@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 46,
+  "bottomRow": 48,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "SECONDARY",
@@ -60,7 +60,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 37,
   "text": "Baixar Tabela",
-  "topRow": 41,
+  "topRow": 43,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "w69ich9l5v",

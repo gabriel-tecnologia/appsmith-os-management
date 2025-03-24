@@ -19,6 +19,9 @@
   "dynamicPropertyPathList": [
     {
       "key": "onTextChanged"
+    },
+    {
+      "key": "onSubmit"
     }
   ],
   "dynamicTriggerPathList": [
@@ -51,7 +54,7 @@
   "mobileRightColumn": 50,
   "mobileTopRow": 25,
   "needsErrorInfo": false,
-  "onSubmit": "",
+  "onSubmit": "{{osListHook.handleSearch()}}",
   "onTextChanged": "{{storeValue('titulo', selecaoTitulo.text)}}",
   "originalBottomRow": 21,
   "originalTopRow": 17,

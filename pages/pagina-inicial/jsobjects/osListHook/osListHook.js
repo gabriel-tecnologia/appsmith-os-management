@@ -91,6 +91,9 @@ export default {
 			formula = formula.concat(", {Cidade} = 'Rio de Janeiro'")
 		}
 
+		// Filtro por título
+		formula = formula.concat(`, SEARCH("${selecaoTitulo.text}", {Título})`);
+
 		formula = formula.concat(')')
 
 		//---------------PAGINAÇÃO--------------------
@@ -133,5 +136,9 @@ export default {
 	resetFilters() {
 		Leitura_OS.clear()
 		clearStore()
-	}	
+	}	,
+
+	normalizeString(value){
+		return value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+	},
 }

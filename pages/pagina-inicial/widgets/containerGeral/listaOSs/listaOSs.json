@@ -9,7 +9,7 @@
   "animateLoading": true,
   "backgroundColor": "#f4f4f5",
   "borderRadius": "0.375rem",
-  "bottomRow": 357,
+  "bottomRow": 360,
   "boxShadow": "none",
   "children": [
     {
@@ -80,7 +80,7 @@
   "itemSpacing": "",
   "key": "cshy8yb5cq",
   "leftColumn": 2,
-  "listData": "{{renderFunction.renderListFiltered()}}",
+  "listData": "{{Leitura_OS.data.records}}",
   "mainCanvasId": "m1y8i7te07",
   "mainContainerId": "40b58zxqc4",
   "minWidth": 450,
@@ -103,7 +103,7 @@
   "selectedItemView": "{{{}}}",
   "serverSidePagination": false,
   "templateHeight": 160,
-  "topRow": 49,
+  "topRow": 52,
   "triggeredItemView": "{{{}}}",
   "type": "LIST_WIDGET_V2",
   "widgetId": "dqtw9pdkn4",
