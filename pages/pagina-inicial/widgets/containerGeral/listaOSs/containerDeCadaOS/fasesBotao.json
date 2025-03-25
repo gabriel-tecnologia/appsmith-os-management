@@ -34,7 +34,7 @@
   "mobileRightColumn": 56,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('controle-de-fases Copy', {}, 'SAME_WINDOW').then(() => {\n  storeValue('selectedOS', currentItem.fields);\n});}}",
+  "onClick": "{{navigateTo('controle-de-fases', {}, 'SAME_WINDOW').then(() => {\n  storeValue('selectedOS', currentItem.fields);\n});}}",
   "parentColumnSpace": 13.926025390625,
   "parentId": "vq6vc5h6yf",
   "parentRowSpace": 10,

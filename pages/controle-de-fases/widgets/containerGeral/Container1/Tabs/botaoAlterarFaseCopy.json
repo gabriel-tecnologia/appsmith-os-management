@@ -26,13 +26,13 @@
       "key": "menuItems.menuItem2.onClick"
     },
     {
-      "key": "menuItems.menuItem3.onClick"
-    },
-    {
       "key": "isDisabled"
     },
     {
       "key": "menuItems.menuIteme6zd83xcs8.onClick"
+    },
+    {
+      "key": "menuItems.menuItem1.onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -70,7 +70,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "Cancelar OS",
-      "onClick": "{{changePhaseFunctions.handleCancelOS();}}",
+      "onClick": "{{showModal(modalCancelamento.name);}}",
       "widgetId": ""
     },
     "menuIteme6zd83xcs8": {

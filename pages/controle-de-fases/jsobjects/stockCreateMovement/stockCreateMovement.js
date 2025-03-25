@@ -1,55 +1,20 @@
 export default {
-	async handleCreateExit() {
-		let fields = "";
-		
-		if (appsmith.store.exitStock != undefined) {
-			fields = {
-				"Ordem de Servico": appsmith.store.exitStock["Ordem de Servico"],
-				"Camaleão": Number(inputKitsCamaleao.text) || 0,
-				"Sistema Nervoso 2": Number(inputSistemaNervoso2.text) || 0,
-				"Kit Poste Canguru": Number(inputPosteCanguru.text) || 0,
-				"Kit Poste 2.0 (Piso)": Number(inputPostePisoBranco.text) || 0,
-				"Kit Poste 2.0 (Parede)": Number(inputPosteParede.text) || 0,
-				"Placa de Sinalização - Gravata - 0800 GAB-RIEL": Number(inputPlacaVerde.text) || 0,
-				"Placa de Sinalização - Gravata 2- 0800 GAB-RIEL": Number(inputPlacaBranca.text) || 0,
-				"Placa Bolacha": Number(inputPlacaBolacha.text) || 0,
-				"Tipo de Movimento": appsmith.store.exitStock["Tipo de Movimento"],
-				"MAC Address do Roteador": appsmith.store.exitStock["MAC Address do Roteador"] ?? "",
-				"Cancelar Remessa de Produto": false,
-				"Cadastrar Remessa de Produto": true
-        }
-    }
-		try{
-			await Criar_Movimento_Estoque.run({
-				Fields: fields
-			});
-			showAlert("Movimento de estoque criado com sucesso", "success")
+	async handleCreateMovement() {	
+		const fields = {
+			"Tipo de Movimento": appsmith.store.currentStock["Tipo de Movimento"],
+			"Ordem de Servico": appsmith.store.currentStock["Ordem de Servico"],
+			"Camaleão": Number(inputKitsCamaleao.text) || 0,
+			"Sistema Nervoso 2": Number(inputSistemaNervoso2.text) || 0,
+			"Kit Poste Canguru": Number(inputPosteCanguru.text) || 0,
+			"Kit Poste 2.0 (Piso)": Number(inputPostePisoBranco.text) || 0,
+			"Kit Poste 2.0 (Parede)": Number(inputPosteParede.text) || 0,
+			"Placa de Sinalização - Gravata - 0800 GAB-RIEL": Number(inputPlacaVerde.text) || 0,
+			"Placa de Sinalização - Gravata 2- 0800 GAB-RIEL": Number(inputPlacaBranca.text) || 0,
+			"Placa Bolacha": Number(inputPlacaBolacha.text) || 0,
+			"MAC Address do Roteador": appsmith.store.currentStock["MAC Address do Roteador"] ?? "",
+			"Cancelar Remessa de Produto": false,
+			"Cadastrar Remessa de Produto": true
 		}
-		catch (error) {
-			showAlert("Falha ao criar novo movimento de estoque", "error")
-		}			
-	},
-	
-	async handleCreateReturn() {
-		let fields = "";
-		
-		if (appsmith.store.returnStock != undefined) {
-			fields = {
-				"Ordem de Servico": appsmith.store.returnStock["Ordem de Servico"],
-				"Camaleão": Number(inputKitsCamaleaoCopy.text) || 0,
-				"Sistema Nervoso 2": Number(inputSistemaNervoso2Copy.text) || 0,
-				"Kit Poste Canguru": Number(inputPosteCanguruCopy.text) || 0,
-				"Kit Poste 2.0 (Piso)": Number(inputPostePisoBrancoCopy.text) || 0,
-				"Kit Poste 2.0 (Parede)": Number(inputPosteParedeCopy.text) || 0,
-				"Placa de Sinalização - Gravata - 0800 GAB-RIEL": Number(inputPlacaVerdeCopy.text) || 0,
-				"Placa de Sinalização - Gravata 2- 0800 GAB-RIEL": Number(inputPlacaBrancaCopy.text) || 0,
-				"Placa Bolacha": Number(inputPlacaBolachaCopy.text) || 0,
-				"Tipo de Movimento": appsmith.store.returnStock["Tipo de Movimento"],
-				"MAC Address do Roteador": appsmith.store.returnStock["MAC Address do Roteador"] ?? "",
-				"Cancelar Remessa de Produto": false,
-				"Cadastrar Remessa de Produto": true
-        }
-    }
 		try{
 			await Criar_Movimento_Estoque.run({
 				Fields: fields

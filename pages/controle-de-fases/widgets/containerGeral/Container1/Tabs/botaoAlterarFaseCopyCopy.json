@@ -38,6 +38,9 @@
   "dynamicTriggerPathList": [
     {
       "key": "menuItems.menuItem3.onClick"
+    },
+    {
+      "key": "menuItems.menuItemn8cvsbp4nk.onClick"
     }
   ],
   "isCompact": false,
@@ -57,6 +60,15 @@
       "label": "Fila de Serviço",
       "onClick": "{{changePhaseFunctions.handleMoveToServiceQueue()}}",
       "widgetId": ""
+    },
+    "menuItemn8cvsbp4nk": {
+      "id": "menuItemn8cvsbp4nk",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Cancelar OS",
+      "onClick": "{{showModal(modalCancelamento.name);}}",
+      "widgetId": "uqnb0maixy"
     }
   },
   "menuItemsSource": "STATIC",

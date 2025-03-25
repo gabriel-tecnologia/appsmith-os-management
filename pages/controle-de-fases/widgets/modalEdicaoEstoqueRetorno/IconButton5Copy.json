@@ -31,7 +31,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{closeModal(modalEdicaoEstoqueRetorno.name).then(() => {\n  stockManagment.getStockRecords();\n});\nshowModal(modalEstoque.name);}}",
+  "onClick": "{{closeModal(modalEdicaoEstoqueRetorno.name).then(() => {\n  stockManagment.getStockRecords();\n});}}",
   "parentId": "2gx8mwyodc",
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",

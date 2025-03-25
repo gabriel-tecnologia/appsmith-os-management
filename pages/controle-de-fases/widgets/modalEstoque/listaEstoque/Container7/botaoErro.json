@@ -37,7 +37,7 @@
   "mobileRightColumn": 47,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{stockManagment.getStockRecords();\ncurrentItem.name == \"Saída de Estoque\" ? showModal(modalEdicaoEstoqueSaida.name) : showModal(modalEdicaoEstoqueRetorno.name)}}",
+  "onClick": "{{stockManagment.getStockRecords();\ncurrentItem.name == \"Saída de Estoque\" ? showModal(modalEdicaoEstoque.name) : showModal(modalEdicaoEstoqueRetorno.name)}}",
   "originalBottomRow": 46,
   "originalTopRow": 42,
   "parentId": "d6ay6m39zb",

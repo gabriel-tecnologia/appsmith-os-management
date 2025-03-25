@@ -1,0 +1,95 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowCurrencyChange": false,
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 116,
+  "boxShadow": "none",
+  "decimals": 2,
+  "defaultCurrencyCode": "BRL",
+  "defaultText": "{{appsmith.store.selectedOS[\"Valor a Cobrar (do Cliente)\"]??\"\"}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "validation"
+    },
+    {
+      "key": "tooltip"
+    },
+    {
+      "key": "label"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "labelStyle"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onTextChanged"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "labelStyle"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "iconAlign": "left",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "zg01v6dm12",
+  "label": "{{inputFormatter.onDiffIcon(\nvalorACobrarCliente.value,\nappsmith.store.selectedOS[\"Valor a Cobrar (do Cliente)\"],\nvalorACobrarCliente.isValid\n)}}\n\nValor a Cobrar (do Cliente)",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "{{inputFormatter.onDiffBold(\nvalorACobrarCliente.value,\nappsmith.store.selectedOS[\"Valor a Cobrar (do Cliente)\"],\nvalorACobrarCliente.isValid\n)}}",
+  "labelTextColor": "{{inputFormatter.onDiffColor(\nvalorACobrarCliente.value,\nappsmith.store.selectedOS[\"Valor a Cobrar (do Cliente)\"],\nvalorACobrarCliente.isValid\n)}}",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 6,
+  "mobileRightColumn": 26,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onTextChanged": "{{valorACobrarCliente.value == undefined ? inputJustifValorACobrar.setValue(\"\") : \"\"}}",
+  "originalBottomRow": 116,
+  "originalTopRow": 109,
+  "parentColumnSpace": 19.8125,
+  "parentId": "vcxpa7yivg",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "showStepArrows": false,
+  "tooltip": "{{valorACobrarCliente.isDisabled ? \"Campo desativado se a OS não estiver em 'Controle de Qualidade'\" : \"\"}}",
+  "topRow": 109,
+  "type": "CURRENCY_INPUT_WIDGET",
+  "validation": "{{valorACobrarCliente.value >= 0 || valorACobrarCliente.value == undefined}}",
+  "version": 1,
+  "widgetId": "qi1mohjgt0",
+  "widgetName": "valorACobrarCliente"
+}

@@ -8,8 +8,8 @@
 			"Observações Pós-Qualidade": {{inputObservacoesPosQualidade != "" ? inputObservacoesPosQualidade.text : appsmith.store.selectedOS["Observações Pós-Qualidade"]}},
 			"Motivo do Ajuste": {{selectAdjustReason.selectedOptionLabel == "" ? null : selectAdjustReason.selectedOptionLabel}},
 			"Motivo de Improdutiva": {{selectImproductiveReason.selectedOptionLabel == "" ? null : selectImproductiveReason.selectedOptionLabel}},
-			"Valor a Cobrar (do Cliente)": {{valorACobrarCliente.value == "" ? null : valorACobrarCliente.value}},
-			"Valor a Pagar (ao Terceiro)": {{valorAPagarParceiro.value == "" ? null : valorAPagarParceiro.value}},
+			"Valor a Cobrar (do Cliente)": {{valorACobrarCliente.value == undefined ? null : valorACobrarCliente.value}},
+			"Valor a Pagar (ao Terceiro)": {{valorAPagarParceiro.value == undefined ? null : valorAPagarParceiro.value}},
 			"Justificativa de Valor a Cobrar": {{inputJustifValorACobrar.text == "" ? "" : inputJustifValorACobrar.text}},
 			"Justificativa de Valor a Pagar Divergente": {{inputJustifValorAPagar.text == "" ? "" : inputJustifValorAPagar.text}}
 		}

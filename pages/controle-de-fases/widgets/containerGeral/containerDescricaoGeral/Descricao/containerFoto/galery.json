@@ -1,0 +1,80 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 22,
+  "bottomRowBeforeCollapse": 72,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{{\n\t\"data\": appsmith.store.selectedOS[\"Foto do Serviço\"]\n}}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "removeButtonClick"
+    }
+  ],
+  "events": [
+    "removeButtonClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": "{{appsmith.store.selectedOS[\"Foto do Serviço\"] != undefined}}",
+  "key": "pi9kaamdyp",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 37,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 7,
+  "needsErrorInfo": false,
+  "originalBottomRow": 155,
+  "originalTopRow": 6,
+  "parentColumnSpace": 18.8125,
+  "parentId": "yafn7ckaq2",
+  "parentRowSpace": 10,
+  "removeButtonClick": "{{filesFunction.removerFotoAirtable();}}",
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": ".app {\n  height: calc(var(--appsmith-ui-height) * 1px);\n  width: calc(var(--appsmith-ui-width) * 1px - 20px);\n  justify-content: center;\n  border-radius: var(--appsmith-theme-borderRadius);\n  box-shadow: var(--appsmith-theme-boxShadow);\n  padding: 29px 25px;\n  box-sizing: border-box;\n  font-family: system-ui;\n  background: #fff;\n  padding-bottom: 100px;\n  overflow-x: none;\n  position: relative;\n  overflow-y: scroll;\n}\n\n* {\n  box-sizing: border-box;\n  font-family: Arial, sans-serif;\n}\n\n.gallery-container {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  gap: 10px;\n  padding: 10px;\n  overflow-x: none;\n  width: 100%;\n}\n\n.gallery-item {\n  position: relative;\n  border-radius: 8px;\n  overflow: hidden;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);\n}\n\n.gallery-item img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  display: absolute;\n  border-radius: 8px;\n}\n\n.remove-btn {\n  position: absolute;\n  bottom: 5px;\n  right: 5px;\n  border: none;\n  padding: 8px 15px;\n  cursor: pointer;\n  border-radius: 5px;\n  font-size: 12px;\n  font-weight: bold;\n  color: white;\n  background: #ff7b7b;\n  transition: all 0.2s;\n  opacity: 0;\n}\n\n.remove-btn:hover {\n  background: #a70000;\n}\n\n.gallery-item:hover .remove-btn {\n  opacity: 1;\n}",
+    "html": "<div class=\"app\">\n\t<div class=\"gallery-container\" id=\"gallery\"></div>\n</div>",
+    "js": "function renderGallery() {\n  const imageData = appsmith.model.data || [];\n  if (imageData.length === 0) return;\n  const gallery = document.getElementById(\"gallery\");\n  gallery.innerHTML = \"\"; // Limpa antes de renderizar\n\n  imageData.forEach(image => {\n    if (image.type != \"video/mp4\") {\n      const item = document.createElement(\"div\");\n      item.classList.add(\"gallery-item\");\n      item.onclick = () => {\n        window.open(image.url, \"_blank\");\n      };\n      const img = document.createElement(\"img\");\n      img.src = image.url;\n      img.alt = image.filename;\n      const btn = document.createElement(\"button\");\n      btn.innerText = \"Remover\";\n      btn.classList.add(\"remove-btn\");\n      btn.onclick = () => {\n        event.stopPropagation();\n        removeImage(image.id);\n      };\n      item.appendChild(img);\n      item.appendChild(btn);\n      gallery.appendChild(item);\n    }\n  });\n}\nfunction removeImage(id) {\n  const imageData = appsmith.model.data;\n  const image = imageData.find(image => image.id === id);\n  appsmith.updateModel({\n    image\n  });\n  appsmith.triggerEvent('removeButtonClick');\n  setTimeou(() => renderGallery(), 10000);\n  renderGallery();\n}\nfunction initApp() {\n  renderGallery();\n}\nappsmith.onModelChange(() => {\n  renderGallery();\n});\nappsmith.onReady(() => {\n  /*\n   * This handler function will get called when parent application is ready.\n   * Initialize your component here\n   * more info - https://docs.appsmith.com/reference/widgets/custom#onready\n   */\n  initApp();\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 6,
+  "topRowBeforeCollapse": 6,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": ".app {\n\theight: calc(var(--appsmith-ui-height) * 1px);\n\twidth: calc(var(--appsmith-ui-width) * 1px - 20px) ;\n\tjustify-content: center;\n\tborder-radius: var(--appsmith-theme-borderRadius);\n\tbox-shadow: var(--appsmith-theme-boxShadow);\n\tpadding: 29px 25px;\n\tbox-sizing: border-box;\n\tfont-family: system-ui;\n\tbackground: #fff;\n\tpadding-bottom: 100px;\n\toverflow-x: none;\n\tposition: relative;\n\toverflow-y: scroll;\n}\n\n* {\n\tbox-sizing: border-box;\n\tfont-family: Arial, sans-serif;\n}\n\n.gallery-container {\n\tdisplay: grid;\n\tgrid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n\tgap: 10px;\n\tpadding: 10px;\n\toverflow-x: none;\n\twidth: 100%;\n}\n\n.gallery-item {\n\tposition: relative;\n\tborder-radius: 8px;\n\toverflow: hidden;\n\tbox-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);\n}\n\n.gallery-item img {\n\twidth: 100%;\n\theight: 100%;\n\tobject-fit: cover;\n\tdisplay: absolute;\n\tborder-radius: 8px;\n}\n\n.remove-btn {\n\tposition: absolute;\n\tbottom: 5px;\n\tright: 5px;\n\tborder: none;\n\tpadding: 8px 15px ;\n\tcursor: pointer;\n\tborder-radius:5px;\n\tfont-size: 12px;\n\tfont-weight: bold;\n\tcolor: white;\n\tbackground: #ff7b7b;\n\ttransition: all 0.2s;\n\topacity: 0;\n}\n\n.remove-btn:hover {\n\tbackground: #a70000;\n\n}\n\n.gallery-item:hover .remove-btn {\n\topacity: 1;\n}\n\n",
+    "html": "<div class=\"app\">\n\t<div class=\"gallery-container\" id=\"gallery\"></div>\n</div>",
+    "js": "\nfunction renderGallery() {\n\tconst imageData = appsmith.model.data || [];\n\n\tif(imageData.length === 0) return;\n\n\tconst gallery = document.getElementById(\"gallery\");\n\tgallery.innerHTML = \"\"; // Limpa antes de renderizar\n\n\timageData.forEach(image => {\n\t\tif (image.type != \"video/mp4\"){\n\t\t\tconst item = document.createElement(\"div\");\n\t\t\titem.classList.add(\"gallery-item\");\n\t\t\titem.onclick = () => {\n\t\t\t\twindow.open(image.url, \"_blank\");\n\t\t\t};\n\n\t\t\tconst img = document.createElement(\"img\");\n\t\t\timg.src = image.url;\n\t\t\timg.alt = image.filename;\n\n\t\t\tconst btn = document.createElement(\"button\");\n\t\t\tbtn.innerText = \"Remover\";\n\t\t\tbtn.classList.add(\"remove-btn\");\n\t\t\tbtn.onclick = () => {\n\t\t\t\tevent.stopPropagation();\n\t\t\t\tremoveImage(image.id);\n\t\t\t}\n\n\t\t\titem.appendChild(img);\n\t\t\titem.appendChild(btn);\n\t\t\tgallery.appendChild(item); }\n\t});\n}\n\nfunction removeImage(id) {\n\tconst imageData = appsmith.model.data;\n\n\tconst image = imageData.find(image => image.id === id);\n\n\tappsmith.updateModel({image})\n\tappsmith.triggerEvent('removeButtonClick')\n\n\tsetTimeou(() => renderGallery(), 10000)\n\n\n\trenderGallery()\n}\n\nfunction initApp() {\n\trenderGallery();\n}\n\nappsmith.onModelChange(() => {\n\trenderGallery();\n})\n\n\nappsmith.onReady(() => {\n\t/*\n\t * This handler function will get called when parent application is ready.\n\t * Initialize your component here\n\t * more info - https://docs.appsmith.com/reference/widgets/custom#onready\n\t */\n\tinitApp();\n});"
+  },
+  "version": 1,
+  "widgetId": "5abiw9lhpl",
+  "widgetName": "galery"
+}

@@ -47,6 +47,9 @@
     },
     {
       "key": "menuItems.menuItemymqjtbeovc.onClick"
+    },
+    {
+      "key": "menuItems.menuItem0ppgui397p.onClick"
     }
   ],
   "isCompact": false,
@@ -58,6 +61,15 @@
   "leftColumn": 0,
   "menuColor": "#00ce7c",
   "menuItems": {
+    "menuItem0ppgui397p": {
+      "id": "menuItem0ppgui397p",
+      "index": 4,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Cancelar OS",
+      "onClick": "{{showModal(modalCancelamento.name);}}",
+      "widgetId": "93tjso878o"
+    },
     "menuItem1": {
       "id": "menuItem1",
       "index": 0,

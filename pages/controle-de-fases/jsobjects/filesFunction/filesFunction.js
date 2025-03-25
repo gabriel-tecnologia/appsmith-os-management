@@ -33,6 +33,7 @@ export default {
 		const newOS = await Leitura_OS_porRecordID.run()
 		storeValue('selectedOS', newOS.fields)
 		},
+	
 	async enviarTermoS3(arquivos){
 		storeValue("tipo_arquivo", "term")
 		let arquivos_para_envio = [];
@@ -77,5 +78,12 @@ export default {
 		catch(error) {
 			showAlert("Falha ao remover arquivo", "error")
 		}
+	},
+	renderVideos(list) {
+		return list.filter(file => file.type == "video/mp4")
+	},
+	
+	renderImagens(list) {
+		return list.filter(file => file.type == "image/jpeg")
 	}
 }

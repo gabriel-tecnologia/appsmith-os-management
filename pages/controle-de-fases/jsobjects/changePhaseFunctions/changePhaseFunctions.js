@@ -1,10 +1,10 @@
 export default {
 	async handleMoveToConcluded(){
-		if (!appsmith.store.selectedOS["Foto do Serviço"] && (appsmith.store.selectedOS.Fase == "Adesão" || appsmith.store.selectedOS.Fase == "Desinstalação")){
+		if (!appsmith.store.selectedOS["Foto do Serviço"]){
 			showAlert("Falta incluir Fotos do Serviço", "error")
 			return;
 		}
-		if (!appsmith.store.selectedOS["Termo de Finalização"] && (appsmith.store.selectedOS.Fase == "Adesão" || appsmith.store.selectedOS.Fase == "Desinstalação")){
+		if (!appsmith.store.selectedOS["Termo de Finalização"] && (appsmith.store.selectedOS["Tipo de Ordem de Serviço"] == "Adesão" || appsmith.store.selectedOS["Tipo de Ordem de Serviço"] == "Desinstalação")){ // No futuro, adicionar Aditivo
 			showAlert("Falta incluir Termo de Finalização", "error")
 			return;
 		}
@@ -16,7 +16,7 @@ export default {
 			showAlert("Falta incluir Momento de Término", "error")
 			return;
 		}
-		if (!appsmith.store.selectedOS["Valor a Pagar (ao Terceiro)"]) {
+		if (appsmith.store.selectedOS["Valor a Pagar (ao Terceiro)"] == undefined) {
 			showAlert("Falta incluir o Valor a Pagar (ao Terceiro)", "error")
 			return;
 		}
@@ -154,6 +154,9 @@ export default {
 			
 			await Alterar_CampoEspecifico.run({Field: {"Solução": "Não se aplica"}})		
 			showAlert("Solução preenchida com sucesso", "success")
+			
+			await Alterar_CampoEspecifico.run({Field: {"Observações (do Terceiro para Gabriel)": `OS Forçada pelo CGS para Controle de Qualidade em '${moment().format('YYYY-MM-DD HH:mm')}'`}})
+			showAlert("Observações (do Terceiro para Gabriel) preenchidas com sucesso", "success")
 			
 			storeValue("fase", "Controle de Qualidade")	
 			await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})

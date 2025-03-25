@@ -1,6 +1,6 @@
 export default {
 	setLocations() {
-		const locs = renderFunction.renderListFiltered().map(record => record.fields)
+		const locs = Leitura_OS.data.records.map(record => record.fields)
 		const pins = locs.map((field) => ({
 			lat: parseFloat(field["Latitude"][0]),
 			long: parseFloat(field["Longitude"][0]),
@@ -35,6 +35,6 @@ export default {
 		
 		storeValue('selectedOS', rec[0])
 		console.log(appsmith.store.selectedOS)
-		navigateTo('controle-de-fases Copy', {}, 'SAME_WINDOW')		
+		navigateTo('controle-de-fases', {}, 'SAME_WINDOW')		
 	}
 }
