@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 36,
+  "bottomRow": 13,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,16 +11,19 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "1.25rem",
-  "fontStyle": "BOLD",
+  "fontSize": "1rem",
+  "fontStyle": "",
   "isLoading": false,
   "isVisible": true,
-  "key": "q6nqmsysmi",
+  "key": "fy8sj7eis5",
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
@@ -30,21 +33,21 @@
   "mobileRightColumn": 41,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 44,
-  "originalTopRow": 40,
+  "originalBottomRow": 13,
+  "originalTopRow": 6,
   "overflow": "NONE",
-  "parentId": "e70v1hjnhi",
+  "parentId": "577d5hb3cq",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 35,
+  "rightColumn": 43,
   "shouldTruncate": false,
-  "text": "Movimento de Estoque",
+  "text": "Motivo de Improdutiva:\n\n • {{selectImproductiveReason.selectedOptionLabel}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 32,
+  "topRow": 6,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "kz5a5k9pwk",
-  "widgetName": "Text7Copy"
+  "widgetId": "ieyu9ldstg",
+  "widgetName": "Text15CopyCopy"
 }

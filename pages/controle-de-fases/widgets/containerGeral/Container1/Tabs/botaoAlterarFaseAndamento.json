@@ -64,7 +64,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "Controle de Qualidade",
-      "onClick": "{{showModal(modalConfirmacao.name);}}",
+      "onClick": "{{showModal(modalConfirmacaoControleQualid.name);}}",
       "widgetId": ""
     },
     "menuItem7xqh7hm348": {

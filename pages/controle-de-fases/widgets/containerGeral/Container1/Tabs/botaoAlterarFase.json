@@ -94,7 +94,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "Improdutivo: parceiro precisa retornar ao cliente",
-      "onClick": "{{changePhaseFunctions.handleMoveToReschedule()\n\n\n// selecaoMotivo.setVisibility(true);\n// storeValue(\"changeTo\", \"Improdutiva\")\n// renderFunctions.renderReasons()\n// \n}}",
+      "onClick": "{{// selecaoMotivo.setVisibility(true);\n// storeValue(\"changeTo\", \"Improdutiva\")\n// renderFunctions.renderReasons()\n// \n}}",
       "widgetId": ""
     },
     "menuItemymqjtbeovc": {

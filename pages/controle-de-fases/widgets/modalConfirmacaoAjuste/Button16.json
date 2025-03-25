@@ -1,13 +1,16 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 32,
+  "bottomRow": 22,
   "boxShadow": "none",
-  "buttonColor": "#009b5d",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonStyle": "PRIMARY_BUTTON",
   "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
     {
       "key": "borderRadius"
     }
@@ -26,7 +29,7 @@
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "aax756b738",
+  "key": "hums0fzbwq",
   "leftColumn": 47,
   "minWidth": 120,
   "mobileBottomRow": 22,
@@ -34,10 +37,8 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{stockPatchErrors.handleMovementError();\nawait Leitura_Movimento_Estoque.run()}}",
-  "originalBottomRow": 32,
-  "originalTopRow": 28,
-  "parentId": "5ijek0idjb",
+  "onClick": "{{changePhaseFunctions.handleMoveToAdjust();\ncloseModal(modalConfirmacaoAjuste.name)}}",
+  "parentId": "1hd5s9tqqh",
   "placement": "CENTER",
   "recaptchaType": "V3",
   "renderMode": "CANVAS",
@@ -45,9 +46,9 @@
   "responsiveBehavior": "hug",
   "rightColumn": 63,
   "text": "Confirmar",
-  "topRow": 28,
+  "topRow": 18,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "wiwyn839cs",
-  "widgetName": "Button14"
+  "widgetId": "80nlnojlz3",
+  "widgetName": "Button16"
 }

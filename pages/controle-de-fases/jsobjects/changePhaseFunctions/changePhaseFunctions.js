@@ -20,6 +20,10 @@ export default {
 			showAlert("Falta incluir o Valor a Pagar (ao Terceiro)", "error")
 			return;
 		}
+		if (appsmith.store.selectedOS.Fase == "Ajuste" && selectAdjustReason.selectedOptionLabel == "") {
+			showAlert("Falta incluir o Motivo de Ajuste", "error")
+			return;
+		}
 		
 		try {
 			storeValue("fase", "Concluído")
@@ -35,6 +39,12 @@ export default {
 	},
 	
 	async handleMoveToReschedule() { // Enquanto não implementamos novo fluxo
+		
+		if (appsmith.store.selectedOS.Fase == "Ajuste" && selectAdjustReason.selectedOptionLabel == "") {
+			showAlert("Falta incluir o Motivo de Ajuste", "error")
+			return;
+		}
+		
 		try {
 			storeValue("fase", "Reagendamento de Serviço")
 			await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
@@ -81,28 +91,40 @@ export default {
 	},
 	
 	async handleMoveToImproductive() {
-		try {
-			await Alterar_CampoEspecifico.run({Field: {"Motivo de Improdutiva": selecaoMotivo.selectedOptionLabel}})
-			showAlert("Motivo de Improdutiva atualizado", "success")
-		}
-		catch (error) {
-			showAlert("Falha ao atualizar Motivo de Improdutiva", "error")			
-		}
 		if (selecaoMotivo.selectedOptionLabel != "") {
 			try {
-				storeValue("fase", "Improdutiva")
-				await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
-				showAlert("Fase da OS alterada para 'Improdutiva'", "success")
-				const newData = await Leitura_OS_porRecordID.run()
-				storeValue("selectedOS", newData.fields)
+				await Alterar_CampoEspecifico.run({Field: {"Motivo de Improdutiva": selecaoMotivo.selectedOptionLabel}})
+				showAlert("Motivo de Improdutiva atualizado", "success")
 			}
-			catch(error) {
-				showAlert("Falha ao alterar fase da OS para 'Improdutiva'", "error")
+			catch (error) {
+				showAlert("Falha ao atualizar Motivo de Improdutiva", "error")			
+			}
+		}
+		else if (selectImproductiveReason.selectedOptionLabel != "") {
+			try {
+				await Alterar_CampoEspecifico.run({Field: {"Motivo de Improdutiva": selectImproductiveReason.selectedOptionLabel}})
+				showAlert("Motivo de Improdutiva atualizado", "success")
+			}
+			catch (error) {
+				showAlert("Falha ao atualizar Motivo de Improdutiva", "error")			
 			}
 		}
 		else {
-			showAlert("Falha ao alterar fase da OS para 'Improdutiva'", "error")			
+			showAlert("Falha ao mudar a fase para Improdutiva, falta preencher o motivo", "error")
+			return
 		}
+		
+		try {
+			storeValue("fase", "Improdutiva")
+			await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
+			showAlert("Fase da OS alterada para 'Improdutiva'", "success")
+			const newData = await Leitura_OS_porRecordID.run()
+			storeValue("selectedOS", newData.fields)
+		}
+		catch(error) {
+			showAlert("Falha ao alterar fase da OS para 'Improdutiva'", "error")
+		}
+		
 		if (appsmith.store.selectedOS.Fase == "Improdutiva") {
 			try {
 				await createOS.handleCreateOS()
@@ -114,36 +136,44 @@ export default {
 				showAlert("Falha ao criar uma nova OS", "error")
 			}
 		}
-		else {
-			showAlert("Não foi possível criar uma nova OS", "error")
-		}
 	},
 	
 	async handleMoveToAdjust() {
-		try {
-			await Alterar_CampoEspecifico.run({Field: {"Motivo do Ajuste": selecaoMotivo.selectedOptionLabel}})
-			showAlert("Motivo de Ajuste atualizado", "success")
-		}
-		catch (error) {
-			showAlert("Falha ao atualizar o Motivo de Ajuste", "error")
-		}
 		if (selecaoMotivo.selectedOptionLabel != "") {
 			try {
-				storeValue("fase", "Ajuste")
-				await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
-				showAlert("Fase da OS alterada para 'Ajuste'", "success")
-				await renderFunctions.renderPhaseState()
-				const newData = await Leitura_OS_porRecordID.run()
-				storeValue("selectedOS", newData.fields)
-				resetWidget("Tabs")
+				await Alterar_CampoEspecifico.run({Field: {"Motivo do Ajuste": selecaoMotivo.selectedOptionLabel}})
+				showAlert("Motivo de Ajuste atualizado", "success")
 			}
-			catch(error){
-				showAlert("Falha ao alterar fase da OS para 'Ajuste'", "error")
-			}		
+			catch (error) {
+				showAlert("Falha ao atualizar o Motivo de Ajuste", "error")
+			}
+		}
+		else if (selectAdjustReason.selectedOptionLabel != "") {
+			try {
+				await Alterar_CampoEspecifico.run({Field: {"Motivo do Ajuste": selectAdjustReason.selectedOptionLabel}})
+				showAlert("Motivo de Ajuste atualizado", "success")
+			}
+			catch (error) {
+				showAlert("Falha ao atualizar o Motivo de Ajuste", "error")
+			}
 		}
 		else {
-			showAlert("Falha ao mudar a fase da OS para 'Ajuste'", "error")	
-		}	
+			showAlert("Falha ao mudar a fase para Ajuste, falta preencher o motivo", "error")
+			return
+		}
+		
+		try {
+			storeValue("fase", "Ajuste")
+			await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
+			showAlert("Fase da OS alterada para 'Ajuste'", "success")
+			await renderFunctions.renderPhaseState()
+			const newData = await Leitura_OS_porRecordID.run()
+			storeValue("selectedOS", newData.fields)
+			resetWidget("Tabs")
+		}
+		catch(error){
+			showAlert("Falha ao alterar fase da OS para 'Ajuste'", "error")
+		}			
 	},
 	
 	async handleMoveToQualityControl() {
@@ -174,6 +204,12 @@ export default {
 	},
 	
 	async handleCancelOS() {
+		
+		if (appsmith.store.selectedOS.Fase == "Ajuste" && selectAdjustReason.selectedOptionLabel == "") {
+			showAlert("Falta incluir o Motivo de Ajuste", "error")
+			return;
+		}
+		
 		try {
 			storeValue("fase", "Cancelado")
 			await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})

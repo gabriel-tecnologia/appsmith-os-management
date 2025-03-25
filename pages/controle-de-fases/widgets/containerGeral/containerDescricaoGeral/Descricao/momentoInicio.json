@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 44,
+  "bottomRow": 43,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -63,7 +63,7 @@
   "text": "<b>Momento de Início</b>: {{appsmith.store.selectedOS[\"Momento de Início\"]??\"\"}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 40,
+  "topRow": 39,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

@@ -28,7 +28,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{closeModal(modalConfirmacao.name);}}",
+  "onClick": "{{closeModal(modalConfirmacaoControleQualid.name);}}",
   "parentId": "6ey6dacsii",
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
