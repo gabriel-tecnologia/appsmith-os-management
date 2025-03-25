@@ -230,12 +230,12 @@ export default {
 	},
 	
 	formatStockText(stock) {
-   
     let text = ""
+		
 		stock["Status da Remessa"] ? text = text.concat("Status: ", stock["Status da Remessa"], "\n\n") : ""
 		stock["Saída de Material"] ? text = text.concat("Saída de Material: ", stock["Saída de Material"], "\n\n") : ""
 		stock["Nota de Remessa / Retorno"] ? text = text.concat("Nota de Remessa / Retorno: ", stock["Nota de Remessa / Retorno"], "\n\n") : ""
-		
+		stock["Movimento Criado por"] ? text = text.concat("Movimento Criado por: ", stock["Movimento Criado por"], "\n\n") : ""
 		stock.Camaleão ? text = text.concat(stock.Camaleão+" x Camaleão\n") : ""
 		stock["Sistema Nervoso 2"] ? text = text.concat(stock["Sistema Nervoso 2"]+" x Sistema Nervoso 2\n") : ""
 		stock["Kit Poste 2.0 (Piso)"] ? text = text.concat(stock["Kit Poste 2.0 (Piso)"] + " x Kit Poste 2.0 (Piso)\n") : ""

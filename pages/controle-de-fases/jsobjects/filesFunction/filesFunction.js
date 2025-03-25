@@ -32,6 +32,8 @@ export default {
 		
 		const newOS = await Leitura_OS_porRecordID.run()
 		storeValue('selectedOS', newOS.fields)
+		
+		resetWidget("listaVideos", true)
 		},
 	
 	async enviarTermoS3(arquivos){
@@ -71,8 +73,8 @@ export default {
 			await Enviar_Fotos.run()
 			const newOS = await Leitura_OS_porRecordID.run()
 			storeValue('selectedOS', newOS.fields)
+			resetWidget("listaVideos", true)
 			galery.model.data = newOS.fields["Foto do Serviço"]
-			resetWidget(galery, true)
 			showAlert(`Imagem removida com sucesso '${galery.model.image.filename}'`, "success")
 		}
 		catch(error) {

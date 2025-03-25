@@ -41,7 +41,7 @@
   "parentId": "ak0c6qrs3h",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 60,
+  "rightColumn": 63,
   "shouldTruncate": false,
   "text": "{{renderFunctions.formatStockText(currentItem.data)}}",
   "textAlign": "LEFT",

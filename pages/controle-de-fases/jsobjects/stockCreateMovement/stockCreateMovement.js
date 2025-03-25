@@ -13,7 +13,8 @@ export default {
 			"Placa Bolacha": Number(inputPlacaBolacha.text) || 0,
 			"MAC Address do Roteador": appsmith.store.currentStock["MAC Address do Roteador"] ?? "",
 			"Cancelar Remessa de Produto": false,
-			"Cadastrar Remessa de Produto": true
+			"Cadastrar Remessa de Produto": true,
+			"Movimento Criado por": appsmith.user.email
 		}
 		try{
 			await Criar_Movimento_Estoque.run({
