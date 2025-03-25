@@ -2,7 +2,8 @@
 	"fields": [
 		"Nome",
 		"CPF",
-		"Empresa"
+		"Empresa",
+		"Email"
 	],
 	"filterByFormula": {{`AND({Status} = 'Ativo', {Função} != 'Gabriel')`}}
 }

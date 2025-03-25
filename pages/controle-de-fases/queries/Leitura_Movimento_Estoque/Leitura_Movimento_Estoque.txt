@@ -15,7 +15,8 @@
 			"Cancelar Remessa de Produto",
 			"record_id",
 			"Tipo de Movimento",
-			"MAC Address do Roteador"
+			"MAC Address do Roteador",
+			"Movimento Criado por"
 		],
     "filterByFormula": {{`AND({id_os}='${appsmith.store.selectedOS.record_id}', NOT({Cancelar Remessa de Produto}))`}}
 }

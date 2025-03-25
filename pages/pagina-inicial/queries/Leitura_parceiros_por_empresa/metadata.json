@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n\t\"fields\": [\n\t\t\"Nome\",\n\t\t\"CPF\",\n\t\t\"Empresa\"\n\t],\n\t\"filterByFormula\": {{`AND({Status} = 'Ativo', {Função} != 'Gabriel')`}}\n}",
+      "body": "{\n\t\"fields\": [\n\t\t\"Nome\",\n\t\t\"CPF\",\n\t\t\"Empresa\",\n\t\t\"Email\"\n\t],\n\t\"filterByFormula\": {{`AND({Status} = 'Ativo', {Função} != 'Gabriel')`}}\n}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {
