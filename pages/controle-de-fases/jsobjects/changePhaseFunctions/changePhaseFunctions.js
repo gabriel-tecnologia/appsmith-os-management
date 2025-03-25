@@ -20,7 +20,7 @@ export default {
 			showAlert("Falta incluir o Valor a Pagar (ao Terceiro)", "error")
 			return;
 		}
-		if (appsmith.store.selectedOS.Fase == "Ajuste" && selectAdjustReason.selectedOptionLabel == "") {
+		if (appsmith.store.selectedOS.Fase == "Ajuste" && appsmith.store.selectedOS["Motivo do Ajuste"] == undefined) {
 			showAlert("Falta incluir o Motivo de Ajuste", "error")
 			return;
 		}
@@ -40,7 +40,7 @@ export default {
 	
 	async handleMoveToReschedule() { // Enquanto não implementamos novo fluxo
 		
-		if (appsmith.store.selectedOS.Fase == "Ajuste" && selectAdjustReason.selectedOptionLabel == "") {
+		if (appsmith.store.selectedOS.Fase == "Ajuste" && appsmith.store.selectedOS["Motivo do Ajuste"] == undefined) {
 			showAlert("Falta incluir o Motivo de Ajuste", "error")
 			return;
 		}
@@ -205,7 +205,7 @@ export default {
 	
 	async handleCancelOS() {
 		
-		if (appsmith.store.selectedOS.Fase == "Ajuste" && selectAdjustReason.selectedOptionLabel == "") {
+		if (appsmith.store.selectedOS.Fase == "Ajuste" && appsmith.store.selectedOS["Motivo do Ajuste"] == undefined) {
 			showAlert("Falta incluir o Motivo de Ajuste", "error")
 			return;
 		}
