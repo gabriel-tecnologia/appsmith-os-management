@@ -103,12 +103,12 @@ export default {
 	renderAdjustReasons(){
 		return [
 			{
-				"name": "[COMERCIAL] Termo de finalização não assinado",
-				"code": "[COMERCIAL] Termo de finalização não assinado"
+				"name": "Termo de finalização não assinado",
+				"code": "Termo de finalização não assinado"
 			},
 			{
-				"name": "[GABRIEL] Controle de qualidade sistêmico reprovado (ex.: sistema offline, câmeras indisponíveis...)",
-				"code": "[GABRIEL] Controle de qualidade sistêmico reprovado (ex.: sistema offline, câmeras indisponíveis...)"
+				"name": "Controle de qualidade sistêmico reprovado (ex.: sistema offline, câmeras indisponíveis...)",
+				"code": "Controle de qualidade sistêmico reprovado (ex.: sistema offline, câmeras indisponíveis...)"
 			}
 		]
 	},
