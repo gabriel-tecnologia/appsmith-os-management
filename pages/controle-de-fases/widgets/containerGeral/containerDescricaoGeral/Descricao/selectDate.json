@@ -29,9 +29,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -44,9 +41,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -59,7 +53,7 @@
   "label": "{{inputFormatter.onDiffIcon(selectDate.formattedDate, appsmith.store.selectedOS[\"Data Agendada para o Serviço\"], selectDate.formattedDate)}}\n\nData Agendada",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelStyle": "{{\ninputFormatter.onDiffBold(\nselectDate.formattedDate,\nappsmith.store.selectedOS[\"Data Agendada para o Serviço\"],\nselectDate.formattedDate)\n\n}}",
+  "labelStyle": "BOLD",
   "labelTextColor": "{{\ninputFormatter.onDiffColor(\nselectDate.formattedDate,\nappsmith.store.selectedOS[\"Data Agendada para o Serviço\"],\nselectDate.formattedDate\n)\n}}",
   "labelTextSize": "0.875rem",
   "labelTooltip": "{{selectDate.isDisabled ? \"Campo desativado se a fase da OS for diferente de Agendamento ou Fila de Serviço\" : \"\"}}",

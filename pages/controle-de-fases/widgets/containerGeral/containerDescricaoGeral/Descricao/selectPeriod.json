@@ -29,9 +29,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -44,9 +41,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -58,7 +52,7 @@
   "key": "561pea48k0",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelStyle": "{{inputFormatter.onDiffBold(\nselectPeriod.selectedOptionLabel,\nappsmith.store.selectedOS.Período,\nselectPeriod.isValid\n)}}",
+  "labelStyle": "BOLD",
   "labelText": "{{inputFormatter.onDiffIcon(\nselectPeriod.selectedOptionLabel,\tappsmith.store.selectedOS.Período,\t\nselectPeriod.isValid\n)}}\n\nPeríodo",
   "labelTextColor": "{{inputFormatter.onDiffColor(\nselectPeriod.selectedOptionLabel,\nappsmith.store.selectedOS.Período,\nselectPeriod.isValid\n)}}",
   "labelTextSize": "0.875rem",

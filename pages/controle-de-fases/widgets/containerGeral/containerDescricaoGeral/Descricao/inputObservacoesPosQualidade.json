@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 101,
+  "bottomRow": 152,
   "boxShadow": "none",
   "defaultText": "{{appsmith.store.selectedOS[\"Observações Pós-Qualidade\"]??\"\"}}",
   "dynamicBindingPathList": [
@@ -21,9 +21,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -33,9 +30,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -49,7 +43,7 @@
   "label": "{{inputFormatter.onDiffIcon(\ninputObservacoesPosQualidade.text,\nappsmith.store.selectedOS[\"Observações Pós-Qualidade\"],\ninputObservacoesPosQualidade.isValid\n)}}\n\nObservações Internas Pós-Qualidade",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelStyle": "{{inputFormatter.onDiffBold(\ninputObservacoesPosQualidade.text,\nappsmith.store.selectedOS[\"Observações Pós-Qualidade\"],\ninputObservacoesPosQualidade.isValid\n)}}",
+  "labelStyle": "BOLD",
   "labelTextColor": "{{inputFormatter.onDiffColor(\ninputObservacoesPosQualidade.text,\nappsmith.store.selectedOS[\"Observações Pós-Qualidade\"],\ninputObservacoesPosQualidade.isValid\n)}}",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
@@ -74,7 +68,7 @@
   "shouldAllowAutofill": false,
   "showStepArrows": false,
   "tooltip": "",
-  "topRow": 91,
+  "topRow": 125,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "kskzcrfxkr",

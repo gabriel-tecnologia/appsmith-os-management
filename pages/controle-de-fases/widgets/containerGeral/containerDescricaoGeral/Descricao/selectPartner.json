@@ -29,9 +29,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -44,9 +41,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -58,7 +52,7 @@
   "key": "s11t1py54n",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelStyle": "{{inputFormatter.onDiffBold(\nselectPartner.selectedOptionLabel,\nappsmith.store.selectedOS[\"Técnico Responsável\"],\nselectPartner.isValid\n)}}",
+  "labelStyle": "BOLD",
   "labelText": "{{inputFormatter.onDiffIcon(\nselectPartner.selectedOptionLabel,\nappsmith.store.selectedOS[\"Técnico Responsável\"],\nselectPartner.isValid\n)}}\n\n\nTécnico Parceiro",
   "labelTextColor": "{{inputFormatter.onDiffColor(\nselectPartner.selectedOptionLabel,\nappsmith.store.selectedOS[\"Técnico Responsável\"],\nselectPartner.isValid\n)}}",
   "labelTextSize": "0.875rem",

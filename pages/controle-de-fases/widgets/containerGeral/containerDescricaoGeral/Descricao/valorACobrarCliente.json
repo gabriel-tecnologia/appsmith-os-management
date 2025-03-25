@@ -4,7 +4,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 116,
+  "bottomRow": 168,
   "boxShadow": "none",
   "decimals": 2,
   "defaultCurrencyCode": "BRL",
@@ -30,9 +30,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -42,9 +39,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicTriggerPathList": [
@@ -61,7 +55,7 @@
   "label": "{{inputFormatter.onDiffIcon(\nvalorACobrarCliente.value,\nappsmith.store.selectedOS[\"Valor a Cobrar (do Cliente)\"],\nvalorACobrarCliente.isValid\n)}}\n\nValor a Cobrar (do Cliente)",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelStyle": "{{inputFormatter.onDiffBold(\nvalorACobrarCliente.value,\nappsmith.store.selectedOS[\"Valor a Cobrar (do Cliente)\"],\nvalorACobrarCliente.isValid\n)}}",
+  "labelStyle": "BOLD",
   "labelTextColor": "{{inputFormatter.onDiffColor(\nvalorACobrarCliente.value,\nappsmith.store.selectedOS[\"Valor a Cobrar (do Cliente)\"],\nvalorACobrarCliente.isValid\n)}}",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
@@ -86,7 +80,7 @@
   "rightColumn": 63,
   "showStepArrows": false,
   "tooltip": "{{valorACobrarCliente.isDisabled ? \"Campo desativado se a OS não estiver em 'Controle de Qualidade'\" : \"\"}}",
-  "topRow": 109,
+  "topRow": 161,
   "type": "CURRENCY_INPUT_WIDGET",
   "validation": "{{valorACobrarCliente.value >= 0 || valorACobrarCliente.value == undefined}}",
   "version": 1,

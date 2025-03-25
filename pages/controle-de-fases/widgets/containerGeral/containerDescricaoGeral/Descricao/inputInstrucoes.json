@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 71,
+  "bottomRow": 82,
   "boxShadow": "none",
   "defaultText": "{{appsmith.store.selectedOS[\"Instruções (para o Terceiros)\"]??\"\"}}",
   "dynamicBindingPathList": [
@@ -21,9 +21,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -33,9 +30,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -49,7 +43,7 @@
   "label": "{{inputFormatter.onDiffIcon(\ninputInstrucoes.text,\nappsmith.store.selectedOS[\"Instruções (para o Terceiros)\"],\ninputInstrucoes.isValid\n)}}\n\nInstruções (para o Terceiros)",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelStyle": "{{inputFormatter.onDiffBold(\ninputInstrucoes.text,\nappsmith.store.selectedOS[\"Instruções (para o Terceiros)\"],\ninputInstrucoes.isValid\n)}}",
+  "labelStyle": "BOLD",
   "labelTextColor": "{{inputFormatter.onDiffColor(\ninputInstrucoes.text,\nappsmith.store.selectedOS[\"Instruções (para o Terceiros)\"],\ninputInstrucoes.isValid\n)}}",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,

@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 158,
+  "bottomRow": 210,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store.selectedOS[\"Motivo do Ajuste\"]??\"\"))(selectAdjustReason.options, selectAdjustReason.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -29,9 +29,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -47,9 +44,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicTriggerPathList": [
@@ -65,7 +59,7 @@
   "key": "s11t1py54n",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelStyle": "{{inputFormatter.onDiffBold(\nselectAdjustReason.selectedOptionLabel,\nappsmith.store.selectedOS[\"Motivo do Ajuste\"],\nselectAdjustReason.isValid\n)}}",
+  "labelStyle": "BOLD",
   "labelText": "{{inputFormatter.onDiffIcon(\nselectAdjustReason.selectedOptionLabel,\nappsmith.store.selectedOS[\"Motivo do Ajuste\"],\nselectAdjustReason.isValid\n)}}\n\nMotivo Ajuste",
   "labelTextColor": "{{inputFormatter.onDiffColor(\nselectAdjustReason.selectedOptionLabel,\nappsmith.store.selectedOS[\"Motivo do Ajuste\"],\nselectAdjustReason.isValid\n)}}",
   "labelTextSize": "0.875rem",
@@ -94,7 +88,7 @@
   "rightColumn": 30,
   "serverSideFiltering": false,
   "sourceData": "{{renderFunctions.renderAdjustReasons()}}",
-  "topRow": 151,
+  "topRow": 203,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "j9rg4r8azg",

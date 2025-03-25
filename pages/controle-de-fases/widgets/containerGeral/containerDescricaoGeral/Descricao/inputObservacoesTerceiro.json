@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 89,
+  "bottomRow": 123,
   "boxShadow": "none",
   "defaultText": "{{appsmith.store.selectedOS[\"Observações (do Terceiro para Gabriel)\"]??\"\"}}",
   "dynamicBindingPathList": [
@@ -21,9 +21,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -33,9 +30,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -49,7 +43,7 @@
   "label": "{{inputFormatter.onDiffIcon(\ninputObservacoesTerceiro.text,\nappsmith.store.selectedOS[\"Observações (do Terceiro para Gabriel)\"],\ninputObservacoesTerceiro.isValid\n)}}\n\nObservações (do Terceiro para Gabriel)",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelStyle": "{{inputFormatter.onDiffBold(\ninputObservacoesPosQualidade.text,\nappsmith.store.selectedOS[\"Observações Pós-Qualidade\"],\ninputObservacoesPosQualidade.isValid\n)}}",
+  "labelStyle": "BOLD",
   "labelTextColor": "{{inputFormatter.onDiffColor(\ninputObservacoesTerceiro.text,\nappsmith.store.selectedOS[\"Observações (do Terceiro para Gabriel)\"],\ninputObservacoesTerceiro.isValid\n)}}",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
@@ -74,7 +68,7 @@
   "shouldAllowAutofill": false,
   "showStepArrows": false,
   "tooltip": "",
-  "topRow": 72,
+  "topRow": 83,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "31njhqp14b",

@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 149,
+  "bottomRow": 201,
   "boxShadow": "none",
   "defaultText": "{{appsmith.store.selectedOS[\"Justificativa de Valor a Pagar Divergente\"]??\"\"}}",
   "dynamicBindingPathList": [
@@ -24,9 +24,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -39,9 +36,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "labelStyle"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -55,7 +49,7 @@
   "label": "{{inputFormatter.onDiffIcon(\ninputJustifValorAPagar.text,\nappsmith.store.selectedOS[\"Justificativa de Valor a Pagar Divergente\"],\ninputJustifValorAPagar.isValid\n)}}\n\nJustificativa de Valor a Pagar Divergente",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelStyle": "{{inputFormatter.onDiffBold(\ninputJustifValorAPagar.text,\nappsmith.store.selectedOS[\"Justificativa de Valor a Pagar Divergente\"],\ninputJustifValorAPagar.isValid\n)}}",
+  "labelStyle": "BOLD",
   "labelTextColor": "{{inputFormatter.onDiffColor(\ninputJustifValorAPagar.text,\nappsmith.store.selectedOS[\"Justificativa de Valor a Pagar Divergente\"],\ninputJustifValorAPagar.isValid\n)}}",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
@@ -80,7 +74,7 @@
   "shouldAllowAutofill": false,
   "showStepArrows": false,
   "tooltip": "{{inputJustifValorAPagar.isDisabled ? \"Campo desativado se a OS não estiver em 'Controle de Qualidade'\" : \"\"}}",
-  "topRow": 139,
+  "topRow": 191,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "l6bw7pxzci",
