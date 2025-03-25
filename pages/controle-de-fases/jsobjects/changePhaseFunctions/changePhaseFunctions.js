@@ -25,6 +25,11 @@ export default {
 			return;
 		}
 		
+		if (appsmith.store.selectedOS["Tipo de Ordem de Serviço"] == "Manutenção" && appsmith.store.selectedOS["Solução"] == undefined) {
+			showAlert("Falta incluir a Solução", "error")
+			return;
+		}
+		
 		try {
 			storeValue("fase", "Concluído")
 			await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
@@ -39,7 +44,6 @@ export default {
 	},
 	
 	async handleMoveToReschedule() { // Enquanto não implementamos novo fluxo
-		
 		if (appsmith.store.selectedOS.Fase == "Ajuste" && appsmith.store.selectedOS["Motivo do Ajuste"] == undefined) {
 			showAlert("Falta incluir o Motivo de Ajuste", "error")
 			return;
@@ -162,6 +166,11 @@ export default {
 			return
 		}
 		
+		if (appsmith.store.selectedOS["Tipo de Ordem de Serviço"] == "Manutenção" && appsmith.store.selectedOS["Solução"] == undefined) {
+			showAlert("Falta incluir a Solução", "error")
+			return;
+		}
+		
 		try {
 			storeValue("fase", "Ajuste")
 			await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
@@ -177,13 +186,15 @@ export default {
 	},
 	
 	async handleMoveToQualityControl() {
+		
+		if (appsmith.store.selectedOS["Tipo de Ordem de Serviço"] == "Manutenção" && appsmith.store.selectedOS["Solução"] == undefined) {
+			showAlert("Falta incluir a Solução", "error")
+			return;
+		}
+		
 		try {			
-			
 			await Alterar_CampoEspecifico.run({Field: {"Momento de Término": moment().format('YYYY-MM-DD HH:mm')}})		
 			showAlert("Momento de Término preenchido com sucesso", "success")
-			
-			await Alterar_CampoEspecifico.run({Field: {"Solução": "Não se aplica"}})		
-			showAlert("Solução preenchida com sucesso", "success")
 			
 			await Alterar_CampoEspecifico.run({Field: {"Observações (do Terceiro para Gabriel)": `OS Forçada pelo CGS para Controle de Qualidade em '${moment().format('YYYY-MM-DD HH:mm')}'`}})
 			showAlert("Observações (do Terceiro para Gabriel) preenchidas com sucesso", "success")

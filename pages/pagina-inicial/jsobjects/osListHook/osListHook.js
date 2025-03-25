@@ -97,28 +97,41 @@ export default {
 		formula = formula.concat(')')
 
 		//---------------PAGINAÇÃO--------------------
+		
 
 		let allRecords = [];
-		//let offset = "";
 
-		//do {
 		let response = await Leitura_OS.run({
 			filterByFormula: formula,
 			maxRecords: 100,
-			//offset: offset
 		});
 
 		allRecords = allRecords.concat(response.records);
-
-		//offset = response.offset || null;
-
-		//} while (offset);
-
 		storeValue("allRecords", allRecords);
-
 		return allRecords
+		
 
-	},
+			// let allRecords = [];
+			// let offset = "";
+// 
+			// do {
+			// let response = await Leitura_OS.run({
+				// filterByFormula: formula,
+				// maxRecords: numeroRegistros.value == "Ilimitado" ? 10000 : Number(numeroRegistros.value),
+				// offset: offset,
+			// });
+// 
+			// allRecords = allRecords.concat(response.records);
+// 
+			// offset = response.offset || null;
+// 
+			// } while (offset);
+// 
+			// storeValue("allRecords", allRecords);
+// 
+			// return allRecords
+		},
+
 
 	async patchPartner() {
 		try {

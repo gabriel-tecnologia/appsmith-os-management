@@ -213,6 +213,22 @@ export default {
 		return partner
 	},
 	
+	renderSolutions() {
+		return [
+			{"name": "Remoção ou troca de equipamento ou componente", "code": "Remoção ou troca de equipamento ou componente"},
+			{"name": "Reinicialização de equipamento", "code": "Reinicialização de equipamento"},
+			{"name": "Não se aplica", "code": "Não se aplica"},
+			{"name": "Restabelecimento automático", "code": "Restabelecimento automático"},
+			{"name": "Atualização, ajuste ou reconfiguração do Software/Firmware", "code": "Atualização, ajuste ou reconfiguração do Software/Firmware"},
+			{"name": "Readequação/reparo de infraestrutura", "code": "Readequação/reparo de infraestrutura"},
+			{"name": "Reinicialização do modem da Internet/conexão 4G", "code": "Reinicialização do modem da Internet/conexão 4G"},
+			{"name": "Solicitação de visita técnica da Operadora ao cliente", "code": "Solicitação de visita técnica da Operadora ao cliente"},
+			{"name": "Desobstrução, limpeza ou ajuste da câmera", "code": "Desobstrução, limpeza ou ajuste da câmera"},
+			{"name": "Remanejamento do rack/câmeras", "code": "Remanejamento do rack/câmeras"},
+			{"name": "Envio de placas da Gabriel", "code": "Envio de placas da Gabriel"}
+		]
+	},
+	
 	formatStockText(stock) {
    
     let text = ""

@@ -2,9 +2,9 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 39,
+  "bottomRow": 60,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store.selectedOS[\"Período\"]))(selectPeriod.options, selectPeriod.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store.selectedOS[\"Solução\"]??\"\"))(selectSolucao.options, selectSolucao.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -14,12 +14,6 @@
     },
     {
       "key": "defaultOptionValue"
-    },
-    {
-      "key": "isDisabled"
-    },
-    {
-      "key": "labelTooltip"
     },
     {
       "key": "sourceData"
@@ -37,14 +31,11 @@
       "key": "sourceData"
     },
     {
-      "key": "isDisabled"
-    },
-    {
       "key": "labelTextColor"
     }
   ],
   "dynamicTriggerPathList": [],
-  "isDisabled": "{{appsmith.store.selectedOS.Fase != \"Agendamento de Serviço\" &&\nappsmith.store.selectedOS.Fase != \"Fila de Serviço\" &&\nappsmith.store.selectedOS.Fase != \"Ajuste\" &&\nappsmith.store.selectedOS.Fase != \"Reagendamento de Serviço\"}}",
+  "isDisabled": false,
   "isFilterable": true,
   "isLoading": false,
   "isRequired": false,
@@ -53,10 +44,10 @@
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelStyle": "BOLD",
-  "labelText": "{{inputFormatter.onDiffIcon(\nselectPeriod.selectedOptionLabel,\tappsmith.store.selectedOS.Período,\t\nselectPeriod.isValid\n)}}\n\nPeríodo",
-  "labelTextColor": "{{inputFormatter.onDiffColor(\nselectPeriod.selectedOptionLabel,\nappsmith.store.selectedOS.Período,\nselectPeriod.isValid\n)}}",
+  "labelText": "{{inputFormatter.onDiffIcon(\nselectSolucao.selectedOptionLabel,\tappsmith.store.selectedOS[\"Solução\"],\t\nselectSolucao.isValid\n)}}\n\nSolução",
+  "labelTextColor": "{{inputFormatter.onDiffColor(\nselectSolucao.selectedOptionLabel,\nappsmith.store.selectedOS[\"Solução\"],\nselectSolucao.isValid\n)}}",
   "labelTextSize": "0.875rem",
-  "labelTooltip": "{{selectPeriod.isDisabled ? \"Campo desativado se a fase da OS for diferente de Agendamento ou Fila de Serviço\" : \"\"}}",
+  "labelTooltip": "",
   "labelWidth": 5,
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
@@ -69,20 +60,20 @@
   "needsErrorInfo": false,
   "optionLabel": "name",
   "optionValue": "code",
-  "originalBottomRow": 39,
-  "originalTopRow": 32,
+  "originalBottomRow": 60,
+  "originalTopRow": 53,
   "parentColumnSpace": 8.28125,
   "parentId": "vcxpa7yivg",
   "parentRowSpace": 10,
-  "placeholderText": "Selecione o Período",
+  "placeholderText": "Selecione a Solução",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 30,
+  "rightColumn": 63,
   "serverSideFiltering": false,
-  "sourceData": "{{renderFunctions.renderPeriod()}}",
-  "topRow": 32,
+  "sourceData": "{{renderFunctions.renderSolutions()}}",
+  "topRow": 53,
   "type": "SELECT_WIDGET",
   "version": 1,
-  "widgetId": "faowsj2l98",
-  "widgetName": "selectPeriod"
+  "widgetId": "s6szogecs2",
+  "widgetName": "selectSolucao"
 }
