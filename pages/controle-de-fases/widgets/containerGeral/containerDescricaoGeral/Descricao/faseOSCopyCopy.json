@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 151,
+  "bottomRow": 132,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -33,15 +33,15 @@
   "mobileLeftColumn": 0,
   "mobileRightColumn": 16,
   "mobileTopRow": 9,
-  "originalBottomRow": 145,
-  "originalTopRow": 140,
+  "originalBottomRow": 126,
+  "originalTopRow": 122,
   "overflow": "NONE",
   "parentColumnSpace": 6.84375,
   "parentId": "vcxpa7yivg",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 62,
+  "rightColumn": 63,
   "searchTags": [
     "typography",
     "paragraph",
@@ -52,13 +52,13 @@
     "Suggested",
     "Content"
   ],
-  "text": "<b>URL Proposta Comercial</b>: {{renderFunctions.handleURLformat(appsmith.store.selectedOS[\"URL Proposta Comercial\"])}}",
+  "text": "<b>Observações (do Terceiro para Gabriel)</b>: {{appsmith.store.selectedOS[\"Observações (do Terceiro para Gabriel)\"]??\"\"}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 146,
+  "topRow": 122,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "ba4q13s7mq",
-  "widgetName": "urlPropostaComercial"
+  "widgetId": "y3nvn638ny",
+  "widgetName": "faseOSCopyCopy"
 }

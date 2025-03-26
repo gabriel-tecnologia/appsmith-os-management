@@ -4,7 +4,6 @@
 			"Solução": {{selectSolucao.selectedOptionLabel == "" ? null : selectSolucao.selectedOptionLabel}}, 
 			"Data Agendada para o Serviço": {{selectDate.selectedDate != "" ? moment(selectDate.selectedDate).format('YYYY-MM-DD') : null}},
 			"Técnico Responsável": {{selectPartner.selectedOptionLabel != ""?selectPartner.selectedOptionLabel: appsmith.store.selectedOS["Técnico Responsável"]}},
-			"Observações (do Terceiro para Gabriel)": {{inputObservacoesTerceiro != "" ? inputObservacoesTerceiro.text : appsmith.store.selectedOS["Observações (do Terceiro para Gabriel)"]}},
 			"Instruções (para o Terceiros)": {{inputInstrucoes != "" ? inputInstrucoes.text : appsmith.store.selectedOS["Instruções (para o Terceiros)"]}},
 			"Observações Pós-Qualidade": {{inputObservacoesPosQualidade != "" ? inputObservacoesPosQualidade.text : appsmith.store.selectedOS["Observações Pós-Qualidade"]}},
 			"Motivo do Ajuste": {{selectAdjustReason.selectedOptionLabel == "" ? null : selectAdjustReason.selectedOptionLabel}},
