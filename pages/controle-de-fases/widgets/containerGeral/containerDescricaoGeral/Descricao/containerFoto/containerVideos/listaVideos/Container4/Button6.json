@@ -12,7 +12,16 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "iconAlign": "left",
   "iconName": "cross",
   "isDefaultClickDisabled": true,
@@ -27,6 +36,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
+  "onClick": "{{filesFunction.removerVideoAirtable(currentItem)}}",
   "parentColumnSpace": 16.640838623046875,
   "parentId": "5djzxrru3v",
   "parentRowSpace": 10,

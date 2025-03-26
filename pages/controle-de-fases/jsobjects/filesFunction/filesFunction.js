@@ -81,6 +81,25 @@ export default {
 			showAlert("Falha ao remover arquivo", "error")
 		}
 	},
+	
+	async removerVideoAirtable(video){
+		let arquivos = appsmith.store.selectedOS["Foto do Serviço"]
+		
+		arquivos = arquivos.filter(arquivo => arquivo.url != video.url)
+		
+		storeValue("photosUrl", arquivos)
+		
+		try {
+			await Enviar_Fotos.run()
+			const newOS = await Leitura_OS_porRecordID.run()
+			storeValue('selectedOS', newOS.fields)
+			showAlert(`Vídeo removido com sucesso '${video.filename}'`, "success")
+		}
+		catch(error) {
+			showAlert("Falha ao remover arquivo", "error")
+		}
+	},
+	
 	renderVideos(list) {
 		return list.filter(file => file.type == "video/mp4")
 	},
