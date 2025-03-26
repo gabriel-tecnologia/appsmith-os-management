@@ -85,7 +85,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "Ajuste: parceiro NÃO precisa retornar ao cliente",
-      "onClick": "{{selecaoMotivo.setVisibility(true);\nstoreValue(\"changeTo\", \"Ajuste\")\nrenderFunctions.renderReasons()\n}}",
+      "onClick": "{{selecaoMotivo.setVisibility(true);\nstoreValue(\"changeTo\", \"Ajuste\");\nrenderFunctions.renderReasons()\n}}",
       "widgetId": ""
     },
     "menuItem3": {
@@ -94,7 +94,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "Improdutivo: parceiro precisa retornar ao cliente",
-      "onClick": "{{// selecaoMotivo.setVisibility(true);\n// storeValue(\"changeTo\", \"Improdutiva\")\n// renderFunctions.renderReasons()\n// \n}}",
+      "onClick": "{{selecaoMotivo.setVisibility(true);\nstoreValue(\"changeTo\", \"Improdutiva\");\nrenderFunctions.renderReasons()\n}}",
       "widgetId": ""
     },
     "menuItemymqjtbeovc": {

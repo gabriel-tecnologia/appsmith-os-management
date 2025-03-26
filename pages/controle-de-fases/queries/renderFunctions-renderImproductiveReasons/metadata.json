@@ -22,7 +22,7 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "fullyQualifiedName": "renderFunctions.renderImproductiveReasons",
     "name": "renderImproductiveReasons",
     "pageId": "controle-de-fases",
