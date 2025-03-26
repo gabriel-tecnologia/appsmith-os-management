@@ -20,8 +20,9 @@ export default {
 			showAlert("Falta incluir o Valor a Pagar (ao Terceiro)", "error")
 			return;
 		}
+		
 		if (appsmith.store.selectedOS.Fase == "Ajuste" && appsmith.store.selectedOS["Motivo do Ajuste"] == undefined) {
-			showAlert("Falta incluir o Motivo de Ajuste", "error")
+			showAlert("Falta incluir o Motivo do Ajuste", "error")
 			return;
 		}
 		
@@ -279,5 +280,8 @@ export default {
 		catch(error){
 			showAlert("Falha ao alterar fase da OS para 'Ajuste'", "error")
 		}		
+	},
+	teste() {
+		console.log(appsmith.store.selectedOS.Fase == "Ajuste" && appsmith.store.selectedOS["Motivo do Ajuste"] == undefined)
 	}
 }

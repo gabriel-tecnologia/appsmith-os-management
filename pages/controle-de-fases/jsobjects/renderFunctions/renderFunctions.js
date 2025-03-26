@@ -32,8 +32,8 @@ export default {
 									"code": "Termo de finalização não assinado"
 								},
 								{
-									"name": "Controle de qualidade sistêmico reprovado (ex.: sistema offline, câmeras indisponíveis...)",
-									"code": "Controle de qualidade sistêmico reprovado (ex.: sistema offline, câmeras indisponíveis...)"
+									"name": "Controle de Qualidade Sistêmico Reprovado",
+									"code": "Controle de Qualidade Sistêmico Reprovado"
 								}
 							]
 			// case "Improdutiva":
@@ -102,15 +102,15 @@ export default {
 	
 	renderAdjustReasons(){
 		return [
-			{
-				"name": "Termo de finalização não assinado",
-				"code": "Termo de finalização não assinado"
-			},
-			{
-				"name": "Controle de qualidade sistêmico reprovado (ex.: sistema offline, câmeras indisponíveis...)",
-				"code": "Controle de qualidade sistêmico reprovado (ex.: sistema offline, câmeras indisponíveis...)"
-			}
-		]
+								{
+									"name": "Termo de finalização não assinado",
+									"code": "Termo de finalização não assinado"
+								},
+								{
+									"name": "Controle de Qualidade Sistêmico Reprovado",
+									"code": "Controle de Qualidade Sistêmico Reprovado"
+								}
+							]
 	},
 	renderImproductiveReasons(){
 		return []
