@@ -1,0 +1,6 @@
+{
+    "fields": {
+        "Erro na Remessa": true,
+				"Cancelar Remessa de Produto" = true
+    }
+}

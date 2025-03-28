@@ -1,0 +1,66 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 59,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{\n  \"tips\": [\n    \"Pass data to this widget in the default model field\",\n    \"Access data in the javascript file using the appsmith.model variable\",\n    \"Create events in the widget and trigger them in the javascript file using appsmith.triggerEvent('eventName')\",\n    \"Access data in CSS as var(--appsmith-model-{property-name})\"\n  ]\n}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    }
+  ],
+  "events": [
+    "onResetClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "ik9vh86fzn",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 171,
+  "mobileLeftColumn": 30,
+  "mobileRightColumn": 53,
+  "mobileTopRow": 141,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "originalBottomRow": 45,
+  "originalTopRow": 6,
+  "parentColumnSpace": 7.38214548304677,
+  "parentId": "3h5bcsd9lh",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "srcDoc": {
+    "css": "body {\n  padding: 4px;\n  font-family: sans-serif;\n}\n\n#dropzone {\n  border: 2px dashed var(--appsmith-theme-primaryColor);\n  border-radius: var(--appsmith-theme-borderRadius);\n  padding: 20px;\n  text-align: center;\n  cursor: pointer;\n}\n\n.controls {\n  margin-bottom: 15px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n}\n\nbutton {\n  background-color: var(--appsmith-theme-primaryColor);\n  border-radius: var(--appsmith-theme-borderRadius);\n  padding: 8px 8px;\n  border: none;\n  color: var(--appsmith-theme-backgroundColor);\n}\n\n.controls {\n  margin-bottom: 10px;\n}\n\n.results {\n  margin-top: 10px;\n  font-family: sans-serif;\n}",
+    "html": "<div id=\"dropzone\" class=\"dropzone\"></div>\n<div id=\"inputStats\" class=\"results\"></div>\n\n<div class=\"controls\">\n  <label for=\"scaleFactor\">Scale Factor (%): </label>\n  <input type=\"number\" id=\"scaleFactor\" value=\"50\" min=\"10\" max=\"100\" />\n  \n  <label for=\"compressionQuality\">Compression Quality (0.1 to 1.0): </label>\n  <input type=\"number\" step=\"0.1\" id=\"compressionQuality\" value=\"0.9\" min=\"0.1\" max=\"1.0\" />\n  \n  <button id=\"compressImage\">Transformar Imagens</button>\n  <button id=\"clearFile\">Limpar Arquivos</button>\n</div>\n\n<div id=\"dropzone\" class=\"dropzone\"></div>\n\n<div class=\"results\" id=\"results\"></div>",
+    "js": "import Dropzone from 'https://cdn.jsdelivr.net/npm/dropzone@6.0.0-beta.2/+esm';\nappsmith.onReady(() => {\n  console.log(\"ready\");\n  dropzoneInit();\n});\nfunction dropzoneInit() {\n  const dropzone = new Dropzone(\"#dropzone\", {\n    url: \"/\",\n    autoProcessQueue: false,\n    acceptedFiles: \"image/*\",\n    maxFiles: null,\n    // Para permitir carregar várias imagens\n    init: function () {\n      this.on(\"addedfile\", handleAddedFile.bind(this));\n    }\n  });\n\n  // Botão de Compress e Scale\n  document.getElementById(\"compressImage\").addEventListener(\"click\", () => {\n    if (dropzone.files.length === 0) {\n      alert(\"Por favor, carregue pelo menos uma imagem.\");\n      return;\n    }\n    const scale = parseFloat(document.getElementById(\"scaleFactor\").value) / 100;\n    const quality = parseFloat(document.getElementById(\"compressionQuality\").value);\n    if (isNaN(scale) || scale <= 0 || scale > 1) {\n      alert(\"Insira um fator de escala válido (10% a 100%).\");\n      return;\n    }\n    if (isNaN(quality) || quality <= 0 || quality > 1) {\n      alert(\"Insira uma qualidade de compressão válida (0.1 a 1.0).\");\n      return;\n    }\n    dropzone.files.forEach(file => {\n      // Processa todas as imagens na fila\n      compressImage(file, scale, quality);\n    });\n  });\n\n  // Botão de Limpar arquivos\n  document.getElementById(\"clearFile\").addEventListener(\"click\", () => {\n    dropzone.removeAllFiles();\n    appsmith.updateModel({\n      compressedImages: []\n    });\n    document.getElementById(\"results\").innerHTML = \"\";\n    document.getElementById(\"inputStats\").innerHTML = \"\";\n    appsmith.updateModel({\n      compressedImgs: \"\"\n    });\n  });\n}\nfunction compressImage(file, scale, quality) {\n  const reader = new FileReader();\n  reader.onload = event => {\n    const img = new Image();\n    img.src = event.target.result;\n    img.onload = () => {\n      const canvas = document.createElement(\"canvas\");\n      const ctx = canvas.getContext(\"2d\");\n      const scaledWidth = Math.round(img.width * scale);\n      const scaledHeight = Math.round(img.height * scale);\n      canvas.width = scaledWidth;\n      canvas.height = scaledHeight;\n      ctx.drawImage(img, 0, 0, scaledWidth, scaledHeight);\n      const compressedDataUrl = canvas.toDataURL(\"image/jpeg\", quality);\n      const byteString = atob(compressedDataUrl.split(',')[1]);\n      const fileSize = byteString.length;\n      const fileSizeKB = (fileSize / 1024).toFixed(2);\n\n      // Obtém a lista atual de imagens ou inicializa um array vazio\n      const storedImages = appsmith.store?.compressedImgs || [];\n\n      // Adiciona a nova imagem comprimida à lista\n      const updatedImages = [...storedImages, compressedDataUrl];\n\n      // Atualiza o modelo no Appsmith\n      appsmith.updateModel({\n        compressedImgs: updatedImages\n      });\n      const resultsDiv = document.getElementById(\"results\");\n      const resultItem = document.createElement(\"div\");\n      resultItem.innerHTML = `\n\t\t\t\t<hr>\n\t\t\t\t<div><strong>Imagem: ${file.name}</strong></div>\n\t\t\t\t<div>Novas Dimensões: ${scaledWidth} x ${scaledHeight}</div>\n\t\t\t\t<div>Tamanho Estimado: ${fileSizeKB} KB</div>\n\t\t\t\t<img src=\"${compressedDataUrl}\" style=\"max-width: 100px; margin-top: 5px;\">\n\t\t\t`;\n      resultsDiv.appendChild(resultItem);\n    };\n  };\n  reader.readAsDataURL(file);\n}\nfunction handleAddedFile(file) {\n  const inputReader = new FileReader();\n  inputReader.onload = event => {\n    const inputImg = new Image();\n    inputImg.src = event.target.result;\n    inputImg.onload = () => {\n      const inputWidth = inputImg.width;\n      const inputHeight = inputImg.height;\n      const inputFileSizeKB = (file.size / 1024).toFixed(2);\n      const inputStatsDiv = document.getElementById(\"inputStats\");\n      const fileInfo = document.createElement(\"div\");\n      fileInfo.innerHTML = `\n\t\t\t\t<hr>\n\t\t\t\t<div><strong>Arquivo:</strong> ${file.name}</div>\n\t\t\t\t<div>Dimensões Originais: ${inputWidth} x ${inputHeight}</div>\n\t\t\t\t<div>Tamanho: ${inputFileSizeKB} KB</div>\n\t\t\t`;\n      inputStatsDiv.appendChild(fileInfo);\n    };\n  };\n  inputReader.readAsDataURL(file);\n}"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 4,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "body {\n\tpadding: 4px;\n\tfont-family: sans-serif\n}\n#dropzone {\n\tborder: 2px dashed var(--appsmith-theme-primaryColor);\n\tborder-radius: var(--appsmith-theme-borderRadius);\n\tpadding: 20px;\n\ttext-align: center;\n\tcursor: pointer;\n}\n\n.controls {\n\tmargin-bottom: 15px;\n\tdisplay: flex;\n\talign-items: center;\n\tgap: 10px;\n}\n\nbutton {\n\tbackground-color: var(--appsmith-theme-primaryColor);\n\tborder-radius: var(--appsmith-theme-borderRadius);\n\tpadding: 8px 8px;\n\tborder: none;\n\tcolor: var(--appsmith-theme-backgroundColor)\n\n}\n\n.controls { margin-bottom: 10px; }\n.results { margin-top: 10px; font-family: sans-serif; }",
+    "html": "<div id=\"dropzone\" class=\"dropzone\"></div>\n<div id=\"inputStats\" class=\"results\"></div>\n\n<div class=\"controls\">\n  <label for=\"scaleFactor\">Scale Factor (%): </label>\n  <input type=\"number\" id=\"scaleFactor\" value=\"50\" min=\"10\" max=\"100\" />\n  \n  <label for=\"compressionQuality\">Compression Quality (0.1 to 1.0): </label>\n  <input type=\"number\" step=\"0.1\" id=\"compressionQuality\" value=\"0.9\" min=\"0.1\" max=\"1.0\" />\n  \n  <button id=\"compressImage\">Transformar Imagens</button>\n  <button id=\"clearFile\">Limpar Arquivos</button>\n</div>\n\n<div id=\"dropzone\" class=\"dropzone\"></div>\n\n<div class=\"results\" id=\"results\"></div>",
+    "js": "import Dropzone from 'https://cdn.jsdelivr.net/npm/dropzone@6.0.0-beta.2/+esm'\n\nappsmith.onReady(() => {\n\tconsole.log(\"ready\");\n\tdropzoneInit();\n});\n\nfunction dropzoneInit() {\n\n\tconst dropzone = new Dropzone(\"#dropzone\", {\n\t\turl: \"/\",\n\t\tautoProcessQueue: false,\n\t\tacceptedFiles: \"image/*\",\n\t\tmaxFiles: null, // Para permitir carregar várias imagens\n\t\tinit: function () {\n\t\t\tthis.on(\"addedfile\", handleAddedFile.bind(this));\n\t\t},\n\t});\n\n\t// Botão de Compress e Scale\n\tdocument.getElementById(\"compressImage\").addEventListener(\"click\", () => {\n\t\tif (dropzone.files.length === 0) {\n\t\t\talert(\"Por favor, carregue pelo menos uma imagem.\");\n\t\t\treturn;\n\t\t}\n\n\t\tconst scale = parseFloat(document.getElementById(\"scaleFactor\").value) / 100;\n\t\tconst quality = parseFloat(document.getElementById(\"compressionQuality\").value);\n\n\t\tif (isNaN(scale) || scale <= 0 || scale > 1) {\n\t\t\talert(\"Insira um fator de escala válido (10% a 100%).\");\n\t\t\treturn;\n\t\t}\n\n\t\tif (isNaN(quality) || quality <= 0 || quality > 1) {\n\t\t\talert(\"Insira uma qualidade de compressão válida (0.1 a 1.0).\");\n\t\t\treturn;\n\t\t}\n\n\t\tdropzone.files.forEach(file => { // Processa todas as imagens na fila\n\t\t\tcompressImage(file, scale, quality);\n\t\t});\n\t});\n\t\n\t\n\t// Botão de Limpar arquivos\n\tdocument.getElementById(\"clearFile\").addEventListener(\"click\", () => {\n\t\tdropzone.removeAllFiles();\n\t\tappsmith.updateModel({ compressedImages: [] }); \n\t\tdocument.getElementById(\"results\").innerHTML = \"\";\n\t\tdocument.getElementById(\"inputStats\").innerHTML = \"\";\n\t\tappsmith.updateModel({ compressedImgs: \"\" });\n\t});\n}\n\nfunction compressImage(file, scale, quality) {\n\tconst reader = new FileReader();\n\treader.onload = (event) => {\n\t\tconst img = new Image();\n\t\timg.src = event.target.result;\n\n\t\timg.onload = () => {\n\t\t\tconst canvas = document.createElement(\"canvas\");\n\t\t\tconst ctx = canvas.getContext(\"2d\");\n\t\t\tconst scaledWidth = Math.round(img.width * scale);\n\t\t\tconst scaledHeight = Math.round(img.height * scale);\n\n\t\t\tcanvas.width = scaledWidth;\n\t\t\tcanvas.height = scaledHeight;\n\t\t\tctx.drawImage(img, 0, 0, scaledWidth, scaledHeight);\n\n\t\t\tconst compressedDataUrl = canvas.toDataURL(\"image/jpeg\", quality);\n\n\t\t\tconst byteString = atob(compressedDataUrl.split(',')[1]);\n\t\t\tconst fileSize = byteString.length;\n\t\t\tconst fileSizeKB = (fileSize / 1024).toFixed(2);\n\t\n\t\t\t// Obtém a lista atual de imagens ou inicializa um array vazio\n\t\t\tconst storedImages = appsmith.store?.compressedImgs || [];\n\n\t\t\t// Adiciona a nova imagem comprimida à lista\n\t\t\tconst updatedImages = [...storedImages, compressedDataUrl];\n\n\t\t\t// Atualiza o modelo no Appsmith\n\t\t\tappsmith.updateModel({ compressedImgs: updatedImages });\n\n\t\t\tconst resultsDiv = document.getElementById(\"results\");\n\t\t\tconst resultItem = document.createElement(\"div\");\n\t\t\tresultItem.innerHTML = `\n\t\t\t\t<hr>\n\t\t\t\t<div><strong>Imagem: ${file.name}</strong></div>\n\t\t\t\t<div>Novas Dimensões: ${scaledWidth} x ${scaledHeight}</div>\n\t\t\t\t<div>Tamanho Estimado: ${fileSizeKB} KB</div>\n\t\t\t\t<img src=\"${compressedDataUrl}\" style=\"max-width: 100px; margin-top: 5px;\">\n\t\t\t`;\n\t\t\tresultsDiv.appendChild(resultItem);\n\t\t};\n\t};\n\treader.readAsDataURL(file);\n}\n\nfunction handleAddedFile(file) {\n\tconst inputReader = new FileReader();\n\tinputReader.onload = event => {\n\t\tconst inputImg = new Image();\n\t\tinputImg.src = event.target.result;\n\t\tinputImg.onload = () => {\n\t\t\tconst inputWidth = inputImg.width;\n\t\t\tconst inputHeight = inputImg.height;\n\t\t\tconst inputFileSizeKB = (file.size / 1024).toFixed(2);\n\n\t\t\tconst inputStatsDiv = document.getElementById(\"inputStats\");\n\t\t\tconst fileInfo = document.createElement(\"div\");\n\t\t\tfileInfo.innerHTML = `\n\t\t\t\t<hr>\n\t\t\t\t<div><strong>Arquivo:</strong> ${file.name}</div>\n\t\t\t\t<div>Dimensões Originais: ${inputWidth} x ${inputHeight}</div>\n\t\t\t\t<div>Tamanho: ${inputFileSizeKB} KB</div>\n\t\t\t`;\n\t\t\tinputStatsDiv.appendChild(fileInfo);\n\t\t};\n\t};\n\tinputReader.readAsDataURL(file);\n}\n"
+  },
+  "version": 1,
+  "widgetId": "jritfbz8r3",
+  "widgetName": "Custom1"
+}

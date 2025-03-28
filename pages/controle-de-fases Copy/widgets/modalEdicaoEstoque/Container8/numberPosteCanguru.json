@@ -1,0 +1,51 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "bottomRow": 32,
+  "defaultValue": "{{appsmith.store.currentStock[\"Kit Poste Canguru\"]}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "defaultValue"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "os1v7w4cmr",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "BOLD",
+  "labelText": "Poste Piso Gen1 (Canguru)",
+  "labelTextSize": "1rem",
+  "labelWidth": 8,
+  "leftColumn": 0,
+  "marks": "[\n\t{\n    \"value\": 0,\n    \"label\": 0\n  },\n  {\n    \"value\": 1,\n    \"label\": 1\n  },\n  {\n    \"value\": 2,\n    \"label\": 2\n  },\n  {\n    \"value\": 3,\n    \"label\": 3\n  },\n\t{\n    \"value\": 4,\n    \"label\": 4\n  },\n\t{\n    \"value\": 5,\n    \"label\": 5\n  },\n\t{\n    \"value\": 6,\n    \"label\": 6\n  },\n\t{\n    \"value\": 7,\n    \"label\": 7\n  },\n\t{\n    \"value\": 8,\n    \"label\": 8\n  },\n\t{\n    \"value\": 9,\n    \"label\": 9\n  },\n\t{\n    \"value\": 10,\n    \"label\": 10\n  },\n\t{\n    \"value\": 11,\n    \"label\": 11\n  },\n\t{\n    \"value\": 12,\n    \"label\": 12\n  },\n\t{\n    \"value\": 13,\n    \"label\": 13\n  },\n\t{\n    \"value\": 14,\n    \"label\": 14\n  },\n\t{\n    \"value\": 15,\n    \"label\": 15\n  },\n\t{\n    \"value\": 16,\n    \"label\": 16\n  },\n\t{\n    \"value\": 17,\n    \"label\": 17\n  },\n\t{\n    \"value\": 18,\n    \"label\": 18\n  },\n\t{\n    \"value\": 19,\n    \"label\": 19\n  },\n\t{\n    \"value\": 20,\n    \"label\": 20\n  }\n]",
+  "max": "20",
+  "min": "0",
+  "mobileBottomRow": 35,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 27,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 13.608341410756111,
+  "parentId": "06nthm5gi9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 56.65573770491804,
+  "shouldScroll": false,
+  "shouldTruncate": false,
+  "showMarksLabel": true,
+  "sliderSize": "m",
+  "step": "1",
+  "tooltipAlwaysOn": false,
+  "topRow": 24,
+  "type": "NUMBER_SLIDER_WIDGET",
+  "version": 1,
+  "widgetId": "bazgdsajjv",
+  "widgetName": "numberPosteCanguru"
+}
