@@ -193,13 +193,23 @@ export default {
 			return;
 		}
 		
-		try {			
+		try {
 			await Alterar_CampoEspecifico.run({Field: {"Momento de Término": moment().format('YYYY-MM-DD HH:mm')}})		
 			showAlert("Momento de Término preenchido com sucesso", "success")
-			
+		}
+		catch(error) {
+			showAlert("Falha ao preencher Momento de Término", "error")
+		}
+		
+		try {
 			await Alterar_CampoEspecifico.run({Field: {"Observações (do Terceiro para Gabriel)": `OS Forçada pelo CGS para Controle de Qualidade em '${moment().format('YYYY-MM-DD HH:mm')}'`}})
 			showAlert("Observações (do Terceiro para Gabriel) preenchidas com sucesso", "success")
+		}
+		catch (error) {
+			showAlert("Falha ao preencher Observações do Terceiro", "error")
+		}
 			
+		try {		
 			storeValue("fase", "Controle de Qualidade")	
 			await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
 			showAlert("Fase da OS alterada para 'Controle de Qualidade'", "success")
