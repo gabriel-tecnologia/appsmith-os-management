@@ -8,7 +8,7 @@ export default {
 			showAlert("Falta incluir Termo de Finalização", "error")
 			return;
 		}
-		if (!appsmith.store.selectedOS["Observações (do Terceiro para Gabriel)"]){
+		if (!appsmith.store.selectedOS["Observações (do Terceiro para Gabriel)"] && appsmith.store.selectedOS["Tipo de Ordem de Serviço"] !== "Adesão"){
 			showAlert("Falta incluir Observações (do Terceiro para Gabriel)", "error")
 			return;
 		}
@@ -44,7 +44,7 @@ export default {
 		}
 	},
 	
-	async handleMoveToReschedule() { // Enquanto não implementamos novo fluxo
+	async handleMoveToReschedule() { // RETIRAR NO NOVO FLUXO
 		if (appsmith.store.selectedOS.Fase == "Ajuste" && appsmith.store.selectedOS["Motivo do Ajuste"] == undefined) {
 			showAlert("Falta incluir o Motivo de Ajuste", "error")
 			return;

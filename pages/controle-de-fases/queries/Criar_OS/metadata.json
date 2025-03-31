@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n\t\"fields\": {\n\t\t\"Tipo de Ordem de Serviço\": {{appsmith.store.selectedOS[\"Tipo de Ordem de Serviço\"]}},\n\t\t\"Fase\": \"Agendamento de Serviço\",\n\t\t\"id_assinatura\": {{appsmith.store.selectedOS.id_assinatura}},\n\t\t\"Instruções (para o Terceiros)\": {{appsmith.store.selectedOS[\"Instruções (para o Terceiros)\"]}},\n\t\t\"Técnico Responsável\": {{appsmith.store.selectedOS[\"Técnico Responsável\"]}},\n\t\t\"Origem do Chamado\": {{appsmith.store.selectedOS[\"Origem do Chamado\"]}},\n\t\t\"Motivo do Chamado\": {{appsmith.store.selectedOS[\"Motivo do Chamado\"]}}\n\t}\n}",
+      "body": "{\n\t\"fields\": {\n\t\t\"Tipo de Ordem de Serviço\": {{appsmith.store.selectedOS[\"Tipo de Ordem de Serviço\"]}},\n\t\t\"OS (Mãe)\": [{{appsmith.store.selectedOS.record_id}}],\n\t\t\"Fase\": \"Agendamento de Serviço\",\n\t\t\"id_assinatura\": {{appsmith.store.selectedOS.id_assinatura}},\n\t\t\"Instruções (para o Terceiros)\": {{appsmith.store.selectedOS[\"Instruções (para o Terceiros)\"]}},\n\t\t\"Técnico Responsável\": {{appsmith.store.selectedOS[\"Técnico Responsável\"]}},\n\t\t\"Origem do Chamado\": {{appsmith.store.selectedOS[\"Origem do Chamado\"]}},\n\t\t\"Motivo do Chamado\": {{appsmith.store.selectedOS[\"Motivo do Chamado\"]}},\n\t\t\"Prioridade OS\": {{appsmith.store.selectedOS[\"Prioridade OS\"]}},\n\t\t\"id_ticket_hubspot\": {{appsmith.store.selectedOS[\"id_ticket_hubspot\"]??undefined}},\n\t\t\"Instruções (Foto)\": {{appsmith.store.selectedOS[\"Instruções (Foto)\"]??undefined}}\n\t}\n}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {
