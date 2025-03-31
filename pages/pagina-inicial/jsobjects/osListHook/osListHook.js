@@ -132,25 +132,38 @@ export default {
 			// return allRecords
 		},
 
-
 	async patchPartner() {
 		try {
-			await Alterar_OS.run()
+			await Alterar_Tecnico.run()
 			showAlert("Técnico Parceiro atualizado com sucesso", "success")
 		}
 		catch (error) {
 			showAlert("Falha ao atualizar Técnico Parceiro", "error")
 		}
-
-		await Leitura_OS.run()
-		this.handleSearch()
+		await this.handleSearch()
+		resetWidget('listaOSs', true)
 	},
-
+	
+	async patchMultiplePartners() {
+		try {
+			for (let i = 0; i < listaOSs.listData.length; i++) {
+				storeValue('selectedOS', listaOSs.listData[i].fields)
+				await Alterar_Tecnico.run()
+			}
+			showAlert("Técnicos parceiros atualizados com sucesso", "success")
+		}
+		catch(error){
+			showAlert("Falha ao atualizar técnicos parceiros", "error")
+		}	
+		await this.handleSearch()
+		resetWidget('listaOSs', true)
+	},
+	
 	resetFilters() {
 		Leitura_OS.clear()
 		clearStore()
-	}	,
-
+	},	
+	
 	normalizeString(value){
 		return value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 	},

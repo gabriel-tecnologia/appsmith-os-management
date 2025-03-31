@@ -1,16 +1,12 @@
 {
-  "gitSyncId": "67d1a3872fb4f2700e437ea5_f4a4db48-b167-4361-91ef-db3573688399",
-  "id": "pagina-inicial_osListHook.normalizeString",
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_7c629978-8206-4f13-95ba-0210c35ccbd2",
+  "id": "pagina-inicial_osListHook.patchMultiplePartners",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [
-        {
-          "name": "value"
-        }
-      ],
+      "jsArguments": [],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -27,8 +23,8 @@
       }
     ],
     "executeOnLoad": false,
-    "fullyQualifiedName": "osListHook.normalizeString",
-    "name": "normalizeString",
+    "fullyQualifiedName": "osListHook.patchMultiplePartners",
+    "name": "patchMultiplePartners",
     "pageId": "pagina-inicial",
     "userSetOnLoad": false
   }

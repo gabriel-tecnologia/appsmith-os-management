@@ -1,6 +1,6 @@
 {
   "gitSyncId": "67d1a3872fb4f2700e437ea5_3b1854c5-63e1-41ba-8d08-5d3064fa39fe",
-  "id": "pagina-inicial_Alterar_OS",
+  "id": "pagina-inicial_Alterar_Tecnico",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -46,7 +46,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "Alterar_OS",
+    "name": "Alterar_Tecnico",
     "pageId": "pagina-inicial",
     "userSetOnLoad": false
   }
