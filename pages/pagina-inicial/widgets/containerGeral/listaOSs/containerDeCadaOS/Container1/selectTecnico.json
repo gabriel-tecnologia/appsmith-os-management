@@ -68,7 +68,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 25,
   "needsErrorInfo": false,
-  "onOptionChange": "{{storeValue('selectedOS', currentItem.fields);\nstoreValue('tecnico', selectTecnico.selectedOptionLabel);\nshowModal(modalConfirmacaoTecnico.name);}}",
+  "onOptionChange": "{{storeValue('selectedOS', currentItem.fields);\nstoreValue('tecnico', selectTecnico.selectedOptionLabel);\nosListHook.patchPartner()}}",
   "optionLabel": "name",
   "optionValue": "code",
   "parentColumnSpace": 1.6171875,

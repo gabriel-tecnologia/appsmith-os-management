@@ -142,7 +142,7 @@ export default {
 			showAlert("Falha ao atualizar Técnico Parceiro", "error")
 		}
 
-		closeModal(modalConfirmacaoTecnico.name)
+		await Leitura_OS.run()
 		this.handleSearch()
 	},
 
