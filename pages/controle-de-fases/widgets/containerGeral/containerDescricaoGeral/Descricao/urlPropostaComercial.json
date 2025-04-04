@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 170,
+  "bottomRow": 164,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -55,7 +55,7 @@
   "text": "<b>URL Proposta Comercial</b>: {{renderFunctions.handleURLformat(appsmith.store.selectedOS[\"URL Proposta Comercial\"])}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 165,
+  "topRow": 159,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

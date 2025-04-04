@@ -46,32 +46,11 @@ export default {
 		}
 	},
 	
-	async handleMoveToSchedule() {
-			if (selectDate.formattedDate !== "") {
-				showAlert("É necessário remover a 'Data Agendada'", "error")
-				return;
-			}
-			if (selectPeriod.selectedOptionLabel !== "") {
-				showAlert("É necessário remover o 'Período'", "error")
-				return;
-			}
-			else {
-				try {
-					await Alterar_OS.run()
-					const newOS = await Leitura_OS_porRecordID.run({
-						recordId: appsmith.store.selectedOS.record_id
-					});
-					storeValue("selectedOS", newOS.fields)
-					showAlert("Alterações feitas com sucesso", "success")
-				}
-				catch(error) {
-					showAlert("Falha ao alterar informações", "error")
-				}
-			}
-		
+	async handleMoveToReschedule() {
+			
 		
 		try {
-			storeValue("fase", "Agendamento de Serviço")
+			storeValue("fase", "Reagendamento de Serviço")
 			await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
 			const newData = await Leitura_OS_porRecordID.run({
 						recordId: appsmith.store.selectedOS.record_id
@@ -81,7 +60,7 @@ export default {
 			await renderFunctions.renderPhaseState()
 		}
 		catch(error) {
-			showAlert("Erro ao mudar a fase da OS para 'Agendamento'", "error")
+			showAlert("Erro ao mudar a fase da OS para 'Reagendamento'", "error")
 		}
 	},
 	

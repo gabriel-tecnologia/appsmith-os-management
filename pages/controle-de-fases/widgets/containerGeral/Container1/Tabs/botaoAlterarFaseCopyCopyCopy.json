@@ -36,6 +36,9 @@
     },
     {
       "key": "menuItems.menuItemg8mm88oodb.onClick"
+    },
+    {
+      "key": "menuItems.menuItemi0bwqfgbto.onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -47,6 +50,9 @@
     },
     {
       "key": "menuItems.menuItemg8mm88oodb.onClick"
+    },
+    {
+      "key": "menuItems.menuItemi0bwqfgbto.onClick"
     }
   ],
   "isCompact": false,
@@ -73,7 +79,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "Agendamento de Serviço",
-      "onClick": "{{changePhaseFunctions.handleMoveToSchedule()}}",
+      "onClick": "{{changePhaseFunctions.handleMoveToReschedule()}}",
       "widgetId": "agdfakm8lp"
     },
     "menuItemhwaklm9bpj": {
@@ -84,6 +90,15 @@
       "label": "Serviço em Andamento",
       "onClick": "{{changePhaseFunctions.handleStartOS()}}",
       "widgetId": "gc1vp08e7p"
+    },
+    "menuItemi0bwqfgbto": {
+      "id": "menuItemi0bwqfgbto",
+      "index": 3,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Reagendamento",
+      "onClick": "{{changePhaseFunctions.handleMoveToReschedule()}}",
+      "widgetId": "t5d703ezzg"
     }
   },
   "menuItemsSource": "STATIC",
