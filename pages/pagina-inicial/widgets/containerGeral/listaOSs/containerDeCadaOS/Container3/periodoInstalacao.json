@@ -1,14 +1,11 @@
 {
   "animateLoading": true,
-  "backgroundColor": "{{renderFunction.handleTextColorPeriod(currentItem.fields[\"Período\"])}}\n",
+  "backgroundColor": "",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 10,
+  "bottomRow": 4,
   "dynamicBindingPathList": [
     {
       "key": "text"
-    },
-    {
-      "key": "backgroundColor"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -35,16 +32,16 @@
   "needsErrorInfo": false,
   "overflow": "NONE",
   "parentColumnSpace": 13.926025390625,
-  "parentId": "vq6vc5h6yf",
+  "parentId": "99mx7rkezo",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 12,
+  "rightColumn": 54,
   "shouldTruncate": false,
   "text": "{{currentItem.fields.Período}}",
   "textAlign": "CENTER",
-  "textColor": "#ffffff",
-  "topRow": 6,
+  "textColor": "#231f20",
+  "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

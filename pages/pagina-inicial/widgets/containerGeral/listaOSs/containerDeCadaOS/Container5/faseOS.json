@@ -1,40 +1,50 @@
 {
   "animateLoading": true,
+  "backgroundColor": "",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
-  "boxShadow": "none",
-  "dynamicBindingPathList": [],
+  "bottomRow": 4,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "backgroundColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "fontFamily": "System Default",
   "fontSize": "0.875rem",
-  "fontStyle": "",
+  "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
   "key": "09ywq68cxc",
-  "leftColumn": 34,
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 8,
-  "mobileLeftColumn": 16,
-  "mobileRightColumn": 24,
-  "mobileTopRow": 4,
+  "mobileBottomRow": 10,
+  "mobileLeftColumn": 12,
+  "mobileRightColumn": 28,
+  "mobileTopRow": 6,
   "needsErrorInfo": false,
   "overflow": "NONE",
-  "parentId": "vq6vc5h6yf",
+  "parentColumnSpace": 13.926025390625,
+  "parentId": "43pe0uqheg",
+  "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 42,
+  "rightColumn": 62,
   "shouldTruncate": false,
-  "text": "Equipe Alocada",
+  "text": "{{currentItem.fields.Fase}}",
   "textAlign": "CENTER",
   "textColor": "#231F20",
-  "textStyle": "BODY",
-  "topRow": 1,
+  "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "x4hddwjfk4",
-  "widgetName": "itensAssinaturaCopy"
+  "widgetId": "ap7h1pokaj",
+  "widgetName": "faseOS"
 }

@@ -5,7 +5,7 @@ export default {
 			lat: parseFloat(field["Latitude"][0]),
 			long: parseFloat(field["Longitude"][0]),
 			title: `${field["Título"]}\n${field["Técnico Responsável"]??""}\n${field["Período"]??""}`,
-			color: renderFunction.handleTextColorPeriod(field["Período"])
+			color: renderFunction.handleMapColorPeriod(field["Período"])
 		}));
 		return pins
 	},

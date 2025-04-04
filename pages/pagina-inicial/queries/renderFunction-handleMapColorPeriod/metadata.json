@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "67d1a3872fb4f2700e437ea5_47f8c955-05d6-47c8-bc87-21765994733a",
-  "id": "pagina-inicial_renderFunction.handleTextColorPeriod",
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_a76a0752-e246-481d-9ea4-814bc38c778e",
+  "id": "pagina-inicial_renderFunction.handleMapColorPeriod",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -27,8 +27,8 @@
       }
     ],
     "executeOnLoad": false,
-    "fullyQualifiedName": "renderFunction.handleTextColorPeriod",
-    "name": "handleTextColorPeriod",
+    "fullyQualifiedName": "renderFunction.handleMapColorPeriod",
+    "name": "handleMapColorPeriod",
     "pageId": "pagina-inicial",
     "userSetOnLoad": false
   }

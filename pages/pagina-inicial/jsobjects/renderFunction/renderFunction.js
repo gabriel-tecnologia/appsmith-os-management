@@ -2,30 +2,30 @@ export default {
 	
 	handleTextColorTechnician(tecnico) {
 		switch (tecnico) {
-			case "[EXT] Power.com": return "#dbeafe";
-			case "[EXT] Telebit": return "#d8b4fe";
-			case "[EXT] C&K": return "#dcfce7";
-			case "[EXT] Multivoltz": return "#fef9c3";
-			case "[EXT] Icatel": return "#fee2e2";
-			case "[EXT] MDJ Solutions": return "#b0fffa";
-			case "[EXT] T7 Solutions": return "#bcc0c1";
-			case "[EXT] CAVI Tecnologia": return "#fce7f3";
-			case "[EXT] JLB SOLUÇÕES": return "#ffbb62";
+			case "[EXT] Power.com": return "#9EBBFF";
+			case "[EXT] Telebit": return "#8EAFFF";
+			case "[EXT] C&K": return "#7EA2FF";
+			case "[EXT] Multivoltz": return "#6E96FF";
+			case "[EXT] Icatel": return "#5E89FF";
+			case "[EXT] MDJ Solutions": return "#4E7DFF";
+			case "[EXT] T7 Solutions": return "#3E70FF";
+			case "[EXT] CAVI Tecnologia": return "#2E64FF";
+			case "[EXT] JLB SOLUÇÕES": return "#1E57FF";
 			default: return "#ffffff";
 		}
 	},
 	handleTextColorPhase(fase) {
 		switch (fase) {
-			case "Agendamento de Serviço": return "#dbeafe";
-			case "Fila de Serviço": return "#d8b4fe";
-			case "Serviço em Andamento": return "#dcfce7";
-			case "Controle de Qualidade": return "#fef9c3";
-			case "Ajuste": return "#fee2e2";
-			case "Improdutiva": return "#b0fffa";
+			case "Agendamento de Serviço": return "#D6E3FF";
+			case "Fila de Serviço": return "#C6D9FF";
+			case "Serviço em Andamento": return "#B6CEFF";
+			case "Controle de Qualidade": return "#A6C4FF";
+			case "Ajuste": return "#96B9FF";
+			case "Improdutiva": return "#86AFFF";
 			default: return "#ffffff";
 		}
 	},
-	handleTextColorPeriod(periodo) {
+	handleMapColorPeriod(periodo) {
 		switch (periodo) {
 			case "Manhã": return "#822222";
 			case "08h": return "#2A0A0A";
@@ -44,6 +44,26 @@ export default {
 			default: return "#ffffff";
 		}
 	},
+	handleTextColorPeriod(periodo) {
+	switch (periodo) {
+		case "Manhã": return "#3FE785";
+		case "08h": return "#4FFF95";  // Verde principal
+		case "09h": return "#63FF9E";
+		case "10h": return "#77FFAA";
+		case "11h": return "#8BFFB4";
+		case "12h": return "#A0FFBE";
+		case "Tarde": return "#B4FFC8";
+		case "13h": return "#C8FFD2";
+		case "14h": return "#DCFFDD";
+		case "15h": return "#B4F7C0";
+		case "16h": return "#9DEEB3";
+		case "17h": return "#86E5A6";
+		case "18h": return "#6FDB98";
+		case "Horário comercial": return "#58D28B";
+		default: return "#ffffff";
+	}
+}
+,
 	renderPartners(empresa) {
 		const data = Leitura_parceiros_por_empresa.data.records
 
