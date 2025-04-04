@@ -10,6 +10,6 @@
 		"Motivo do Chamado": {{appsmith.store.selectedOS["Motivo do Chamado"]}},
 		"Prioridade OS": {{appsmith.store.selectedOS["Prioridade OS"]}},
 		"id_ticket_hubspot": {{appsmith.store.selectedOS["id_ticket_hubspot"]??undefined}},
-		"Instruções (Foto)": {{appsmith.store.selectedOS["Instruções (Foto)"]??undefined}}
+		"Instruções (Foto)": {{appsmith.store.photosURL == "" ? undefined : appsmith.store.photosURL}}
 	}
 }

@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "67d1a3872fb4f2700e437ea5_faf2c529-d5dc-48d9-bf4f-200c688e70f6",
-  "id": "pagina-inicial_renderFunction.renderPartners",
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_026e61ed-9693-48d1-b515-79631884fc77",
+  "id": "pagina-inicial_renderFunction.renderPartner",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -8,7 +8,7 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "empresa"
+          "name": "record_ID"
         }
       ],
       "paginationType": "NONE",
@@ -27,8 +27,8 @@
       }
     ],
     "executeOnLoad": false,
-    "fullyQualifiedName": "renderFunction.renderPartners",
-    "name": "renderPartners",
+    "fullyQualifiedName": "renderFunction.renderPartner",
+    "name": "renderPartner",
     "pageId": "pagina-inicial",
     "userSetOnLoad": false
   }

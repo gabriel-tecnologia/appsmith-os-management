@@ -16,7 +16,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/v0/app1uxxj9gL9otgrB/ordem_de_servico/{{appsmith.store.selectedOS.record_id}}",
+      "path": "/v0/app1uxxj9gL9otgrB/ordem_de_servico/{{this.params.recordId}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true

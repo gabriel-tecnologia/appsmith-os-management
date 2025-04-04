@@ -1,13 +1,5 @@
 export default {
-	handleDateOptions(){		
-		const datas = Leitura_Data_de_Agendamento_OS.data.records.map(record => record.fields["Data Agendada para o Serviço"]);
-		const availableDatas = datas.filter((item, index) => datas.indexOf(item) === index);
-		const result = availableDatas.map(element => ({name: element, code: element}))
-		return result
-	},
-
-
-
+	
 	handleTextColorTechnician(tecnico) {
 		switch (tecnico) {
 			case "[EXT] Power.com": return "#dbeafe";
@@ -63,5 +55,17 @@ export default {
 		}).join("\n");
 
 		return formattedData
-	}
+	},
+	
+	renderPartner(record_ID) {
+    const data = Leitura_parceiros_por_empresa.data.records;
+    
+    const filteredData = data.filter(rec => rec.fields.record_id == record_ID);
+    
+    const formattedData = filteredData.map(rec => rec.fields.Nome).join("\n");
+
+    return formattedData
+}
+
+	
 }

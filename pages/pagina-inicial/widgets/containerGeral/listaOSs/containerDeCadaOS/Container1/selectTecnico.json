@@ -77,7 +77,7 @@
   "placeholderText": "-- Selecionar --",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 62,
   "serverSideFiltering": false,
   "sourceData": "{{selectOptions.PARTNER.map(element => ({name: element, code: element}))}}",
   "topRow": 0,

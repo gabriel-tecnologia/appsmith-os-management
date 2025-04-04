@@ -5,7 +5,9 @@ export default {
 				try {
 					storeValue("fase", "Ajuste")
 					await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
-					const newData = await Leitura_OS_porRecordID.run()
+					const newData = await Leitura_OS_porRecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 					storeValue("selectedOS", newData.fields)
 					showAlert("Fase da OS alterada para 'Ajuste'", "success")
 				}
@@ -18,20 +20,26 @@ export default {
 				try {
 					storeValue("fase", "Improdutiva")
 					await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
-					const newData = await Leitura_OS_porRecordID.run()
+					const newData = await Leitura_OS_porRecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 					storeValue("selectedOS", newData.fields)
 					showAlert("Fase da OS alterada para 'Improdutiva'", "success")	
 				}
 				catch (error) {
 					showAlert("Não foi possível alterar a fase da OS para 'Improdutiva'", "error")
-					const newData = await Leitura_OS_porRecordID.run()
+					const newData = await Leitura_OS_porRecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 					storeValue("selectedOS", newData.fields)
 					return;
 				}
 				try {
 					await createOS.handleCreateOS()
 					showAlert("Nova OS criada com sucesso", "success")
-					const newData = await Leitura_OS_porRecordID.run()
+					const newData = await Leitura_OS_porRecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 					storeValue("selectedOS", newData.fields)
 				}
 				catch (error) {
@@ -49,7 +57,9 @@ export default {
 			try {
 				storeValue("fase", "Fila de Serviço")
 				await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
-				const newData = await Leitura_OS_porRecordID.run()
+				const newData = await Leitura_OS_porRecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+				});
 				storeValue("selectedOS", newData.fields)
 				showAlert("Fase da OS alterada para 'Fila de Serviço'", "success")
 			}
@@ -58,7 +68,9 @@ export default {
 				return;
 			}
 		}
-	const newOS = await Leitura_OS_porRecordID.run()
+	const newOS = await Leitura_OS_porRecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 	storeValue("selectedOS", newOS.fields)
 	},
 	
@@ -83,7 +95,9 @@ export default {
 			
 			try {
 				await Alterar_OS.run()
-				const newOS = await Leitura_OS_porRecordID.run();
+				const newOS = await Leitura_OS_porRecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 				storeValue("selectedOS", newOS.fields)
 				showAlert("Alterações feitas com sucesso", "success")
 			}
@@ -111,7 +125,9 @@ export default {
 			else {
 				try {
 					await Alterar_OS.run()
-					const newOS = await Leitura_OS_porRecordID.run();
+					const newOS = await Leitura_OS_porRecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 					storeValue("selectedOS", newOS.fields)
 					showAlert("Alterações feitas com sucesso", "success")
 					showModal(confirmModal.name)
@@ -121,35 +137,39 @@ export default {
 				}					
 			}
 		}
-		else if (appsmith.store.selectedOS.Fase == "Fila de Serviço") {
-			if (selectDate.formattedDate == "") {
-				showAlert("É necessário preencher 'Data Agendada'", "error")
-				return;
-			}
-			if (selectPeriod.selectedOptionLabel == "") {
-				showAlert("É necessário preencher 'Período'", "error")
-				return;
-			}
-			if (selectPartner.selectedOptionLabel == "") {
-				showAlert("É necessário preencher 'Técnico Parceiro'", "error")
-				return;
-			}
-			else {
-				try {
-					await Alterar_OS.run()
-					const newOS = await Leitura_OS_porRecordID.run();
-					storeValue("selectedOS", newOS.fields)
-					showAlert("Alterações feitas com sucesso", "success")
-				}
-				catch(error) {
-					showAlert("Falha ao alterar informações", "error")
-				}
-			}
-		}
+		// else if (appsmith.store.selectedOS.Fase == "Fila de Serviço") {
+			// if (selectDate.formattedDate == "") {
+				// showAlert("É necessário preencher 'Data Agendada'", "error")
+				// return;
+			// }
+			// if (selectPeriod.selectedOptionLabel == "") {
+				// showAlert("É necessário preencher 'Período'", "error")
+				// return;
+			// }
+			// if (selectPartner.selectedOptionLabel == "") {
+				// showAlert("É necessário preencher 'Técnico Parceiro'", "error")
+				// return;
+			// }
+			// else {
+				// try {
+					// await Alterar_OS.run()
+					// const newOS = await Leitura_OS_porRecordID.run({
+						// recordId: appsmith.store.selectedOS.record_id
+					// });
+					// storeValue("selectedOS", newOS.fields)
+					// showAlert("Alterações feitas com sucesso", "success")
+				// }
+				// catch(error) {
+					// showAlert("Falha ao alterar informações", "error")
+				// }
+			// }
+		// }
 		else {
 			try {
 				await Alterar_OS.run()
-				const newOS = await Leitura_OS_porRecordID.run();
+				const newOS = await Leitura_OS_porRecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 				storeValue("selectedOS", newOS.fields)
 				showAlert("Alterações feitas com sucesso", "success")
 			}

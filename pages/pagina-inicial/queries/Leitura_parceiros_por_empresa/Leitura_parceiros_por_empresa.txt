@@ -3,7 +3,8 @@
 		"Nome",
 		"CPF",
 		"Empresa",
-		"Email"
+		"Email",
+		"record_id"
 	],
 	"filterByFormula": {{`AND({Status} = 'Ativo', {Função} != 'Gabriel')`}}
 }

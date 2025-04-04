@@ -33,6 +33,9 @@
     },
     {
       "key": "menuItems.menuItem1.onClick"
+    },
+    {
+      "key": "menuItems.menuItemw479k44jpm.onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -43,7 +46,7 @@
       "key": "menuItems.menuItem3.onClick"
     },
     {
-      "key": "menuItems.menuIteme6zd83xcs8.onClick"
+      "key": "menuItems.menuItemw479k44jpm.onClick"
     }
   ],
   "isCompact": false,
@@ -73,14 +76,14 @@
       "onClick": "{{showModal(modalCancelamento.name);}}",
       "widgetId": ""
     },
-    "menuIteme6zd83xcs8": {
-      "id": "menuIteme6zd83xcs8",
+    "menuItemw479k44jpm": {
+      "id": "menuItemw479k44jpm",
       "index": 2,
       "isDisabled": false,
       "isVisible": true,
-      "label": "Reagendamento de Serviço",
-      "onClick": "{{changePhaseFunctions.handleMoveToReschedule()}}",
-      "widgetId": "yoljki16tn"
+      "label": "Improdutiva",
+      "onClick": "{{storeValue('changeTo', 'Improdutiva')\nselecaoMotivoCopy.setVisibility(true)}}",
+      "widgetId": "13ni79t8v5"
     }
   },
   "menuItemsSource": "STATIC",

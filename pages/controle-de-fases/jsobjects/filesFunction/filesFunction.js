@@ -30,7 +30,9 @@ export default {
 		storeValue('arquivo_para_nuvem', null);
 		storeValue('arquivos_para_envio_airtable', null);
 		
-		const newOS = await Leitura_OS_porRecordID.run()
+		const newOS = await Leitura_OS_porRecordID.run({
+			recordId: appsmith.store.selectedOS.record_id
+		});
 		storeValue('selectedOS', newOS.fields)
 		
 		resetWidget("listaVideos", true)
@@ -59,7 +61,9 @@ export default {
 		storeValue('arquivo_para_nuvem', null);
 		storeValue('arquivos_para_envio_airtable', null);
 		
-		const newOS = await Leitura_OS_porRecordID.run()
+		const newOS = await Leitura_OS_porRecordID.run({
+			recordId: appsmith.store.selectedOS.record_id
+		});
 		storeValue('selectedOS', newOS.fields)
 	},
 	async removerFotoAirtable(){
@@ -71,7 +75,9 @@ export default {
 		
 		try {
 			await Enviar_Fotos.run()
-			const newOS = await Leitura_OS_porRecordID.run()
+			const newOS = await Leitura_OS_porRecordID.run({
+				recordId: appsmith.store.selectedOS.record_id
+			});
 			storeValue('selectedOS', newOS.fields)
 			resetWidget("listaVideos", true)
 			galery.model.data = newOS.fields["Foto do Serviço"]
@@ -91,7 +97,9 @@ export default {
 		
 		try {
 			await Enviar_Fotos.run()
-			const newOS = await Leitura_OS_porRecordID.run()
+			const newOS = await Leitura_OS_porRecordID.run({
+				recordId: appsmith.store.selectedOS.record_id
+			});
 			storeValue('selectedOS', newOS.fields)
 			showAlert(`Vídeo removido com sucesso '${video.filename}'`, "success")
 		}

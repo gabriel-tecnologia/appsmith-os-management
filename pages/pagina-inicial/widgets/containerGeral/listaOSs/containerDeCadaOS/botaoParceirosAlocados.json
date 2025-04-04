@@ -11,20 +11,21 @@
       "key": "borderRadius"
     },
     {
-      "key": "text"
+      "key": "tooltip"
     },
     {
-      "key": "tooltip"
+      "key": "text"
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "21g0jzqzhy",
-  "leftColumn": 39,
+  "leftColumn": 32,
   "minWidth": 120,
   "mobileBottomRow": 20,
   "mobileLeftColumn": 48,
@@ -39,10 +40,10 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 51,
-  "text": "{{currentItem.fields.Equipe ? currentItem.fields.Equipe : \"Sem Equipe Alocada\"}}",
+  "rightColumn": 44,
+  "text": "{{currentItem.fields.Equipe ? renderFunction.renderPartner(currentItem.fields.Equipe) : \"Sem Equipe Alocada\"}}",
   "tooltip": "{{renderFunction.renderPartners(currentItem.fields[\"Técnico Responsável\"])}}",
-  "topRow": 4,
+  "topRow": 5,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "pticm8qx4l",

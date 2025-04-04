@@ -1,0 +1,68 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 25,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconAlign": "left",
+  "iconName": "annotation",
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "{{appsmith.store.selectedOS[\"OS (Filha)\"] != undefined}}",
+  "key": "8cq7jdzwvw",
+  "leftColumn": 36,
+  "minWidth": 120,
+  "mobileBottomRow": 23,
+  "mobileLeftColumn": 17,
+  "mobileRightColumn": 33,
+  "mobileTopRow": 19,
+  "needsErrorInfo": false,
+  "onClick": "{{changePages.renderOSChildInfo()}}",
+  "originalBottomRow": 25,
+  "originalTopRow": 21,
+  "parentColumnSpace": 8.236129760742188,
+  "parentId": "vcxpa7yivg",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 59,
+  "text": "{{renderFunctions.renderOSChildInfo.data??\"Sem OS Filha\"}}",
+  "topRow": 21,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "r9nna07323",
+  "widgetName": "Button11Copy"
+}
