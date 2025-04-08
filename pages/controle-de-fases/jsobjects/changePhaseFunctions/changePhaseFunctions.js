@@ -72,6 +72,32 @@ export default {
 		}
 	},
 	
+	async handleMoveToReschedule() {
+		
+		try {
+			await Alterar_CampoEspecifico.run({Field: {"Período": null}})
+			await Alterar_CampoEspecifico.run({Field: {"Data Agendada para o Serviço": null}})
+			await Alterar_CampoEspecifico.run({Field: {"Técnico Responsável": null}})
+		}
+		catch (error) {
+			showAlert("Falha ao limpar campos: Período e Data de Agendamento", "error")
+		}
+			
+		try {
+			storeValue("fase", "Reagendamento de Serviço")
+			await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
+			const newData = await Leitura_OS_porRecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
+			storeValue("selectedOS", newData.fields)
+			showAlert("OS movida para 'Reagendamento' com sucesso", "success")
+			await renderFunctions.renderPhaseState()
+		}
+		catch(error) {
+			showAlert("Erro ao mudar a fase da OS para 'Reagendamento'", "error")
+		}
+	},
+	
 	async handleStartOS() { // Poderá fazer no novo fluxo?
 		try {
 			storeValue('hora_inicio',new Date())
