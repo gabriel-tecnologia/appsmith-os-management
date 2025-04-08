@@ -50,12 +50,6 @@
     },
     {
       "key": "menuItems.menuItem3.onClick"
-    },
-    {
-      "key": "menuItems.menuItembnqtqkk25c.onClick"
-    },
-    {
-      "key": "menuItems.menuItemzh1xi1obcj.onClick"
     }
   ],
   "isCompact": false,
@@ -93,24 +87,6 @@
       "label": "Improdutivo",
       "onClick": "{{selecaoMotivo.setVisibility(true);\nstoreValue(\"changeTo\", \"Improdutiva\");\nrenderFunctions.renderReasons()\n}}",
       "widgetId": ""
-    },
-    "menuItembnqtqkk25c": {
-      "id": "menuItembnqtqkk25c",
-      "index": 3,
-      "isDisabled": false,
-      "isVisible": true,
-      "label": "Reagendamento",
-      "onClick": "{{changePhaseFunctions.handleMoveToReschedule()}}",
-      "widgetId": "ciwk8csw27"
-    },
-    "menuItemzh1xi1obcj": {
-      "id": "menuItemzh1xi1obcj",
-      "index": 4,
-      "isDisabled": false,
-      "isVisible": true,
-      "label": "Cancelar OS",
-      "onClick": "{{changePhaseFunctions.handleCancelOS()}}",
-      "widgetId": "2hvvr6eckb"
     }
   },
   "menuItemsSource": "STATIC",

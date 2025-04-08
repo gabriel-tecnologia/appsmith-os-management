@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 90,
+  "bottomRow": 106,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -55,7 +55,7 @@
   "text": "<b>Observações (do Terceiro para Gabriel)</b>: {{appsmith.store.selectedOS[\"Observações (do Terceiro para Gabriel)\"]??\"\"}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 86,
+  "topRow": 102,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

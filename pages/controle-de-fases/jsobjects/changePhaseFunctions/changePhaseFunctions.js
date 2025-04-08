@@ -46,21 +46,28 @@ export default {
 		}
 	},
 	
-	async handleMoveToReschedule() {
-			
+	async handleMoveToSchedule() {
 		
 		try {
-			storeValue("fase", "Reagendamento de Serviço")
+			await Alterar_CampoEspecifico.run({Field: {"Período": null}})
+			await Alterar_CampoEspecifico.run({Field: {"Data Agendada para o Serviço": null}})
+		}
+		catch (error) {
+			showAlert("Falha ao limpar campos: Período e Data de Agendamento", "error")
+		}
+			
+		try {
+			storeValue("fase", "Agendamento de Serviço")
 			await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
 			const newData = await Leitura_OS_porRecordID.run({
 						recordId: appsmith.store.selectedOS.record_id
 					});
 			storeValue("selectedOS", newData.fields)
-			showAlert("OS reagendada com sucesso", "success")
+			showAlert("OS movida para 'Agendamento' com sucesso", "success")
 			await renderFunctions.renderPhaseState()
 		}
 		catch(error) {
-			showAlert("Erro ao mudar a fase da OS para 'Reagendamento'", "error")
+			showAlert("Erro ao mudar a fase da OS para 'Agendamento'", "error")
 		}
 	},
 	
@@ -299,25 +306,5 @@ export default {
 		else {
 			showAlert("Falha ao mudar a fase da OS para 'Fila de Serviço'", "error")
 		}		
-	},
-	
-	async handleTemporaryMoveToAdjust() { // Enquanto não implementamos novo Fluxo
-		try {
-			storeValue("fase", "Ajuste")
-			await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
-			showAlert("Fase da OS alterada para 'Ajuste'", "success")
-			await renderFunctions.renderPhaseState()
-			const newData = await Leitura_OS_porRecordID.run({
-				recordId: appsmith.store.selectedOS.record_id
-			});
-			storeValue("selectedOS", newData.fields)
-			resetWidget("Tabs")
-		}
-		catch(error){
-			showAlert("Falha ao alterar fase da OS para 'Ajuste'", "error")
-		}		
-	},
-	teste() {
-		console.log(appsmith.store.selectedOS.Fase == "Ajuste" && appsmith.store.selectedOS["Motivo do Ajuste"] == undefined)
 	}
 }

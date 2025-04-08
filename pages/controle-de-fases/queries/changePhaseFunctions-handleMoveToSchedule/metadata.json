@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "67d1a3872fb4f2700e437ea5_b94f141c-741f-413b-bad8-19161dc1d8c3",
-  "id": "controle-de-fases_changePhaseFunctions.handleMoveToReschedule",
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_01c3020f-17b2-47cb-8979-585db4587a5b",
+  "id": "controle-de-fases_changePhaseFunctions.handleMoveToSchedule",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -23,8 +23,8 @@
       }
     ],
     "executeOnLoad": false,
-    "fullyQualifiedName": "changePhaseFunctions.handleMoveToReschedule",
-    "name": "handleMoveToReschedule",
+    "fullyQualifiedName": "changePhaseFunctions.handleMoveToSchedule",
+    "name": "handleMoveToSchedule",
     "pageId": "controle-de-fases",
     "userSetOnLoad": false
   }

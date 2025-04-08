@@ -50,9 +50,6 @@
   "dynamicTriggerPathList": [
     {
       "key": "menuItems.menuItem2.onClick"
-    },
-    {
-      "key": "menuItems.menuItemwadmstksg7.onClick"
     }
   ],
   "isCompact": false,
@@ -72,15 +69,6 @@
       "label": "Controle de Qualidade",
       "onClick": "{{showModal(modalConfirmacaoControleQualid.name);}}",
       "widgetId": ""
-    },
-    "menuItemwadmstksg7": {
-      "id": "menuItemwadmstksg7",
-      "index": 1,
-      "isDisabled": false,
-      "isVisible": true,
-      "label": "Reagendamento",
-      "onClick": "{{changePhaseFunctions.handleMoveToReschedule()}}",
-      "widgetId": "j1ktqpd44g"
     }
   },
   "menuItemsSource": "STATIC",

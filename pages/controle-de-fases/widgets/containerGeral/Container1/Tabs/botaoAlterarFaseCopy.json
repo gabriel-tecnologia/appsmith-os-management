@@ -50,9 +50,6 @@
     },
     {
       "key": "menuItems.menuItemw479k44jpm.onClick"
-    },
-    {
-      "key": "menuItems.menuItemq7jxvu1anf.onClick"
     }
   ],
   "isCompact": false,
@@ -81,15 +78,6 @@
       "label": "Cancelar OS",
       "onClick": "{{showModal(modalCancelamento.name);}}",
       "widgetId": ""
-    },
-    "menuItemq7jxvu1anf": {
-      "id": "menuItemq7jxvu1anf",
-      "index": 3,
-      "isDisabled": false,
-      "isVisible": true,
-      "label": "Reagendamento",
-      "onClick": "{{changePhaseFunctions.handleMoveToReschedule()}}",
-      "widgetId": "dgzr7nukd9"
     },
     "menuItemw479k44jpm": {
       "id": "menuItemw479k44jpm",
