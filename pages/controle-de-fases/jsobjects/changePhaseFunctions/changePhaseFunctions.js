@@ -51,6 +51,7 @@ export default {
 		try {
 			await Alterar_CampoEspecifico.run({Field: {"Período": null}})
 			await Alterar_CampoEspecifico.run({Field: {"Data Agendada para o Serviço": null}})
+			await Alterar_CampoEspecifico.run({Field: {"Técnico Responsável": null}})
 		}
 		catch (error) {
 			showAlert("Falha ao limpar campos: Período e Data de Agendamento", "error")
@@ -162,6 +163,7 @@ export default {
 			}
 			catch(error) {
 				showAlert("Falha ao criar uma nova OS", "error")
+				console.log(error)
 			}
 		}
 	},
