@@ -40,7 +40,7 @@
   "shouldTruncate": false,
   "text": "{{currentItem.fields.Período}}",
   "textAlign": "CENTER",
-  "textColor": "#231f20",
+  "textColor": "#ffffff",
   "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
