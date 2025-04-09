@@ -89,7 +89,7 @@
       "id": "menuItem3",
       "index": 2,
       "isDisabled": false,
-      "isVisible": true,
+      "isVisible": false,
       "label": "Improdutivo",
       "onClick": "{{selecaoMotivo.setVisibility(true);\nstoreValue(\"changeTo\", \"Improdutiva\");\nrenderFunctions.renderReasons()\n}}",
       "widgetId": ""
