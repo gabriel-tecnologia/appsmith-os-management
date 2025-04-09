@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 30,
+  "bottomRow": 42,
   "boxShadow": "none",
   "buttonColor": "#009b5d",
   "buttonStyle": "PRIMARY_BUTTON",
@@ -45,7 +45,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 63,
   "text": "Confirmar",
-  "topRow": 26,
+  "topRow": 38,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "wiwyn839cs",

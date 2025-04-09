@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 13,
+  "bottomRow": 15,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -33,7 +33,7 @@
   "mobileRightColumn": 41,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 15,
+  "originalBottomRow": 13,
   "originalTopRow": 6,
   "overflow": "NONE",
   "parentId": "5ijek0idjb",
@@ -41,7 +41,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "shouldTruncate": false,
-  "text": "Deseja confirmar o movimento de estoque para a OS\n\n<b>{{appsmith.store.selectedOS.Título}}</b>?",
+  "text": "Deseja cancelar o movimento de estoque para a OS\n\n<b>{{appsmith.store.selectedOS.Título}}</b>?",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 6,
