@@ -34,7 +34,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{changePhaseFunctions.handleConfirmMoveTo()}}",
+  "onClick": "{{changePhaseFunctions.handleConfirmMoveTo();\ncloseModal(modalConfirmarMotivo.name)}}",
   "originalBottomRow": 21,
   "originalTopRow": 17,
   "parentId": "v3ht485ar5",
