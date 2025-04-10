@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 346,
+  "bottomRow": 352,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
@@ -74,8 +74,8 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 253,
   "needsErrorInfo": false,
-  "originalBottomRow": 343,
-  "originalTopRow": 300,
+  "originalBottomRow": 369,
+  "originalTopRow": 326,
   "parentColumnSpace": 15.082538604736328,
   "parentId": "vcxpa7yivg",
   "parentRowSpace": 10,
@@ -83,7 +83,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "shouldScrollContents": true,
-  "topRow": 303,
+  "topRow": 309,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "nvwukbazk9",

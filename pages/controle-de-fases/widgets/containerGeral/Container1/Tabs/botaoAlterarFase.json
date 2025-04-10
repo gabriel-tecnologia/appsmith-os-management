@@ -53,9 +53,6 @@
     },
     {
       "key": "menuItems.menuItem3.onClick"
-    },
-    {
-      "key": "menuItems.menuItemf0zobem2c7.onClick"
     }
   ],
   "isCompact": false,
@@ -89,19 +86,10 @@
       "id": "menuItem3",
       "index": 2,
       "isDisabled": false,
-      "isVisible": false,
+      "isVisible": true,
       "label": "Improdutivo",
       "onClick": "{{selecaoMotivo.setVisibility(true);\nstoreValue(\"changeTo\", \"Improdutiva\");\nrenderFunctions.renderReasons()\n}}",
       "widgetId": ""
-    },
-    "menuItemf0zobem2c7": {
-      "id": "menuItemf0zobem2c7",
-      "index": 3,
-      "isDisabled": false,
-      "isVisible": true,
-      "label": "Reagendamento",
-      "onClick": "{{changePhaseFunctions.handleMoveToReschedule()}}",
-      "widgetId": "h6rdpd2z1j"
     }
   },
   "menuItemsSource": "STATIC",

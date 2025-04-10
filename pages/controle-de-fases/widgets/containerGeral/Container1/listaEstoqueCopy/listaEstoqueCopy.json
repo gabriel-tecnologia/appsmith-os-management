@@ -82,6 +82,11 @@
       "key": "listData"
     }
   ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "primaryKeys"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "enhancements": true,
   "flexVerticalAlignment": "start",
@@ -109,7 +114,7 @@
   "parentColumnSpace": 6.9375,
   "parentId": "e70v1hjnhi",
   "parentRowSpace": 10,
-  "primaryKeys": "{{listaEstoqueCopy.listData.map((currentItem, currentIndex) => currentItem[\"data\"] )}}",
+  "primaryKeys": "{{listaEstoqueCopy.listData.map((currentItem, currentIndex) =>currentItem[\"data\"])}}",
   "renderMode": "CANVAS",
   "requiresFlatWidgetChildren": true,
   "responsiveBehavior": "fill",
