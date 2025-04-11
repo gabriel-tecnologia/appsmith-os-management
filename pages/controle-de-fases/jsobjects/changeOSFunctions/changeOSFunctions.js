@@ -109,61 +109,25 @@ export default {
 				showModal(confirmModal.name)
 			}
 		}
+		
 		else if (appsmith.store.selectedOS.Fase == "Agendamento de Serviço") {
-			if (selectDate.formattedDate == "") {
-				showAlert("É necessário preencher 'Data Agendada'", "error")
-				return;
-			}
-			if (selectPeriod.selectedOptionLabel == "") {
-				showAlert("É necessário preencher 'Período'", "error")
-				return;
-			}
-			if (selectPartner.selectedOptionLabel == "") {
-				showAlert("É necessário preencher 'Técnico Parceiro'", "error")
-				return;
-			}
-			else {
-				try {
-					await Alterar_OS.run()
-					const newOS = await Leitura_OS_porRecordID.run({
-						recordId: appsmith.store.selectedOS.record_id
-					});
-					storeValue("selectedOS", newOS.fields)
-					showAlert("Alterações feitas com sucesso", "success")
+			try {
+				await Alterar_OS.run()
+				const newOS = await Leitura_OS_porRecordID.run({
+					recordId: appsmith.store.selectedOS.record_id
+				});
+				storeValue("selectedOS", newOS.fields)
+				showAlert("Alterações feitas com sucesso", "success")
+
+				if (selectDate.formattedDate != "" && selectPeriod.selectedOptionLabel != "" && selectPartner.selectedOptionLabel != "") {
 					showModal(confirmModal.name)
-				}
-				catch(error) {
-					showAlert("Falha ao alterar informações", "error")
-				}					
+				}	
 			}
+			catch(error) {
+				showAlert("Falha ao alterar informações", "error")
+			}					
 		}
-		// else if (appsmith.store.selectedOS.Fase == "Fila de Serviço") {
-			// if (selectDate.formattedDate == "") {
-				// showAlert("É necessário preencher 'Data Agendada'", "error")
-				// return;
-			// }
-			// if (selectPeriod.selectedOptionLabel == "") {
-				// showAlert("É necessário preencher 'Período'", "error")
-				// return;
-			// }
-			// if (selectPartner.selectedOptionLabel == "") {
-				// showAlert("É necessário preencher 'Técnico Parceiro'", "error")
-				// return;
-			// }
-			// else {
-				// try {
-					// await Alterar_OS.run()
-					// const newOS = await Leitura_OS_porRecordID.run({
-						// recordId: appsmith.store.selectedOS.record_id
-					// });
-					// storeValue("selectedOS", newOS.fields)
-					// showAlert("Alterações feitas com sucesso", "success")
-				// }
-				// catch(error) {
-					// showAlert("Falha ao alterar informações", "error")
-				// }
-			// }
-		// }
+		
 		else {
 			try {
 				await Alterar_OS.run()
