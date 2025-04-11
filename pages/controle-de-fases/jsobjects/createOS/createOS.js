@@ -2,12 +2,22 @@ export default {
 	async handleCreateOS(){
 		
 		// Gambiarra para manter as Instruções (Foto) na nova OS
-		storeValue('photosURL', "")
+		storeValue('instructionPhotosURL', "")
 		
 		if (appsmith.store.selectedOS["Instruções (Foto)"] != undefined) {
 			let fotos = appsmith.store.selectedOS["Instruções (Foto)"]
 			let arquivos_para_envio = fotos.map(foto => ({"url": foto.url}))
-			storeValue('photosURL', arquivos_para_envio)
+			storeValue('instructionPhotosURL', arquivos_para_envio)			
+		}
+		
+		// Gambiarra para manter as Fotos de Serviço na nova OS
+		
+		storeValue('servicePhotosUrl', "")
+		
+		if (appsmith.store.selectedOS["Foto do Serviço"] != undefined) {
+			let fotos = appsmith.store.selectedOS["Foto do Serviço"]
+			let arquivos_para_envio = fotos.map(foto => ({"url": foto.url}))
+			storeValue('servicePhotosUrl', arquivos_para_envio)
 		}
 		
 		// Cria nova OS

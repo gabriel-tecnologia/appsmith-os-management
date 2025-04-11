@@ -178,8 +178,8 @@ export default {
 		stock["Sistema Nervoso 2"] ? text = text.concat(stock["Sistema Nervoso 2"]+" x Sistema Nervoso 2\n") : ""
 		stock["Kit Poste 2.0 (Piso)"] ? text = text.concat(stock["Kit Poste 2.0 (Piso)"] + " x Kit Poste 2.0 (Piso)\n") : ""
 		stock["Kit Poste 2.0 (Parede)"] ? text = text.concat(stock["Kit Poste 2.0 (Parede)"]+" x Kit Poste 2.0 (Parede)\n") : ""
-		stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"] ? text = text.concat(stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"]+" x Placa de Sinalização - Gravata\n") : ""
-		stock["Placa de Sinalização - Gravata 2- 0800 GAB-RIEL"] ? text = text.concat(stock["Placa de Sinalização - Gravata 2- 0800 GAB-RIEL"]+" x Placa de Sinalização - Gravata 2\n") : ""
+		stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"] ? text = text.concat(stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"]+" x Placa Gravata Gen1 (Verde)\n") : ""
+		stock["Placa de Sinalização - Gravata 2- 0800 GAB-RIEL"] ? text = text.concat(stock["Placa de Sinalização - Gravata 2- 0800 GAB-RIEL"]+" x Placa Gravata Gen2 (Branca)\n") : ""
 		stock["Placa Bolacha"] ? text = text.concat(stock["Placa Bolacha"]+" x Placa Bolacha Nova\n") : ""
 		return text
 	},

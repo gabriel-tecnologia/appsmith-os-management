@@ -190,6 +190,16 @@ export default {
 			catch(error) {
 				showAlert("Falha ao criar uma nova OS", "error")
 				console.log(error)
+				storeValue("fase", "Controle de Qualidade")	
+				await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
+				showAlert("Fase da OS retornou para 'Controle de Qualidade'", "success")
+
+				const newData = await Leitura_OS_porRecordID.run({
+							recordId: appsmith.store.selectedOS.record_id
+						});
+				storeValue("selectedOS", newData.fields)
+				await renderFunctions.renderPhaseState()
+				resetWidget("Tabs")
 			}
 		}
 	},
