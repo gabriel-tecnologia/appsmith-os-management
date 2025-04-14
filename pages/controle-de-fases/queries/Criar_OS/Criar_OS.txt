@@ -12,6 +12,8 @@
 		"Prioridade OS": {{appsmith.store.selectedOS["Prioridade OS"]}},
 		"id_ticket_hubspot": {{appsmith.store.selectedOS["id_ticket_hubspot"]??undefined}},
 		"Instruções (Foto)": {{appsmith.store.instructionPhotosURL == "" ? undefined : appsmith.store.instructionPhotosURL}},
-		"Foto do Serviço": {{appsmith.store.servicePhotosUrl == "" ? undefined : appsmith.store.servicePhotosUrl}}
+		"Foto do Serviço": {{appsmith.store.servicePhotosUrl == "" ? undefined : appsmith.store.servicePhotosUrl}},
+		"Termo de Finalização": {{appsmith.store.termPdf == "" ? undefined : appsmith.store.termPdf}},
+		"clicksign_envelope": {{appsmith.store.selectedOS.clicksign_envelope}}
 	}
 }

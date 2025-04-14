@@ -20,6 +20,16 @@ export default {
 			storeValue('servicePhotosUrl', arquivos_para_envio)
 		}
 		
+		// Gambiarra para manter o Termo de Finalização na nova OS
+		
+		storeValue('termPdf', "")
+		
+		if (appsmith.store.selectedOS["Termo de Finalização"] != undefined) {
+			let term = appsmith.store.selectedOS["Termo de Finalização"]
+			let arquivos_para_envio = term.map(term => ({"url": term.url}))
+			storeValue('termPdf', arquivos_para_envio)
+		}
+		
 		// Cria nova OS
 		const newOS = await Criar_OS.run()
 		storeValue("newOS", newOS.fields)
