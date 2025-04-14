@@ -178,7 +178,7 @@ export default {
 			showAlert("Falha ao alterar fase da OS para 'Improdutiva'", "error")
 		}
 		
-		if (appsmith.store.selectedOS.Fase == "Improdutiva" && appsmith.store.selectedOS["Motivo de Improdutiva"] != "Não foi necessário realizar o serviço") {
+		if (appsmith.store.selectedOS.Fase == "Improdutiva" && appsmith.store.selectedOS["Motivo de Improdutiva"] != "Não foi necessário realizar o serviço" && appsmith.store.selectedOS["OS (Filha)"] == undefined) {
 			try {
 				await createOS.handleCreateOS()
 				showAlert("Nova OS criada com sucesso", "success")
