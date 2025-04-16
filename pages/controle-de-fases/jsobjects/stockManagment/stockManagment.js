@@ -1,23 +1,27 @@
 export default {
-	stock: [],
+	exitStock: [],
+	returnStock: [],
+	
 	async getStockRecords() {
-		this.stock = []
+		this.exitStock = []
+		this.returnStock = []
 		const stockData = await Leitura_Movimento_Estoque.run()
 		const stockFieldsData = stockData.records.map(rec => rec.fields)
 		
 		for (let i = 0; i < stockFieldsData.length; i++) {
 			const sublist = stockFieldsData[i];
 			if (sublist["Tipo de Movimento"] === "Saída") {
-					this.stock.push({
+					this.exitStock.push({
 						name: 'Saída de Estoque',
 						data: stockFieldsData[i]})
 			}
 			if (sublist["Tipo de Movimento"] === "Retorno") {
-					this.stock.push({
+					this.returnStock.push({
 						name: 'Retorno de Estoque',
 						data: stockFieldsData[i]})
 			}
-		}	
-		storeValue('stock', this.stock)
+		}
+		storeValue('exitStock', this.exitStock)
+		storeValue('returnStock', this.returnStock)
 	}
 }

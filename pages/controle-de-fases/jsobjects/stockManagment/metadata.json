@@ -8,7 +8,11 @@
     "pluginType": "JS",
     "variables": [
       {
-        "name": "stock",
+        "name": "exitStock",
+        "value": "[]"
+      },
+      {
+        "name": "returnStock",
         "value": "[]"
       }
     ]
