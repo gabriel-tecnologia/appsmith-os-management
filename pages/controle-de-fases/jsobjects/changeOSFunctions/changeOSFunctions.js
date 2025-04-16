@@ -141,5 +141,24 @@ export default {
 				showAlert("Falha ao alterar informações", "error")
 			}
 		}
+	},
+	
+	handleEditPermissions() {
+		const fase = appsmith.store.selectedOS.Fase
+		const prioridade = appsmith.store.selectedOS["Prioridade OS"]
+
+		const fasesPermitidas = ["Agendamento de Serviço", "Fila de Serviço", "Ajuste", "Reagendamento de Serviço"]
+		const prioridadesBloqueadas = ["Cliente VIP", "Vandalismo", "Retenção", "Canal Problemas"]
+
+		if (!fasesPermitidas.includes(fase)) {
+			return true
+		}
+
+		if (fase === "Fila de Serviço" && prioridadesBloqueadas.includes(prioridade)) {
+			return true
+		}
+
+		return false
 	}
+
 }

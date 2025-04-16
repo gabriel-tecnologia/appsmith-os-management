@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 60,
+  "bottomRow": 65,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -34,8 +34,8 @@
   "mobileLeftColumn": 0,
   "mobileRightColumn": 16,
   "mobileTopRow": 9,
-  "originalBottomRow": 60,
-  "originalTopRow": 56,
+  "originalBottomRow": 65,
+  "originalTopRow": 61,
   "overflow": "NONE",
   "parentColumnSpace": 6.84375,
   "parentId": "vcxpa7yivg",
@@ -56,10 +56,10 @@
   "text": "<b>Momento de Início</b>: {{appsmith.store.selectedOS[\"Momento de Início\"]??\"\"}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 56,
+  "topRow": 61,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "loyho9dx28",
+  "widgetId": "gx194b2siq",
   "widgetName": "momentoInicio"
 }

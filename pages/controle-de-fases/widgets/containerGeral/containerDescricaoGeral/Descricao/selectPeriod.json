@@ -44,7 +44,7 @@
     }
   ],
   "dynamicTriggerPathList": [],
-  "isDisabled": "{{appsmith.store.selectedOS.Fase != \"Agendamento de Serviço\" &&\nappsmith.store.selectedOS.Fase != \"Fila de Serviço\" &&\nappsmith.store.selectedOS.Fase != \"Ajuste\" &&\nappsmith.store.selectedOS.Fase != \"Reagendamento de Serviço\"}}",
+  "isDisabled": "{{changeOSFunctions.handleEditPermissions()}}",
   "isFilterable": true,
   "isLoading": false,
   "isRequired": false,
@@ -56,7 +56,7 @@
   "labelText": "{{inputFormatter.onDiffIcon(\nselectPeriod.selectedOptionLabel,\tappsmith.store.selectedOS.Período,\t\nselectPeriod.isValid\n)}}\n\nPeríodo",
   "labelTextColor": "{{inputFormatter.onDiffColor(\nselectPeriod.selectedOptionLabel,\nappsmith.store.selectedOS.Período,\nselectPeriod.isValid\n)}}",
   "labelTextSize": "0.875rem",
-  "labelTooltip": "{{selectPeriod.isDisabled ? \"Campo desativado se a fase da OS for diferente de Agendamento ou Fila de Serviço\" : \"\"}}",
+  "labelTooltip": "{{selectPeriod.isDisabled ? \"Campo desativado se a fase da OS for diferente de Agendamento, Fila de Serviço ou Ajuste, e se a Prioridade for Cliente VIP, Vandalismo, Retenção ou Canal Problemas\" : \"\"}}",
   "labelWidth": 5,
   "leftColumn": 0,
   "maxDynamicHeight": 9000,

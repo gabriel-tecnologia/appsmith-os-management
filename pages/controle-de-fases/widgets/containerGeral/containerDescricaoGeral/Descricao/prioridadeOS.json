@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 70,
+  "bottomRow": 60,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -34,8 +34,8 @@
   "mobileLeftColumn": 0,
   "mobileRightColumn": 16,
   "mobileTopRow": 9,
-  "originalBottomRow": 70,
-  "originalTopRow": 66,
+  "originalBottomRow": 60,
+  "originalTopRow": 56,
   "overflow": "NONE",
   "parentColumnSpace": 6.84375,
   "parentId": "vcxpa7yivg",
@@ -53,13 +53,13 @@
     "Suggested",
     "Content"
   ],
-  "text": "<b>Momento de Término</b>: {{appsmith.store.selectedOS[\"Momento de Término\"]??\"\"}}",
+  "text": "<b>Prioridade da OS</b>: {{appsmith.store.selectedOS[\"Prioridade OS\"]??\"\"}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 66,
+  "topRow": 56,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "00xj5gjkx0",
-  "widgetName": "momentoTermino"
+  "widgetId": "loyho9dx28",
+  "widgetName": "prioridadeOS"
 }
