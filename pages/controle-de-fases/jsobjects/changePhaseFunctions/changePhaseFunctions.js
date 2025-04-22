@@ -262,6 +262,7 @@ export default {
 		}
 		catch(error) {
 			showAlert("Falha ao preencher Momento de Término", "error")
+			return;
 		}
 		
 		try {
@@ -270,6 +271,7 @@ export default {
 		}
 		catch (error) {
 			showAlert("Falha ao preencher Observações do Terceiro", "error")
+			return
 		}
 			
 		try {		
