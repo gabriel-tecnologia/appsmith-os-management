@@ -1,6 +1,6 @@
 {
   "gitSyncId": "67d1a3872fb4f2700e437ea5_dafa1a89-b76d-40ce-a690-b3f520f79b5d",
-  "id": "controle-de-fases_Enviar_Fotos",
+  "id": "controle-de-fases_Enviar_Fotos_Airtable",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -46,7 +46,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "Enviar_Fotos",
+    "name": "Enviar_Fotos_Airtable",
     "pageId": "controle-de-fases",
     "userSetOnLoad": false
   }

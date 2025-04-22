@@ -1,6 +1,6 @@
 {
   "gitSyncId": "67d1a3872fb4f2700e437ea5_45b2be8c-7474-44d2-8e4b-d06ae06fe19a",
-  "id": "controle-de-fases_Upload_Images",
+  "id": "controle-de-fases_Enviar_Arquivos_S3",
   "pluginId": "amazons3-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -87,7 +87,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "Upload_Images",
+    "name": "Enviar_Arquivos_S3",
     "pageId": "controle-de-fases",
     "userSetOnLoad": false
   }

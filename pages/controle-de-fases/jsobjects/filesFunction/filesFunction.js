@@ -1,4 +1,96 @@
 export default {
+	
+	async compressAndUpload(files) {		
+		
+		const scale = 0.5;
+		const quality = 0.9;
+		const compressedFiles = [];
+
+		for (const file of files) {
+			
+			// Se for vídeo, dá bypass na compressão
+			if (file.type === "video/mp4") {
+				compressedFiles.push(file)
+			}
+			else {
+				
+				// Logs para visibilidade
+				console.log("Arquivo recebido do FilePicker:", file);
+
+				// Convertendo de base64 para Blob
+				const fileBlob = await this.base64ToBlob(file.data);
+
+				// Comprimindo cada imagem usando a lib
+				const compressedFile = await this.compressImage(fileBlob, scale, quality, file.name);
+
+				// Reconverte de Blob para Base64
+				const compressedBase64 = await this.blobToBase64(compressedFile);
+
+				// Pusha para a lista no formato base64
+				compressedFiles.push({
+					data: compressedBase64,
+					id: file.id,
+					name: file.name,
+					type: file.type,
+					size: compressedFile.size
+				});
+			}			
+		}
+		
+		await this.envia_arquivos_pra_nuvem(compressedFiles);
+	},
+	
+	async compressImage(file, scale, quality, fileName) {
+		const options = {
+			maxSizeMB: 1,
+			maxWidthOrHeight: Math.round(2000 * scale),
+			useWebWorker: true,
+			initialQuality: quality
+		};
+
+		try {
+			const compressedBlob = await imageCompression(file, options);
+			return this.blobToFile(compressedBlob, fileName);
+		} catch (error) {
+			console.error('Erro ao comprimir a imagem:', error);
+			throw error;
+		}
+	},
+		
+	async base64ToBlob(dataURL) {
+    console.log("DataURL recebido em base64ToBlob", dataURL);
+		
+    const response = await fetch(dataURL);
+    const blob = await response.blob();
+		
+    console.log("Blob enviado como resposta", blob);
+		
+    return blob;
+	},
+	
+	blobToFile(blob, fileName) {
+		const object = {
+			name: fileName,
+			type: blob.type,
+			size: blob.size,
+			blob: blob
+		};
+		return object
+	},
+	
+	async blobToBase64(input) {
+		const blob = input.blob || input;
+
+		if (typeof blob.arrayBuffer !== "function") {
+			console.error("Objeto passado não é um Blob válido:", blob);
+			throw new Error("blob.arrayBuffer is not a function");
+		}
+
+		const arrayBuffer = await blob.arrayBuffer();
+		const base64String = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
+		return `data:${blob.type};base64,${base64String}`;
+	},
+	
 	async envia_arquivos_pra_nuvem(arquivos){
 		storeValue("tipo_arquivo", "instruction")
 		let arquivos_para_envio;
@@ -13,14 +105,14 @@ export default {
 		console.log(arquivos_para_envio)
 		for (const arquivo of arquivos){
 			storeValue('arquivo_para_nuvem', arquivo);
-			const resposta = await Upload_Images.run();
+			const resposta = await Enviar_Arquivos_S3.run();
 			const url = resposta.signedUrl;
 			arquivos_para_envio.push({"url": url});
 			storeValue('arquivo_para_nuvem', null);
 		}
 		storeValue('photosUrl', arquivos_para_envio);
 		try {
-			await Enviar_Fotos.run();
+			await Enviar_Fotos_Airtable.run();
 			showAlert("Foto(s) enviada(s) com sucesso", "success")
 		}
 		catch (error) {
@@ -43,7 +135,7 @@ export default {
 		let arquivos_para_envio = [];
 		for (const arquivo of arquivos){
 			storeValue('arquivo_para_nuvem', arquivo);
-			const resposta = await Upload_Images.run();
+			const resposta = await Enviar_Arquivos_S3.run();
 			const url = resposta.signedUrl;
 			arquivos_para_envio.push({"url": url});
 			storeValue('arquivo_para_nuvem', null);
@@ -74,7 +166,7 @@ export default {
 		storeValue("photosUrl", fotos)
 		
 		try {
-			await Enviar_Fotos.run()
+			await Enviar_Fotos_Airtable.run()
 			const newOS = await Leitura_OS_porRecordID.run({
 				recordId: appsmith.store.selectedOS.record_id
 			});
@@ -96,7 +188,7 @@ export default {
 		storeValue("photosUrl", arquivos)
 		
 		try {
-			await Enviar_Fotos.run()
+			await Enviar_Fotos_Airtable.run()
 			const newOS = await Leitura_OS_porRecordID.run({
 				recordId: appsmith.store.selectedOS.record_id
 			});

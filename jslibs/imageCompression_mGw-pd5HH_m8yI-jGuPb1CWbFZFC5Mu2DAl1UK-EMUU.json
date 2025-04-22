@@ -1,0 +1,10 @@
+{
+  "accessor": [
+    "imageCompression"
+  ],
+  "defs": "{\"!name\":\"LIB/imageCompression\",\"imageCompression\":{\"!type\":\"fn()\",\"getDataUrlFromFile\":{\"!type\":\"fn()\",\"prototype\":{}},\"getFilefromDataUrl\":{\"!type\":\"fn()\",\"prototype\":{}},\"loadImage\":{\"!type\":\"fn()\",\"prototype\":{}},\"drawImageInCanvas\":{\"!type\":\"fn()\",\"prototype\":{}},\"drawFileInCanvas\":{\"!type\":\"fn()\",\"prototype\":{}},\"canvasToFile\":{\"!type\":\"fn()\",\"prototype\":{}},\"getExifOrientation\":{\"!type\":\"fn()\",\"prototype\":{}},\"handleMaxWidthOrHeight\":{\"!type\":\"fn()\",\"prototype\":{}},\"followExifOrientation\":{\"!type\":\"fn()\",\"prototype\":{}},\"cleanupCanvasMemory\":{\"!type\":\"fn()\",\"prototype\":{}},\"isAutoOrientationInBrowser\":{\"!type\":\"fn()\",\"prototype\":{}},\"approximateBelowMaximumCanvasSizeOfBrowser\":{\"!type\":\"fn()\",\"prototype\":{}},\"copyExifWithoutOrientation\":{\"!type\":\"fn()\",\"prototype\":{}},\"getBrowserName\":{\"!type\":\"fn()\",\"prototype\":{}},\"version\":{\"!type\":\"string\"},\"prototype\":{}}}",
+  "name": "imageCompression",
+  "uidString": "imageCompression_https://unpkg.com/browser-image-compression@2.0.2/dist/browser-image-compression.js",
+  "url": "https://unpkg.com/browser-image-compression@2.0.2/dist/browser-image-compression.js",
+  "version": "2.0.2"
+}
