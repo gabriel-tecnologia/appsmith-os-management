@@ -38,7 +38,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 60,
   "shouldTruncate": false,
-  "text": "Motivo de {{appsmith.store.changeTo}}:\n\n • {{selecaoMotivo.selectedOptionLabel}}",
+  "text": "Motivo de {{appsmith.store.changeTo}}:\n\n • {{appsmith.store.selectedOS.Fase == \"Controle de Qualidade\" ?\nselecaoMotivo.selectedOptionLabel : selecaoMotivoCopy.selectedOptionLabel}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 6,

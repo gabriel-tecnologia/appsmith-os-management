@@ -1,5 +1,5 @@
 {
-  "gitSyncId": "67d1a3872fb4f2700e437ea5_c98c1fe0-b3b4-4ecb-9ab1-649f336ad478",
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_a18a7806-abea-4ca8-803b-0f99cc8ca828",
   "id": "controle-de-fases Copy_stockManagment",
   "unpublishedCollection": {
     "name": "stockManagment",
@@ -8,7 +8,11 @@
     "pluginType": "JS",
     "variables": [
       {
-        "name": "stock",
+        "name": "exitStock",
+        "value": "[]"
+      },
+      {
+        "name": "returnStock",
         "value": "[]"
       }
     ]

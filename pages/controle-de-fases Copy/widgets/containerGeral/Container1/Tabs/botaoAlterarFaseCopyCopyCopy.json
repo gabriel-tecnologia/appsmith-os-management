@@ -33,17 +33,23 @@
     },
     {
       "key": "menuItems.menuItemhwaklm9bpj.onClick"
+    },
+    {
+      "key": "menuItems.menuItemg8mm88oodb.onClick"
+    },
+    {
+      "key": "menuItems.menuItemi0bwqfgbto.onClick"
     }
   ],
   "dynamicTriggerPathList": [
-    {
-      "key": "menuItems.menuItem3.onClick"
-    },
     {
       "key": "menuItems.menuItemhwaklm9bpj.onClick"
     },
     {
       "key": "menuItems.menuItemfiqx6fg6ry.onClick"
+    },
+    {
+      "key": "menuItems.menuItemg8mm88oodb.onClick"
     }
   ],
   "isCompact": false,
@@ -55,27 +61,27 @@
   "leftColumn": 1,
   "menuColor": "#00ce7c",
   "menuItems": {
-    "menuItem3": {
-      "id": "menuItem3",
-      "index": 0,
-      "isDisabled": false,
-      "isVisible": true,
-      "label": "Reagendamento de Serviço",
-      "onClick": "{{changePhaseFunctions.handleMoveToReschedule()}}",
-      "widgetId": ""
-    },
     "menuItemfiqx6fg6ry": {
       "id": "menuItemfiqx6fg6ry",
-      "index": 2,
+      "index": 1,
       "isDisabled": false,
       "isVisible": true,
       "label": "Cancelar OS",
       "onClick": "{{showModal(modalCancelamento.name);}}",
       "widgetId": "rxgizkr562"
     },
+    "menuItemg8mm88oodb": {
+      "id": "menuItemg8mm88oodb",
+      "index": 2,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Agendamento de Serviço",
+      "onClick": "{{changePhaseFunctions.handleMoveToSchedule()}}",
+      "widgetId": "agdfakm8lp"
+    },
     "menuItemhwaklm9bpj": {
       "id": "menuItemhwaklm9bpj",
-      "index": 1,
+      "index": 0,
       "isDisabled": false,
       "isVisible": true,
       "label": "Serviço em Andamento",

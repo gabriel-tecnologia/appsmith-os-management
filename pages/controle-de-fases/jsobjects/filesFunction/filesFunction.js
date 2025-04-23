@@ -226,6 +226,6 @@ export default {
 	},
 	
 	renderImagens(list) {
-		return list.filter(file => file.type == "image/jpeg")
+		return list.filter(file => file.type == "image/jpeg" || file.type == "image/png")
 	}
 }

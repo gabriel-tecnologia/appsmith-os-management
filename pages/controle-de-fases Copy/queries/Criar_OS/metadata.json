@@ -1,5 +1,5 @@
 {
-  "gitSyncId": "67d1a3872fb4f2700e437ea5_7f72eeae-e5f3-47fc-b7b2-67c702e60ed9",
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_94d74b5c-5c87-410d-8c35-1509fbc883fa",
   "id": "controle-de-fases Copy_Criar_OS",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n\t\"fields\": {\n\t\t\"Tipo de Ordem de Serviço\": {{appsmith.store.selectedOS[\"Tipo de Ordem de Serviço\"]}},\n\t\t\"Fase\": \"Agendamento de Serviço\",\n\t\t\"id_assinatura\": {{appsmith.store.selectedOS.id_assinatura}},\n\t\t\"Instruções (para o Terceiros)\": {{appsmith.store.selectedOS[\"Instruções (para o Terceiros)\"]}},\n\t\t\"Técnico Responsável\": {{appsmith.store.selectedOS[\"Técnico Responsável\"]}},\n\t\t\"Origem do Chamado\": {{appsmith.store.selectedOS[\"Origem do Chamado\"]}},\n\t\t\"Motivo do Chamado\": {{appsmith.store.selectedOS[\"Motivo do Chamado\"]}}\n\t}\n}",
+      "body": "{\n\t\"fields\": {\n\t\t\"Tipo de Ordem de Serviço\": {{appsmith.store.selectedOS[\"Tipo de Ordem de Serviço\"]}},\n\t\t\"OS (Mãe)\": [{{appsmith.store.selectedOS.record_id}}],\n\t\t\"Fase\": \"Agendamento de Serviço\",\n\t\t\"id_assinatura\": {{appsmith.store.selectedOS.id_assinatura}},\n\t\t\"Instruções (para o Terceiros)\": {{ appsmith.store.selectedOS[\"Instruções (para o Terceiros)\"] + \"\\n\\n(Instruções da OS mãe)\" }},\n\t\t\"Observações (do Terceiro para Gabriel)\": {{appsmith.store.selectedOS[\"Observações (do Terceiro para Gabriel)\"]}},\n\t\t\"Técnico Responsável\": {{appsmith.store.selectedOS[\"Técnico Responsável\"]}},\n\t\t\"Origem do Chamado\": {{appsmith.store.selectedOS[\"Origem do Chamado\"]}},\n\t\t\"Motivo do Chamado\": {{appsmith.store.selectedOS[\"Motivo do Chamado\"]}},\n\t\t\"Prioridade OS\": {{appsmith.store.selectedOS[\"Prioridade OS\"]}},\n\t\t\"id_ticket_hubspot\": {{appsmith.store.selectedOS[\"id_ticket_hubspot\"]??undefined}},\n\t\t\"Instruções (Foto)\": {{appsmith.store.instructionPhotosURL == \"\" ? undefined : appsmith.store.instructionPhotosURL}},\n\t\t\"Foto do Serviço\": {{appsmith.store.servicePhotosUrl == \"\" ? undefined : appsmith.store.servicePhotosUrl}},\n\t\t\"Termo de Finalização\": {{appsmith.store.termPdf == \"\" ? undefined : appsmith.store.termPdf}},\n\t\t\"clicksign_envelope\": {{appsmith.store.selectedOS.clicksign_envelope}}\n\t}\n}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {

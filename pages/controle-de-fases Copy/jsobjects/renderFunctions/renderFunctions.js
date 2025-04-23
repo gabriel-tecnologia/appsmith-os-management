@@ -47,64 +47,68 @@ export default {
 							]
 	},
 	renderImproductiveReasons(){
-		return []
-			// {
-				// "name": "[CLIENTE] Sem ponto elétrico disponível",
-				// "code": "[CLIENTE] Sem ponto elétrico disponível"
-			// },
-			// {
-				// "name": "[CLIENTE] Cliente ou síndico indisponível",
-				// "code": "[CLIENTE] Cliente ou síndico indisponível"
-			// },
-			// {
-				// "name": "[CLIENTE] Cliente ou síndico não ciente",
-				// "code": "[CLIENTE] Cliente ou síndico não ciente"
-			// },
-			// {
-				// "name": "[CLIENTE] Não aceitou infraestrutura",
-				// "code": "[CLIENTE] Não aceitou infraestrutura"
-			// },
-			// {
-				// "name": "[CLIENTE] Decisões ou preferências que exigem reagendamento (ex.: infra embutida, mudança de local, etc.)",
-				// "code": "[CLIENTE] Decisões ou preferências que exigem reagendamento (ex.: infra embutida, mudança de local, etc.)"
-			// },
-			// {
-				// "name": "[CLIENTE] Local em obra",
-				// "code": "[CLIENTE] Local em obra"
-			// },
-			// {
-				// "name": "[PARCEIRO] Atraso não tolerado",
-				// "code": "[PARCEIRO] Atraso não tolerado"
-			// },
-			// {
-				// "name": "[PARCEIRO] Problemas com veículos ou materiais insuficientes",
-				// "code": "[PARCEIRO] Problemas com veículos ou materiais insuficientes"
-			// },
-			// {
-				// "name": "[PARCEIRO] Controle de qualidade físico reprovado (ex.angulação inadequada, sealtubo mal instalado...)",
-				// "code": "[PARCEIRO] Controle de qualidade físico reprovado (ex.angulação inadequada, sealtubo mal instalado...)"
-			// },
-			// {
-				// "name": "[PARCEIRO] Falta de evidências fotográficas",
-				// "code": "[PARCEIRO] Falta de evidências fotográficas"
-			// },
-			// {
-				// "name": "[GABRIEL] Sem sinal de 4G",
-				// "code": "[GABRIEL] Sem sinal de 4G"
-			// },
-			// {
-				// "name": "[GABRIEL] Necessidade de cabeamento de internet",
-				// "code": "[GABRIEL] Necessidade de cabeamento de internet"
-			// },
-			// {
-				// "name": "[GABRIEL] Equipamento com defeito (SN/Camaleão)",
-				// "code": "[GABRIEL] Equipamento com defeito (SN/Camaleão)"
-			// },
-			// {
-				// "name": "[EXTERNO] Chuva ou condições climáticas adversas",
-				// "code": "[EXTERNO] Chuva ou condições climáticas adversas"
-			// }									
-		// ]	
+		return [
+			{
+				"name": "[CLIENTE] Sem ponto elétrico disponível",
+				"code": "[CLIENTE] Sem ponto elétrico disponível"
+			},
+			{
+				"name": "[CLIENTE] Cliente ou síndico indisponível",
+				"code": "[CLIENTE] Cliente ou síndico indisponível"
+			},
+			{
+				"name": "[CLIENTE] Cliente ou síndico não ciente",
+				"code": "[CLIENTE] Cliente ou síndico não ciente"
+			},
+			{
+				"name": "[CLIENTE] Não aceitou infraestrutura",
+				"code": "[CLIENTE] Não aceitou infraestrutura"
+			},
+			{
+				"name": "[CLIENTE] Decisões ou preferências que exigem reagendamento (ex.: infra embutida, mudança de local, etc.)",
+				"code": "[CLIENTE] Decisões ou preferências que exigem reagendamento (ex.: infra embutida, mudança de local, etc.)"
+			},
+			{
+				"name": "[CLIENTE] Local em obra",
+				"code": "[CLIENTE] Local em obra"
+			},
+			{
+				"name": "[PARCEIRO] Atraso não tolerado",
+				"code": "[PARCEIRO] Atraso não tolerado"
+			},
+			{
+				"name": "[PARCEIRO] Problemas com veículos ou materiais insuficientes",
+				"code": "[PARCEIRO] Problemas com veículos ou materiais insuficientes"
+			},
+			{
+				"name": "[PARCEIRO] Controle de qualidade físico reprovado (ex.angulação inadequada, sealtubo mal instalado...)",
+				"code": "[PARCEIRO] Controle de qualidade físico reprovado (ex.angulação inadequada, sealtubo mal instalado...)"
+			},
+			{
+				"name": "[PARCEIRO] Falta de evidências fotográficas",
+				"code": "[PARCEIRO] Falta de evidências fotográficas"
+			},
+			{
+				"name": "[GABRIEL] Sem sinal de 4G",
+				"code": "[GABRIEL] Sem sinal de 4G"
+			},
+			{
+				"name": "[GABRIEL] Necessidade de cabeamento de internet",
+				"code": "[GABRIEL] Necessidade de cabeamento de internet"
+			},
+			{
+				"name": "[GABRIEL] Equipamento com defeito (SN/Camaleão)",
+				"code": "[GABRIEL] Equipamento com defeito (SN/Camaleão)"
+			},
+			{
+				"name": "[EXTERNO] Chuva ou condições climáticas adversas",
+				"code": "[EXTERNO] Chuva ou condições climáticas adversas"
+			},
+			{
+				"name": "Não foi necessário realizar o serviço",
+				"code": "Não foi necessário realizar o serviço"
+			}										
+		]	
 	},
 	
 	renderReasonsOptions(){
@@ -174,8 +178,8 @@ export default {
 		stock["Sistema Nervoso 2"] ? text = text.concat(stock["Sistema Nervoso 2"]+" x Sistema Nervoso 2\n") : ""
 		stock["Kit Poste 2.0 (Piso)"] ? text = text.concat(stock["Kit Poste 2.0 (Piso)"] + " x Kit Poste 2.0 (Piso)\n") : ""
 		stock["Kit Poste 2.0 (Parede)"] ? text = text.concat(stock["Kit Poste 2.0 (Parede)"]+" x Kit Poste 2.0 (Parede)\n") : ""
-		stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"] ? text = text.concat(stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"]+" x Placa de Sinalização - Gravata\n") : ""
-		stock["Placa de Sinalização - Gravata 2- 0800 GAB-RIEL"] ? text = text.concat(stock["Placa de Sinalização - Gravata 2- 0800 GAB-RIEL"]+" x Placa de Sinalização - Gravata 2\n") : ""
+		stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"] ? text = text.concat(stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"]+" x Placa Gravata Gen1 (Verde)\n") : ""
+		stock["Placa de Sinalização - Gravata 2- 0800 GAB-RIEL"] ? text = text.concat(stock["Placa de Sinalização - Gravata 2- 0800 GAB-RIEL"]+" x Placa Gravata Gen2 (Branca)\n") : ""
 		stock["Placa Bolacha"] ? text = text.concat(stock["Placa Bolacha"]+" x Placa Bolacha Nova\n") : ""
 		return text
 	},
@@ -416,7 +420,37 @@ export default {
 			else {
 				return itens.join('\n')
 			}
-		}
+		},
+	
+		async renderOSMotherInfo() {
+			if (appsmith.store.selectedOS["OS (Mãe)"] != undefined) {
+				let relativeOS = await Leitura_OS_Por_RecordID.run({
+					recordId: appsmith.store.selectedOS["OS (Mãe)"][0]
+				});
+			
+				let fields = relativeOS.fields
+
+				return fields["id_os"]
+			}
+			else{
+				return ""
+			}
+		},
+	
+		async renderOSChildInfo() {
+				if (appsmith.store.selectedOS["OS (Filha)"] != undefined) {
+				let relativeOS = await Leitura_OS_Por_RecordID.run({
+					recordId: appsmith.store.selectedOS["OS (Filha)"][0]
+				});
+			
+				let fields = relativeOS.fields
+
+				return fields["id_os"]
+			}
+			else {
+				return ""
+			}
+	}
 }
 
 

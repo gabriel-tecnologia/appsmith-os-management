@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 78,
+  "bottomRow": 77,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store.selectedOS[\"Solução\"]??\"\"))(selectSolucao.options, selectSolucao.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 63,
   "serverSideFiltering": false,
   "sourceData": "{{renderFunctions.renderSolutions()}}",
-  "topRow": 71,
+  "topRow": 70,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "s6szogecs2",

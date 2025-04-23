@@ -42,14 +42,14 @@
     },
     {
       "key": "menuItems.menuItem2.onClick"
+    },
+    {
+      "key": "menuItems.menuItemwadmstksg7.onClick"
     }
   ],
   "dynamicTriggerPathList": [
     {
       "key": "menuItems.menuItem2.onClick"
-    },
-    {
-      "key": "menuItems.menuItem7xqh7hm348.onClick"
     }
   ],
   "isCompact": false,
@@ -69,15 +69,6 @@
       "label": "Controle de Qualidade",
       "onClick": "{{showModal(modalConfirmacaoControleQualid.name);}}",
       "widgetId": ""
-    },
-    "menuItem7xqh7hm348": {
-      "id": "menuItem7xqh7hm348",
-      "index": 1,
-      "isDisabled": false,
-      "isVisible": true,
-      "label": "Reagendamento de Serviço",
-      "onClick": "{{changePhaseFunctions.handleMoveToReschedule()}}",
-      "widgetId": "brx2zgdp2f"
     }
   },
   "menuItemsSource": "STATIC",

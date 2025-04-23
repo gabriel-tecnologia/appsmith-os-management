@@ -4,8 +4,10 @@ export default {
 			if (selectAdjustReason.selectedOptionValue != "") {
 				try {
 					storeValue("fase", "Ajuste")
-					await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
-					const newData = await Leitura_OS_porRecordID.run()
+					await Alterar_Campo_Especifico.run({Field: {"Fase": appsmith.store.fase}})
+					const newData = await Leitura_OS_Por_RecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 					storeValue("selectedOS", newData.fields)
 					showAlert("Fase da OS alterada para 'Ajuste'", "success")
 				}
@@ -17,21 +19,27 @@ export default {
 			else if (selectImproductiveReason.selectedOptionValue != "") {
 				try {
 					storeValue("fase", "Improdutiva")
-					await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
-					const newData = await Leitura_OS_porRecordID.run()
+					await Alterar_Campo_Especifico.run({Field: {"Fase": appsmith.store.fase}})
+					const newData = await Leitura_OS_Por_RecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 					storeValue("selectedOS", newData.fields)
 					showAlert("Fase da OS alterada para 'Improdutiva'", "success")	
 				}
 				catch (error) {
 					showAlert("Não foi possível alterar a fase da OS para 'Improdutiva'", "error")
-					const newData = await Leitura_OS_porRecordID.run()
+					const newData = await Leitura_OS_Por_RecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 					storeValue("selectedOS", newData.fields)
 					return;
 				}
 				try {
 					await createOS.handleCreateOS()
 					showAlert("Nova OS criada com sucesso", "success")
-					const newData = await Leitura_OS_porRecordID.run()
+					const newData = await Leitura_OS_Por_RecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 					storeValue("selectedOS", newData.fields)
 				}
 				catch (error) {
@@ -48,8 +56,10 @@ export default {
 		else if (appsmith.store.selectedOS.Fase == "Agendamento de Serviço") {
 			try {
 				storeValue("fase", "Fila de Serviço")
-				await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
-				const newData = await Leitura_OS_porRecordID.run()
+				await Alterar_Campo_Especifico.run({Field: {"Fase": appsmith.store.fase}})
+				const newData = await Leitura_OS_Por_RecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+				});
 				storeValue("selectedOS", newData.fields)
 				showAlert("Fase da OS alterada para 'Fila de Serviço'", "success")
 			}
@@ -58,7 +68,9 @@ export default {
 				return;
 			}
 		}
-	const newOS = await Leitura_OS_porRecordID.run()
+	const newOS = await Leitura_OS_Por_RecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 	storeValue("selectedOS", newOS.fields)
 	},
 	
@@ -83,7 +95,9 @@ export default {
 			
 			try {
 				await Alterar_OS.run()
-				const newOS = await Leitura_OS_porRecordID.run();
+				const newOS = await Leitura_OS_Por_RecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 				storeValue("selectedOS", newOS.fields)
 				showAlert("Alterações feitas com sucesso", "success")
 			}
@@ -95,61 +109,31 @@ export default {
 				showModal(confirmModal.name)
 			}
 		}
+		
 		else if (appsmith.store.selectedOS.Fase == "Agendamento de Serviço") {
-			if (selectDate.formattedDate == "") {
-				showAlert("É necessário preencher 'Data Agendada'", "error")
-				return;
-			}
-			if (selectPeriod.selectedOptionLabel == "") {
-				showAlert("É necessário preencher 'Período'", "error")
-				return;
-			}
-			if (selectPartner.selectedOptionLabel == "") {
-				showAlert("É necessário preencher 'Técnico Parceiro'", "error")
-				return;
-			}
-			else {
-				try {
-					await Alterar_OS.run()
-					const newOS = await Leitura_OS_porRecordID.run();
-					storeValue("selectedOS", newOS.fields)
-					showAlert("Alterações feitas com sucesso", "success")
+			try {
+				await Alterar_OS.run()
+				const newOS = await Leitura_OS_Por_RecordID.run({
+					recordId: appsmith.store.selectedOS.record_id
+				});
+				storeValue("selectedOS", newOS.fields)
+				showAlert("Alterações feitas com sucesso", "success")
+
+				if (selectDate.formattedDate != "" && selectPeriod.selectedOptionLabel != "" && selectPartner.selectedOptionLabel != "") {
 					showModal(confirmModal.name)
-				}
-				catch(error) {
-					showAlert("Falha ao alterar informações", "error")
-				}					
+				}	
 			}
+			catch(error) {
+				showAlert("Falha ao alterar informações", "error")
+			}					
 		}
-		else if (appsmith.store.selectedOS.Fase == "Fila de Serviço") {
-			if (selectDate.formattedDate == "") {
-				showAlert("É necessário preencher 'Data Agendada'", "error")
-				return;
-			}
-			if (selectPeriod.selectedOptionLabel == "") {
-				showAlert("É necessário preencher 'Período'", "error")
-				return;
-			}
-			if (selectPartner.selectedOptionLabel == "") {
-				showAlert("É necessário preencher 'Técnico Parceiro'", "error")
-				return;
-			}
-			else {
-				try {
-					await Alterar_OS.run()
-					const newOS = await Leitura_OS_porRecordID.run();
-					storeValue("selectedOS", newOS.fields)
-					showAlert("Alterações feitas com sucesso", "success")
-				}
-				catch(error) {
-					showAlert("Falha ao alterar informações", "error")
-				}
-			}
-		}
+		
 		else {
 			try {
 				await Alterar_OS.run()
-				const newOS = await Leitura_OS_porRecordID.run();
+				const newOS = await Leitura_OS_Por_RecordID.run({
+						recordId: appsmith.store.selectedOS.record_id
+					});
 				storeValue("selectedOS", newOS.fields)
 				showAlert("Alterações feitas com sucesso", "success")
 			}
@@ -157,5 +141,24 @@ export default {
 				showAlert("Falha ao alterar informações", "error")
 			}
 		}
+	},
+	
+	handleEditPermissions() {
+		const fase = appsmith.store.selectedOS.Fase
+		const prioridade = appsmith.store.selectedOS["Prioridade OS"]
+
+		const fasesPermitidas = ["Agendamento de Serviço", "Fila de Serviço", "Ajuste", "Reagendamento de Serviço"]
+		const prioridadesBloqueadas = ["Cliente VIP", "Vandalismo", "Retenção", "Canal Problemas"]
+
+		if (!fasesPermitidas.includes(fase)) {
+			return true
+		}
+
+		if (fase === "Fila de Serviço" && prioridadesBloqueadas.includes(prioridade)) {
+			return true
+		}
+
+		return false
 	}
+
 }

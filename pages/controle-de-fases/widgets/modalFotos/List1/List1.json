@@ -97,7 +97,7 @@
   "itemSpacing": 8,
   "key": "dmhzqp3mfq",
   "leftColumn": 1,
-  "listData": "{{appsmith.store.selectedOS[\"Foto do Serviço\"]}}",
+  "listData": "{{filesFunction.renderImagens(appsmith.store.selectedOS[\"Foto do Serviço\"])}}",
   "mainCanvasId": "17iect6y1w",
   "mainContainerId": "5cq9c9yklq",
   "minWidth": 450,

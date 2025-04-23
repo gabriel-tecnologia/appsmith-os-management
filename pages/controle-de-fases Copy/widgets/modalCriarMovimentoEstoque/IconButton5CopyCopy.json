@@ -31,7 +31,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{closeModal(modalCriarMovimentoEstoque.name).then(() => {\n  stockManagment.getStockRecords();\n});\nshowModal(modalEstoque.name);}}",
+  "onClick": "{{closeModal(modalCriarMovimentoEstoque.name).then(() => {\n  stockManagment.getStockRecords();\n});}}",
   "parentId": "v4ntunhtlg",
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",

@@ -1,4 +1,5 @@
 export default {
+	
 	async handleCreateOS(){
 		
 		// Gambiarra para manter as Instruções (Foto) na nova OS

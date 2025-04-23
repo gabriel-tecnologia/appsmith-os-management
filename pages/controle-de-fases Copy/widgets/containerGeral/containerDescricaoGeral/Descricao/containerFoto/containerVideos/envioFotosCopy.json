@@ -41,7 +41,7 @@
   "mobileRightColumn": 33,
   "mobileTopRow": 44,
   "needsErrorInfo": false,
-  "onFilesSelected": "{{filesFunction.envia_arquivos_pra_nuvem(envioFotos.files);\nresetWidget(\"envioFotos\", true);}}",
+  "onFilesSelected": "{{filesFunction.compressAndUpload(envioFotosCopy.files);\nresetWidget(\"envioFotosCopy\", true);}}",
   "originalBottomRow": 91,
   "originalTopRow": 87,
   "parentColumnSpace": 5.2008056640625,
