@@ -5,38 +5,41 @@ export default {
 		const scale = 0.5;
 		const quality = 0.9;
 		const compressedFiles = [];
-
-		for (const file of files) {
-			
-			// Se for vídeo, dá bypass na compressão
-			if (file.type === "video/mp4") {
-				compressedFiles.push(file)
-			}
-			else {
-				
-				// Logs para visibilidade
-				console.log("Arquivo recebido do FilePicker:", file);
-
-				// Convertendo de base64 para Blob
-				const fileBlob = await this.base64ToBlob(file.data);
-
-				// Comprimindo cada imagem usando a lib
-				const compressedFile = await this.compressImage(fileBlob, scale, quality, file.name);
-
-				// Reconverte de Blob para Base64
-				const compressedBase64 = await this.blobToBase64(compressedFile);
-
-				// Pusha para a lista no formato base64
-				compressedFiles.push({
-					data: compressedBase64,
-					id: file.id,
-					name: file.name,
-					type: file.type,
-					size: compressedFile.size
-				});
-			}			
-		}
 		
+		try {
+			for (const file of files) {
+				// Se for vídeo, dá bypass na compressão
+				if (file.type === "video/mp4") {
+					compressedFiles.push(file)
+				}
+				else {
+					// Logs para visibilidade
+					console.log("Arquivo recebido do FilePicker:", file);
+
+					// Convertendo de base64 para Blob
+					const fileBlob = await this.base64ToBlob(file.data);
+
+					// Comprimindo cada imagem usando a lib
+					const compressedFile = await this.compressImage(fileBlob, scale, quality, file.name);
+
+					// Reconverte de Blob para Base64
+					const compressedBase64 = await this.blobToBase64(compressedFile);
+
+					// Pusha para a lista no formato base64
+					compressedFiles.push({
+						data: compressedBase64,
+						id: file.id,
+						name: file.name,
+						type: file.type,
+						size: compressedFile.size
+					});
+				}			
+			}		
+		}
+		catch (error) {
+			showAlert("Erro ao comprimir imagens", "error")
+		}
+
 		try {
 			await this.envia_arquivos_pra_nuvem(compressedFiles);
 			showAlert("Upload de arquivos finalizado com sucesso", "success")

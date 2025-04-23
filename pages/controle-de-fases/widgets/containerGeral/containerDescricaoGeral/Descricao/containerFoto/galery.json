@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 22,
+  "bottomRow": 33,
   "bottomRowBeforeCollapse": 72,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{{\n\t\"data\": appsmith.store.selectedOS[\"Foto do Serviço\"]\n}}}",
@@ -51,7 +51,7 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 7,
   "needsErrorInfo": false,
-  "originalBottomRow": 64,
+  "originalBottomRow": 22,
   "originalTopRow": 6,
   "parentColumnSpace": 18.8125,
   "parentId": "yafn7ckaq2",
@@ -66,7 +66,7 @@
     "js": "function renderGallery() {\n  const imageData = appsmith.model.data || [];\n  if (imageData.length === 0) return;\n  const gallery = document.getElementById(\"gallery\");\n  gallery.innerHTML = \"\"; // Limpa antes de renderizar\n\n  imageData.forEach(image => {\n    if (image.type != \"video/mp4\") {\n      const item = document.createElement(\"div\");\n      item.classList.add(\"gallery-item\");\n      item.onclick = () => {\n        window.open(image.url, \"_blank\");\n      };\n      const img = document.createElement(\"img\");\n      img.src = image.url;\n      img.alt = image.filename;\n      const btn = document.createElement(\"button\");\n      btn.innerText = \"Remover\";\n      btn.classList.add(\"remove-btn\");\n      btn.onclick = () => {\n        event.stopPropagation();\n        removeImage(image.id);\n      };\n      item.appendChild(img);\n      item.appendChild(btn);\n      gallery.appendChild(item);\n    }\n  });\n}\nfunction removeImage(id) {\n  const imageData = appsmith.model.data;\n  const image = imageData.find(image => image.id === id);\n  appsmith.updateModel({\n    image\n  });\n  appsmith.triggerEvent('removeButtonClick');\n  renderGallery();\n}\nfunction initApp() {\n  renderGallery();\n}\nappsmith.onModelChange(() => {\n  renderGallery();\n});\nappsmith.onReady(() => {\n  /*\n   * This handler function will get called when parent application is ready.\n   * Initialize your component here\n   * more info - https://docs.appsmith.com/reference/widgets/custom#onready\n   */\n  initApp();\n});"
   },
   "theme": "{{appsmith.theme}}",
-  "topRow": 6,
+  "topRow": 8,
   "topRowBeforeCollapse": 6,
   "type": "CUSTOM_WIDGET",
   "uncompiledSrcDoc": {
