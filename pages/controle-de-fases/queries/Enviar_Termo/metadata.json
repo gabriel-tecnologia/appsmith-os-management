@@ -1,6 +1,6 @@
 {
   "gitSyncId": "67d1a3872fb4f2700e437ea5_65cc7482-f5a6-436d-aec4-3f8c4f645173",
-  "id": "controle-de-fases_Enviar_termo",
+  "id": "controle-de-fases_Enviar_Termo",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n\t\"fields\": {\n\t\t\"Termo de Finalização\": {{appsmith.store.termUrl}}\n\t}\n}",
+      "body": "{\n\t\"fields\": {\n\t\t\"Termo de Finalização\": {{this.params.term}}\n\t}\n}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {
@@ -46,7 +46,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "Enviar_termo",
+    "name": "Enviar_Termo",
     "pageId": "controle-de-fases",
     "userSetOnLoad": false
   }

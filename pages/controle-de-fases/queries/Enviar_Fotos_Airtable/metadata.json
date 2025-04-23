@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n\t\"fields\": {\n\t\t\"Foto do Serviço\": {{appsmith.store.photosUrl}}\n\t}\n}",
+      "body": "{\n\t\"fields\": {\n\t\t\"Foto do Serviço\": {{this.params.photosUrl}}\n\t}\n}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {

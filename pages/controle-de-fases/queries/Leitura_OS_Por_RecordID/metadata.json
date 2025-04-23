@@ -1,6 +1,6 @@
 {
   "gitSyncId": "67d1a3872fb4f2700e437ea5_6083324d-2a53-4320-a6d9-42c3ec920682",
-  "id": "controle-de-fases_Leitura_OS_porRecordID",
+  "id": "controle-de-fases_Leitura_OS_Por_RecordID",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -38,7 +38,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "Leitura_OS_porRecordID",
+    "name": "Leitura_OS_Por_RecordID",
     "pageId": "controle-de-fases",
     "userSetOnLoad": false
   }

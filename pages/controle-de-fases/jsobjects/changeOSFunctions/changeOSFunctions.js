@@ -4,8 +4,8 @@ export default {
 			if (selectAdjustReason.selectedOptionValue != "") {
 				try {
 					storeValue("fase", "Ajuste")
-					await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
-					const newData = await Leitura_OS_porRecordID.run({
+					await Alterar_Campo_Especifico.run({Field: {"Fase": appsmith.store.fase}})
+					const newData = await Leitura_OS_Por_RecordID.run({
 						recordId: appsmith.store.selectedOS.record_id
 					});
 					storeValue("selectedOS", newData.fields)
@@ -19,8 +19,8 @@ export default {
 			else if (selectImproductiveReason.selectedOptionValue != "") {
 				try {
 					storeValue("fase", "Improdutiva")
-					await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
-					const newData = await Leitura_OS_porRecordID.run({
+					await Alterar_Campo_Especifico.run({Field: {"Fase": appsmith.store.fase}})
+					const newData = await Leitura_OS_Por_RecordID.run({
 						recordId: appsmith.store.selectedOS.record_id
 					});
 					storeValue("selectedOS", newData.fields)
@@ -28,7 +28,7 @@ export default {
 				}
 				catch (error) {
 					showAlert("Não foi possível alterar a fase da OS para 'Improdutiva'", "error")
-					const newData = await Leitura_OS_porRecordID.run({
+					const newData = await Leitura_OS_Por_RecordID.run({
 						recordId: appsmith.store.selectedOS.record_id
 					});
 					storeValue("selectedOS", newData.fields)
@@ -37,7 +37,7 @@ export default {
 				try {
 					await createOS.handleCreateOS()
 					showAlert("Nova OS criada com sucesso", "success")
-					const newData = await Leitura_OS_porRecordID.run({
+					const newData = await Leitura_OS_Por_RecordID.run({
 						recordId: appsmith.store.selectedOS.record_id
 					});
 					storeValue("selectedOS", newData.fields)
@@ -56,8 +56,8 @@ export default {
 		else if (appsmith.store.selectedOS.Fase == "Agendamento de Serviço") {
 			try {
 				storeValue("fase", "Fila de Serviço")
-				await Alterar_CampoEspecifico.run({Field: {"Fase": appsmith.store.fase}})
-				const newData = await Leitura_OS_porRecordID.run({
+				await Alterar_Campo_Especifico.run({Field: {"Fase": appsmith.store.fase}})
+				const newData = await Leitura_OS_Por_RecordID.run({
 						recordId: appsmith.store.selectedOS.record_id
 				});
 				storeValue("selectedOS", newData.fields)
@@ -68,7 +68,7 @@ export default {
 				return;
 			}
 		}
-	const newOS = await Leitura_OS_porRecordID.run({
+	const newOS = await Leitura_OS_Por_RecordID.run({
 						recordId: appsmith.store.selectedOS.record_id
 					});
 	storeValue("selectedOS", newOS.fields)
@@ -95,7 +95,7 @@ export default {
 			
 			try {
 				await Alterar_OS.run()
-				const newOS = await Leitura_OS_porRecordID.run({
+				const newOS = await Leitura_OS_Por_RecordID.run({
 						recordId: appsmith.store.selectedOS.record_id
 					});
 				storeValue("selectedOS", newOS.fields)
@@ -113,7 +113,7 @@ export default {
 		else if (appsmith.store.selectedOS.Fase == "Agendamento de Serviço") {
 			try {
 				await Alterar_OS.run()
-				const newOS = await Leitura_OS_porRecordID.run({
+				const newOS = await Leitura_OS_Por_RecordID.run({
 					recordId: appsmith.store.selectedOS.record_id
 				});
 				storeValue("selectedOS", newOS.fields)
@@ -131,7 +131,7 @@ export default {
 		else {
 			try {
 				await Alterar_OS.run()
-				const newOS = await Leitura_OS_porRecordID.run({
+				const newOS = await Leitura_OS_Por_RecordID.run({
 						recordId: appsmith.store.selectedOS.record_id
 					});
 				storeValue("selectedOS", newOS.fields)

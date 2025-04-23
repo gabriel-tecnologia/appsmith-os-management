@@ -44,7 +44,6 @@ export default {
 		catch(error) {
 			showAlert("Falha ao fazer upload de arquivos", "error")
 		}
-		
 	},
 	
 	async compressImage(file, scale, quality, fileName) {
@@ -109,17 +108,22 @@ export default {
 		else{
 			arquivos_para_envio = fotos.map(foto => ({"url": foto.url}));
 		}
+		
 		console.log(arquivos_para_envio)
-		for (const arquivo of arquivos){
-			storeValue('arquivo_para_nuvem', arquivo);
-			const resposta = await Enviar_Arquivos_S3.run();
+		
+		for (const arquivo of arquivos) {
+			const resposta = await Enviar_Arquivos_S3.run({
+				filesData: arquivo
+			});
 			const url = resposta.signedUrl;
 			arquivos_para_envio.push({"url": url});
 			storeValue('arquivo_para_nuvem', null);
 		}
-		storeValue('photosUrl', arquivos_para_envio);
+		
 		try {
-			await Enviar_Fotos_Airtable.run();
+			await Enviar_Fotos_Airtable.run({
+				photosUrl: arquivos_para_envio
+			});
 			showAlert("Foto(s) enviada(s) com sucesso", "success")
 		}
 		catch (error) {
@@ -129,7 +133,7 @@ export default {
 		storeValue('arquivo_para_nuvem', null);
 		storeValue('arquivos_para_envio_airtable', null);
 		
-		const newOS = await Leitura_OS_porRecordID.run({
+		const newOS = await Leitura_OS_Por_RecordID.run({
 			recordId: appsmith.store.selectedOS.record_id
 		});
 		storeValue('selectedOS', newOS.fields)
@@ -142,15 +146,18 @@ export default {
 		let arquivos_para_envio = [];
 		for (const arquivo of arquivos){
 			storeValue('arquivo_para_nuvem', arquivo);
-			const resposta = await Enviar_Arquivos_S3.run();
+			const resposta = await Enviar_Arquivos_S3.run({
+				filesData: arquivo
+			});
 			const url = resposta.signedUrl;
 			arquivos_para_envio.push({"url": url});
 			storeValue('arquivo_para_nuvem', null);
 		}
-		storeValue('termUrl', arquivos_para_envio);
 		
 		try {
-			await Enviar_termo.run();
+			await Enviar_Termo.run({
+				term: arquivos_para_envio
+			});
 			showAlert("Termo enviado com sucesso", "success")
 		}
 		catch (error) {
@@ -160,7 +167,7 @@ export default {
 		storeValue('arquivo_para_nuvem', null);
 		storeValue('arquivos_para_envio_airtable', null);
 		
-		const newOS = await Leitura_OS_porRecordID.run({
+		const newOS = await Leitura_OS_Por_RecordID.run({
 			recordId: appsmith.store.selectedOS.record_id
 		});
 		storeValue('selectedOS', newOS.fields)
@@ -169,12 +176,12 @@ export default {
 		let fotos = appsmith.store.selectedOS["Foto do Serviço"]
 		
 		fotos = fotos.filter(image => image.url != galery.model.image.url)
-		
-		storeValue("photosUrl", fotos)
-		
+				
 		try {
-			await Enviar_Fotos_Airtable.run()
-			const newOS = await Leitura_OS_porRecordID.run({
+			await Enviar_Fotos_Airtable.run({
+				photosUrl: fotos
+			});
+			const newOS = await Leitura_OS_Por_RecordID.run({
 				recordId: appsmith.store.selectedOS.record_id
 			});
 			storeValue('selectedOS', newOS.fields)
@@ -192,11 +199,11 @@ export default {
 		
 		arquivos = arquivos.filter(arquivo => arquivo.url != video.url)
 		
-		storeValue("photosUrl", arquivos)
-		
 		try {
-			await Enviar_Fotos_Airtable.run()
-			const newOS = await Leitura_OS_porRecordID.run({
+			await Enviar_Fotos_Airtable.run({
+				photosUrl: arquivos
+			});
+			const newOS = await Leitura_OS_Por_RecordID.run({
 				recordId: appsmith.store.selectedOS.record_id
 			});
 			storeValue('selectedOS', newOS.fields)

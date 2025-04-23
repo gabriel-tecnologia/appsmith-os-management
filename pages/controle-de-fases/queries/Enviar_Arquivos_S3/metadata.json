@@ -8,7 +8,7 @@
       "encodeParamsToggle": true,
       "formData": {
         "body": {
-          "data": "{\n\t\"data\": \"{{appsmith.store.arquivo_para_nuvem.data}}\"\n}"
+          "data": "{\n\t\"data\": \"{{this.params.filesData}}\"\n}"
         },
         "bucket": {
           "data": "os-pictures"

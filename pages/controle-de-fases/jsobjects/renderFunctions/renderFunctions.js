@@ -424,7 +424,7 @@ export default {
 	
 		async renderOSMotherInfo() {
 			if (appsmith.store.selectedOS["OS (Mãe)"] != undefined) {
-				let relativeOS = await Leitura_OS_porRecordID.run({
+				let relativeOS = await Leitura_OS_Por_RecordID.run({
 					recordId: appsmith.store.selectedOS["OS (Mãe)"][0]
 				});
 			
@@ -439,7 +439,7 @@ export default {
 	
 		async renderOSChildInfo() {
 				if (appsmith.store.selectedOS["OS (Filha)"] != undefined) {
-				let relativeOS = await Leitura_OS_porRecordID.run({
+				let relativeOS = await Leitura_OS_Por_RecordID.run({
 					recordId: appsmith.store.selectedOS["OS (Filha)"][0]
 				});
 			

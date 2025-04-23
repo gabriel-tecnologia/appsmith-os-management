@@ -1,6 +1,6 @@
 {
   "gitSyncId": "67d1a3872fb4f2700e437ea5_76208de7-68fa-4a3b-bb1b-5797fda29aa9",
-  "id": "controle-de-fases_Alterar_CampoEspecifico",
+  "id": "controle-de-fases_Alterar_Campo_Especifico",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -46,7 +46,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "Alterar_CampoEspecifico",
+    "name": "Alterar_Campo_Especifico",
     "pageId": "controle-de-fases",
     "userSetOnLoad": false
   }

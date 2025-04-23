@@ -1,5 +1,5 @@
 {
 	"fields": {
-		"Foto do Serviço": {{appsmith.store.photosUrl}}
+		"Foto do Serviço": {{this.params.photosUrl}}
 	}
 }

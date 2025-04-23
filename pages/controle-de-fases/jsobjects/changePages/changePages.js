@@ -1,6 +1,6 @@
 export default {
 	async renderOSMotherInfo() {
-		let motherOS = await Leitura_OS_porRecordID.run({
+		let motherOS = await Leitura_OS_Por_RecordID.run({
 			recordId: appsmith.store.selectedOS["OS (Mãe)"][0]
 		});
 
@@ -13,7 +13,7 @@ export default {
 			
 	},
 	async renderOSChildInfo() {
-		let childOS = await Leitura_OS_porRecordID.run({
+		let childOS = await Leitura_OS_Por_RecordID.run({
 			recordId: appsmith.store.selectedOS["OS (Filha)"][0]
 		});
 

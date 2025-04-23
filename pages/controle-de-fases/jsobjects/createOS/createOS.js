@@ -33,11 +33,11 @@ export default {
 		// Cria nova OS
 		const newOS = await Criar_OS.run()
 		storeValue("newOS", newOS.fields)
-		await Alterar_CampoEspecifico.run({Field: {"OS (Filha)": [appsmith.store.newOS.record_id]}})
+		await Alterar_Campo_Especifico.run({Field: {"OS (Filha)": [appsmith.store.newOS.record_id]}})
 		showAlert('Campo OS(Filha) preenchida na coluna OS (Mãe)', 'success')
 		
 		// Atualiza OS atual e renderiza os botões de OS mãe/filha
-		const newData = await Leitura_OS_porRecordID.run({
+		const newData = await Leitura_OS_Por_RecordID.run({
 			recordId: appsmith.store.selectedOS.record_id
 		});
 		storeValue("selectedOS", newData.fields)
