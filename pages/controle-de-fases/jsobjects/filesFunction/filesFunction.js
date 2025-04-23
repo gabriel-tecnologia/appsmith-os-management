@@ -38,6 +38,8 @@ export default {
 		}
 		catch (error) {
 			showAlert("Erro ao comprimir imagens", "error")
+			await this.envia_arquivos_pra_nuvem(files)
+			return
 		}
 
 		try {

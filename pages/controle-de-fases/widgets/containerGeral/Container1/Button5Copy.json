@@ -13,15 +13,9 @@
     },
     {
       "key": "buttonColor"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
-    {
-      "key": "isVisible"
-    },
     {
       "key": "animateLoading"
     }
@@ -34,7 +28,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": "{{stockManagment.stock == \"\"}}",
+  "isVisible": true,
   "key": "q16wn0byh3",
   "leftColumn": 1,
   "minWidth": 120,
