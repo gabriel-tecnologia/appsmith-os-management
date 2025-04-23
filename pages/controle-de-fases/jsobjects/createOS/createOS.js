@@ -11,7 +11,6 @@ export default {
 		}
 		
 		// Gambiarra para manter as Fotos de Serviço na nova OS
-		
 		storeValue('servicePhotosUrl', "")
 		
 		if (appsmith.store.selectedOS["Foto do Serviço"] != undefined) {
@@ -21,7 +20,6 @@ export default {
 		}
 		
 		// Gambiarra para manter o Termo de Finalização na nova OS
-		
 		storeValue('termPdf', "")
 		
 		if (appsmith.store.selectedOS["Termo de Finalização"] != undefined) {

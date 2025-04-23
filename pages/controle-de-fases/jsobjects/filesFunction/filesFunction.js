@@ -102,7 +102,7 @@ export default {
 		return `data:${blob.type};base64,${base64String}`;
 	},
 	
-	async envia_arquivos_pra_nuvem(arquivos){
+	async envia_arquivos_pra_nuvem(arquivos) {
 		storeValue("tipo_arquivo", "instruction")
 		let arquivos_para_envio;
 		let fotos = appsmith.store.selectedOS["Foto do Serviço"]
@@ -131,7 +131,7 @@ export default {
 			});
 			showAlert("Foto(s) enviada(s) com sucesso", "success")
 		}
-		catch (error) {
+		catch(error) {
 			showAlert("Falha ao enviar foto(s)", "error")
 		}
 
@@ -146,9 +146,10 @@ export default {
 		resetWidget("listaVideos", true)
 		},
 	
-	async enviarTermoS3(arquivos){
+	async enviarTermoS3(arquivos) {
 		storeValue("tipo_arquivo", "term")
 		let arquivos_para_envio = [];
+		
 		for (const arquivo of arquivos){
 			storeValue('arquivo_para_nuvem', arquivo);
 			const resposta = await Enviar_Arquivos_S3.run({
@@ -177,7 +178,8 @@ export default {
 		});
 		storeValue('selectedOS', newOS.fields)
 	},
-	async removerFotoAirtable(){
+	
+	async removerFotoAirtable() {
 		let fotos = appsmith.store.selectedOS["Foto do Serviço"]
 		
 		fotos = fotos.filter(image => image.url != galery.model.image.url)
@@ -199,7 +201,7 @@ export default {
 		}
 	},
 	
-	async removerVideoAirtable(video){
+	async removerVideoAirtable(video) {
 		let arquivos = appsmith.store.selectedOS["Foto do Serviço"]
 		
 		arquivos = arquivos.filter(arquivo => arquivo.url != video.url)
