@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "bottomRow": 43,
+  "bottomRow": 41,
   "bottomRowBeforeCollapse": 43,
   "docUrl": "{{appsmith.store.selectedOS[\"Termo de Finalização\"][0].url}}",
   "dynamicBindingPathList": [
@@ -36,7 +36,7 @@
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 64,
-  "topRow": 33,
+  "topRow": 31,
   "topRowBeforeCollapse": 33,
   "type": "DOCUMENT_VIEWER_WIDGET",
   "version": 1,

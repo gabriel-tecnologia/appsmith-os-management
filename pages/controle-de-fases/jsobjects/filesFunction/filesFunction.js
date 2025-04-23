@@ -1,6 +1,6 @@
 export default {
 	
-	async compressAndUpload(files) {		
+	async compressAndUpload(files) {
 		
 		const scale = 0.5;
 		const quality = 0.9;
