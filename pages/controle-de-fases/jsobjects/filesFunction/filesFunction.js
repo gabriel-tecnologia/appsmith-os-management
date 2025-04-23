@@ -37,7 +37,14 @@ export default {
 			}			
 		}
 		
-		await this.envia_arquivos_pra_nuvem(compressedFiles);
+		try {
+			await this.envia_arquivos_pra_nuvem(compressedFiles);
+			showAlert("Upload de arquivos finalizado com sucesso", "success")
+		}
+		catch(error) {
+			showAlert("Falha ao fazer upload de arquivos", "error")
+		}
+		
 	},
 	
 	async compressImage(file, scale, quality, fileName) {

@@ -110,26 +110,28 @@ export default {
 		storeValue("allRecords", allRecords);
 		return allRecords
 		
-
+			// Abaixo, há uma forma alternativa de chamar essa query para possivelmente puxar mais de 100 registros. Não implementamos por receio de sobrecarregar o Airtable.
+		
 			// let allRecords = [];
 			// let offset = "";
-// 
+ 
 			// do {
 			// let response = await Leitura_OS.run({
 				// filterByFormula: formula,
 				// maxRecords: numeroRegistros.value == "Ilimitado" ? 10000 : Number(numeroRegistros.value),
 				// offset: offset,
 			// });
-// 
+ 
 			// allRecords = allRecords.concat(response.records);
-// 
+ 
 			// offset = response.offset || null;
-// 
+ 
 			// } while (offset);
-// 
+ 
 			// storeValue("allRecords", allRecords);
-// 
+ 
 			// return allRecords
+		
 		},
 
 	async patchPartner() {
