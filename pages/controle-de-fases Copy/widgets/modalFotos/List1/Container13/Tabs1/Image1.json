@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 63,
+  "bottomRow": 54,
   "boxShadow": "none",
   "defaultImage": "",
   "dynamicBindingPathList": [
@@ -12,6 +12,7 @@
       "key": "borderRadius"
     }
   ],
+  "dynamicHeight": "FIXED",
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -34,10 +35,10 @@
   "needsErrorInfo": false,
   "objectFit": "contain",
   "onClick": "{{navigateTo(currentItem.url, {}, 'NEW_WINDOW');}}",
-  "parentId": "a3jidj4hxg",
+  "parentId": "wpx6571wm0",
   "renderMode": "CANVAS",
   "rightColumn": 63,
-  "topRow": 0,
+  "topRow": 1,
   "type": "IMAGE_WIDGET",
   "version": 1,
   "widgetId": "4y9wvnyjv4",

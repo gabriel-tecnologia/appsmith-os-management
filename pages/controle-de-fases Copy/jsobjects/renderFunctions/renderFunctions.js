@@ -183,6 +183,7 @@ export default {
 		stock["Placa Bolacha"] ? text = text.concat(stock["Placa Bolacha"]+" x Placa Bolacha Nova\n") : ""
 		return text
 	},
+	
 	renderPeriod() {
 		switch (appsmith.store.selectedOS["Tipo de Ordem de Serviço"]){
 			case "Manutenção":

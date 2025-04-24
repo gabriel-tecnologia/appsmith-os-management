@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "67d1a3872fb4f2700e437ea5_f3189829-d7a9-433f-9fd4-83ccd7c0fafd",
-  "id": "controle-de-fases Copy_filesFunction.renderImagens",
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_5f0fa58c-b4f0-4ad3-90c6-f2a90fe32151",
+  "id": "controle-de-fases Copy_filesFunction.renderFile",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -8,7 +8,7 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "list"
+          "name": "fileName"
         }
       ],
       "paginationType": "NONE",
@@ -27,8 +27,8 @@
       }
     ],
     "executeOnLoad": false,
-    "fullyQualifiedName": "filesFunction.renderImagens",
-    "name": "renderImagens",
+    "fullyQualifiedName": "filesFunction.renderFile",
+    "name": "renderFile",
     "pageId": "controle-de-fases Copy",
     "userSetOnLoad": false
   }

@@ -57,7 +57,7 @@
           }
         },
         "path": {
-          "data": "{{appsmith.store.selectedOS[\"installationIdBifrost (from id_assinatura)\"][0]}}/{{appsmith.store.selectedOS.triggeredRow.id_os}}/{{appsmith.store.tipo_arquivo}}/{{appsmith.store.arquivo_para_nuvem.name}}"
+          "data": "{{appsmith.store.selectedOS[\"installationIdBifrost (from id_assinatura)\"][0]}}/{{appsmith.store.selectedOS.id_os}}/{{appsmith.store.tipo_arquivo}}/{{appsmith.store.arquivo_para_nuvem.name}}"
         },
         "read": {
           "dataType": {

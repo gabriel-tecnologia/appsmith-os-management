@@ -1,6 +1,6 @@
 {
   "gitSyncId": "67d1a3872fb4f2700e437ea5_55ce9ccb-47e1-42a8-9404-9321e3c451f6",
-  "id": "controle-de-fases Copy_getOSPictures",
+  "id": "controle-de-fases Copy_Leitura_Fotos_Servico_S3",
   "pluginId": "amazons3-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -84,7 +84,7 @@
       }
     ],
     "executeOnLoad": true,
-    "name": "getOSPictures",
+    "name": "Leitura_Fotos_Servico_S3",
     "pageId": "controle-de-fases Copy",
     "userSetOnLoad": true
   }

@@ -103,7 +103,7 @@ export default {
 	},
 	
 	async envia_arquivos_pra_nuvem(arquivos) {
-		storeValue("tipo_arquivo", "instruction")
+		storeValue("tipo_arquivo", "Foto do Servico")
 		let arquivos_para_envio;
 		let fotos = appsmith.store.selectedOS["Foto do Serviço"]
 		console.log(fotos)
@@ -225,7 +225,16 @@ export default {
 		return list.filter(file => file.type == "video/mp4")
 	},
 	
-	renderImagens(list) {
+	renderImages(list) {
 		return list.filter(file => file.type == "image/jpeg" || file.type == "image/png")
+	},
+	
+	renderFile(fileName) {
+		if (fileName.includes(".jpg") || (fileName.includes(".png") || (fileName.includes(".jpeg")))) {
+			return 'imagem'
+		}
+		else {
+			return 'video'
+		}
 	}
 }

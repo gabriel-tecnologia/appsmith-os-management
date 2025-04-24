@@ -1,0 +1,166 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": 1,
+  "bottomRow": 62,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "children": [
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 610,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": true,
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isDisabled": false,
+      "isLoading": false,
+      "isVisible": true,
+      "key": "hmhpuxt8r1",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 150,
+      "minWidth": 450,
+      "mobileBottomRow": 150,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 419.8359375,
+      "mobileTopRow": 0,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "qramymbnt4",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 419.8359375,
+      "shouldScrollContents": false,
+      "tabId": "tab1",
+      "tabName": "imagem",
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "wpx6571wm0",
+      "widgetName": "Canvas48"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 610,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": true,
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isDisabled": false,
+      "isLoading": false,
+      "isVisible": true,
+      "key": "hmhpuxt8r1",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 150,
+      "minWidth": 450,
+      "mobileBottomRow": 150,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 419.8359375,
+      "mobileTopRow": 0,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "qramymbnt4",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 419.8359375,
+      "shouldScrollContents": false,
+      "tabId": "tab2",
+      "tabName": "video",
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "wog2wryvie",
+      "widgetName": "Canvas49"
+    }
+  ],
+  "defaultTab": "{{filesFunction.renderFile(currentItem.fileName)}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultTab"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "stretch",
+  "isCanvas": true,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "6sfk2rxpu8",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 15,
+  "minWidth": 450,
+  "mobileBottomRow": 16,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 17.4931640625,
+  "parentId": "a3jidj4hxg",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "shouldScrollContents": true,
+  "shouldShowTabs": false,
+  "tabsObj": {
+    "tab1": {
+      "id": "tab1",
+      "index": 0,
+      "isVisible": true,
+      "label": "imagem",
+      "positioning": "vertical",
+      "widgetId": "wpx6571wm0"
+    },
+    "tab2": {
+      "id": "tab2",
+      "index": 1,
+      "isVisible": true,
+      "label": "video",
+      "positioning": "vertical",
+      "widgetId": "wog2wryvie"
+    }
+  },
+  "topRow": 1,
+  "type": "TABS_WIDGET",
+  "version": 3,
+  "widgetId": "qramymbnt4",
+  "widgetName": "Tabs1"
+}

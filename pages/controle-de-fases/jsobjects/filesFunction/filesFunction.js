@@ -103,7 +103,7 @@ export default {
 	},
 	
 	async envia_arquivos_pra_nuvem(arquivos) {
-		storeValue("tipo_arquivo", "instruction")
+		storeValue("tipo_arquivo", "Foto do Servico")
 		let arquivos_para_envio;
 		let fotos = appsmith.store.selectedOS["Foto do Serviço"]
 		console.log(fotos)
