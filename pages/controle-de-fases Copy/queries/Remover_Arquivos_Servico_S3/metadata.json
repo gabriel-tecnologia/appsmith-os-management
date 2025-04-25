@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "67d1a3872fb4f2700e437ea5_4fdc190f-3f22-4faf-8d44-1dab492e3b6d",
-  "id": "controle-de-fases Copy_Enviar_Arquivos_S3",
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_dee33d54-7394-4b2a-a175-364e27da665c",
+  "id": "controle-de-fases Copy_Remover_Arquivos_Servico_S3",
   "pluginId": "amazons3-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -14,7 +14,7 @@
           "data": "os-pictures"
         },
         "command": {
-          "data": "UPLOAD_MULTIPLE_FILES_FROM_BODY"
+          "data": "DELETE_FILE"
         },
         "create": {
           "dataType": {
@@ -57,7 +57,7 @@
           }
         },
         "path": {
-          "data": "{{appsmith.store.selectedOS[\"installationIdBifrost (from id_assinatura)\"][0]}}/{{appsmith.store.selectedOS.id_os}}/{{appsmith.store.tipo_arquivo}}"
+          "data": "{{appsmith.store.selectedOS[\"installationIdBifrost (from id_assinatura)\"][0]}}/{{appsmith.store.selectedOS.id_os}}/{{appsmith.store.tipo_arquivo}}/{{this.params.deletedFile}}"
         },
         "read": {
           "dataType": {
@@ -87,7 +87,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "Enviar_Arquivos_S3",
+    "name": "Remover_Arquivos_Servico_S3",
     "pageId": "controle-de-fases Copy",
     "userSetOnLoad": false
   }

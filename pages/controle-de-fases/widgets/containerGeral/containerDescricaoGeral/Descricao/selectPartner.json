@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 53,
+  "bottomRow": 54,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store.selectedOS[\"Técnico Responsável\"]))(selectPartner.options, selectPartner.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -80,7 +80,7 @@
   "rightColumn": 63,
   "serverSideFiltering": false,
   "sourceData": "{{renderFunctions.renderAvailablePartners.data}}",
-  "topRow": 46,
+  "topRow": 47,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "3g0m94d6b0",

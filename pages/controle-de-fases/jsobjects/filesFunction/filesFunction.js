@@ -143,6 +143,8 @@ export default {
 		});
 		storeValue('selectedOS', newOS.fields)
 		
+		galery.model.data = newOS.fields["Foto do Serviço"]
+		
 		resetWidget("listaVideos", true)
 		},
 	

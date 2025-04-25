@@ -171,18 +171,32 @@ export default {
     let text = ""
 		
 		stock["Status da Remessa"] ? text = text.concat("Status: ", stock["Status da Remessa"], "\n\n") : ""
+		
 		stock["Saída de Material"] ? text = text.concat("Saída de Material: ", stock["Saída de Material"], "\n\n") : ""
+		
 		stock["Nota de Remessa / Retorno"] ? text = text.concat("Nota de Remessa / Retorno: ", stock["Nota de Remessa / Retorno"], "\n\n") : ""
+		
 		stock["Movimento Criado por"] ? text = text.concat("Movimento Criado por: ", stock["Movimento Criado por"], "\n\n") : ""
+		
 		stock.Camaleão ? text = text.concat(stock.Camaleão+" x Camaleão\n") : ""
+		
 		stock["Sistema Nervoso 2"] ? text = text.concat(stock["Sistema Nervoso 2"]+" x Sistema Nervoso 2\n") : ""
+		
+		stock["Kit Poste Canguru"] ? text = text.concat(stock["Kit Poste Canguru"] + " x Kit Poste Canguru\n") : ""
+		
 		stock["Kit Poste 2.0 (Piso)"] ? text = text.concat(stock["Kit Poste 2.0 (Piso)"] + " x Kit Poste 2.0 (Piso)\n") : ""
+		
 		stock["Kit Poste 2.0 (Parede)"] ? text = text.concat(stock["Kit Poste 2.0 (Parede)"]+" x Kit Poste 2.0 (Parede)\n") : ""
+		
 		stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"] ? text = text.concat(stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"]+" x Placa Gravata Gen1 (Verde)\n") : ""
+		
 		stock["Placa de Sinalização - Gravata 2- 0800 GAB-RIEL"] ? text = text.concat(stock["Placa de Sinalização - Gravata 2- 0800 GAB-RIEL"]+" x Placa Gravata Gen2 (Branca)\n") : ""
+		
 		stock["Placa Bolacha"] ? text = text.concat(stock["Placa Bolacha"]+" x Placa Bolacha Nova\n") : ""
+		
 		return text
 	},
+	
 	renderPeriod() {
 		switch (appsmith.store.selectedOS["Tipo de Ordem de Serviço"]){
 			case "Manutenção":
