@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 17,
+  "bottomRow": 21,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -41,7 +41,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 62,
   "shouldTruncate": false,
-  "text": "Campos da tabela atualizados! \nDeseja mudar a fase da OS?\n\n{{appsmith.store.selectedOS.Fase == \"Agendamento de Serviço\" ?\"Agendamento ➞ Fila de Serviço\" : \"\"}}\n{{appsmith.store.selectedOS.Fase == \"Controle de Qualidade\" ?\"Controle de Qualidade ➞ \": \"\"}} {{appsmith.store.selectedOS[\"Motivo do Ajuste\"] != undefined  && appsmith.store.selectedOS.Fase == \"Controle de Qualidade\" ? \"Ajuste\" : \"\" }}\n{{appsmith.store.selectedOS[\"Motivo de Improdutiva\"] != undefined  && appsmith.store.selectedOS.Fase == \"Controle de Qualidade\" ? \"Improdutiva\" : \"\" }}",
+  "text": "Campos da tabela atualizados! \nDeseja mudar a fase da OS?\n\n{{appsmith.store.selectedOS.Fase == \"Agendamento de Serviço\" ?\"Agendamento ➞ Fila de Serviço\" : \"\"}}\n{{appsmith.store.selectedOS.Fase == \"Controle de Qualidade\" ?\"Controle de Qualidade ➞ \": \"\"}} {{appsmith.store.selectedOS[\"Motivo do Ajuste\"] != undefined  && appsmith.store.selectedOS.Fase == \"Controle de Qualidade\" ? \"Ajuste\" : \"\" }}\n{{appsmith.store.selectedOS[\"Motivo de Improdutiva\"] != undefined  && appsmith.store.selectedOS.Fase == \"Controle de Qualidade\" ? \"Improdutiva\" : \"\" }}\n{{appsmith.store.selectedOS.Fase == \"Fila de Serviço\" ?\"Fila de Serviço ➞ Agendamento de Serviço\" : \"\"}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 6,

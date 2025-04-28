@@ -34,7 +34,8 @@ export default {
 						size: compressedFile.size
 					});
 				}			
-			}		
+			}
+			showAlert("Imagens comprimidas com sucesso", "success");
 		}
 		catch (error) {
 			showAlert("Erro ao comprimir imagens", "error")
@@ -61,8 +62,7 @@ export default {
 
 		try {
 			const compressedBlob = await imageCompression(file, options);
-			const validName = fileName || "compressed.image.jpg";
-			return this.blobToFile(compressedBlob, validName);
+			return this.blobToFile(compressedBlob, fileName);
 		} catch (error) {
 			console.error('Erro ao comprimir a imagem:', error);
 			throw error;
@@ -117,47 +117,48 @@ export default {
 		
 		console.log(arquivos_para_envio)
 		
-		// Cria lista de arquivos para enviar ao S3
-    const filesData = arquivos.map((arquivo) => ({
-        data: arquivo.data, // Base64 or Binary data
-        type: arquivo.type, // MIME type (e.g., "image/jpeg") - A query requer type.
-        name: arquivo.name, // File name - Para tentar garantir que não seja null
-    }));
-
-    console.log("Files prepared for upload:", filesData);
-
-    try {
-        // Envia a lista de arquivos para o S3
-        const resposta = await Enviar_Arquivos_S3.run({
-            filesData: filesData,
-        });
-			
-				console.log("Response from Enviar_Arquivos_S3:", resposta);
-
-        // Pega a URL de cada arquivo
-        resposta.forEach((res, index) => {
-            const url = res?.signedUrl; // 
-            arquivos_para_envio.push({ url: url });
-        });
-		}
-		catch(error) {
-			showAlert("Falha ao enviar arquivos para o S3", "error")
-		}
-				
-		// for (const arquivo of arquivos) {
-			// const resposta = await Enviar_Arquivos_S3.run({
-				// filesData: arquivo
-			// });
-			// const url = resposta.signedUrl;
-			// arquivos_para_envio.push({"url": url});
-			// storeValue('arquivo_para_nuvem', null);
+		// // Cria lista de arquivos para enviar ao S3
+    // const filesData = arquivos.map((arquivo) => ({
+        // data: arquivo.data, // Base64 
+        // type: arquivo.type, // MIME type (e.g., "image/jpeg") - A query requer type.
+        // name: arquivo.name, // File name - Para tentar garantir que não seja null
+    // }));
+// 
+    // console.log("Files prepared for upload:", filesData);
+// 
+    // try {
+        // // Envia a lista de arquivos para o S3
+        // const resposta = await Enviar_Arquivos_S3.run({
+            // filesData: filesData,
+        // });
+			// 
+				// console.log("Response from Enviar_Arquivos_S3:", resposta);
+// 
+        // // Pega a URL de cada arquivo
+        // resposta.forEach((res, index) => {
+            // const url = res.signedUrl; // 
+            // arquivos_para_envio.push({ "url": url });
+        // });
 		// }
+		// catch(error) {
+			// showAlert("Falha ao enviar arquivos para o S3", "error")
+		// }
+						// 
 		
+		for (const arquivo of arquivos) {
+			const resposta = await Enviar_Arquivo_S3.run({
+				fileName: arquivo.name,
+				filesData: arquivo
+			});
+			const url = resposta.signedUrl;
+			arquivos_para_envio.push({"url": url});			
+		}
+
 		try {
 			await Enviar_Fotos_Airtable.run({
 				photosUrl: arquivos_para_envio
 			});
-			showAlert("Foto(s) enviada(s) com sucesso", "success")
+			showAlert("Foto(s) enviada(s) ao Airtable com sucesso", "success")
 		}
 		catch(error) {
 			showAlert("Falha ao enviar foto(s)", "error")
@@ -233,19 +234,21 @@ export default {
 	async removerArquivoS3() {
 		let files = await Leitura_Fotos_Servico_S3.data;
 		
-		let file = files.find(file => file.url == galery.model.image.url)
+		let file = files.find(file => file.fileName == galery.model.image.fileName)
 		
 		if (!file) {
 			showAlert("Arquivo não encontrado para remoção", "error")
-			console.error("Arquivo não encontrado:", galery.model.image.url);
+			console.error("Arquivo não encontrado:", galery.model.image.fileName);
 			return;
 		}
 		console.log("Arquivo encontrado para remoção:", file);
 				
 		try {
 			await Remover_Arquivos_Servico_S3.run({
-				deletedFile: file
+				deletedFilePath: file
 			});
+			
+			showAlert(`Arquivo removido com sucesso '${galery.model.image.fileName}'`, "success")
 			
 			const newOS = await Leitura_OS_Por_RecordID.run({
 				recordId: appsmith.store.selectedOS.record_id
@@ -254,12 +257,12 @@ export default {
 			
 			galery.model.data = await Leitura_Fotos_Servico_S3.run();
 			
-			showAlert(`Arquivo removido com sucesso '${galery.model.image.filename}'`, "success")
 		}
 		catch(error) {
 			showAlert("Falha ao remover arquivo", "error")
 			console.log(error)
 		}
+		
 	},
 		
 	renderFile(fileName) {

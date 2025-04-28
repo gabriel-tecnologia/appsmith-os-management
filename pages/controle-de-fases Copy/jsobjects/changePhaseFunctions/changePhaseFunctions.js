@@ -54,7 +54,7 @@ export default {
 			await Alterar_Campo_Especifico.run({Field: {"Técnico Responsável": null}})
 		}
 		catch (error) {
-			showAlert("Falha ao limpar campos: Período e Data de Agendamento", "error")
+			showAlert("Falha ao limpar campos: Período, Data de Agendamento e Técnico", "error")
 		}
 			
 		try {

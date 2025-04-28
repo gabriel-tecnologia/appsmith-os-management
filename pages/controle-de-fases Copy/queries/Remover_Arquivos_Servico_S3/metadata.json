@@ -57,7 +57,7 @@
           }
         },
         "path": {
-          "data": "{{appsmith.store.selectedOS[\"installationIdBifrost (from id_assinatura)\"][0]}}/{{appsmith.store.selectedOS.id_os}}/{{appsmith.store.tipo_arquivo}}/{{this.params.deletedFile}}"
+          "data": "{{this.params.deletedFilePath}}"
         },
         "read": {
           "dataType": {
@@ -80,10 +80,10 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "formData.path.data"
+        "key": "formData.body.data"
       },
       {
-        "key": "formData.body.data"
+        "key": "formData.path.data"
       }
     ],
     "executeOnLoad": false,

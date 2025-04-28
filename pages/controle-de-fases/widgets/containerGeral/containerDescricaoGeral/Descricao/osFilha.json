@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 22,
+  "bottomRow": 21,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -52,7 +52,7 @@
   "text": "<b>OS (Filha)</b>",
   "textAlign": "CENTER",
   "textColor": "#231F20",
-  "topRow": 18,
+  "topRow": 17,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

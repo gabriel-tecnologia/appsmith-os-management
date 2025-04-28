@@ -68,10 +68,11 @@ export default {
 				return;
 			}
 		}
-	const newOS = await Leitura_OS_Por_RecordID.run({
-						recordId: appsmith.store.selectedOS.record_id
-					});
-	storeValue("selectedOS", newOS.fields)
+			
+		const newOS = await Leitura_OS_Por_RecordID.run({
+							recordId: appsmith.store.selectedOS.record_id
+						});
+		storeValue("selectedOS", newOS.fields)
 	},
 	
 	async changeOSFields () {	
@@ -126,6 +127,36 @@ export default {
 			catch(error) {
 				showAlert("Falha ao alterar informações", "error")
 			}					
+		}
+		
+		else if (appsmith.store.selectedOS.Fase == "Fila de Serviço") {
+			try {
+				await Alterar_OS.run()
+				const newOS = await Leitura_OS_Por_RecordID.run({
+					recordId: appsmith.store.selectedOS.record_id
+				});
+				storeValue("selectedOS", newOS.fields)
+				showAlert("Alterações feitas com sucesso", "success")
+
+				if (selectDate.formattedDate == "" && selectPeriod.selectedOptionLabel == "" && selectPartner.selectedOptionLabel == "") {
+					try {
+						storeValue("fase", "Agendamento de Serviço")
+						await Alterar_Campo_Especifico.run({Field: {"Fase": appsmith.store.fase}})
+						const newData = await Leitura_OS_Por_RecordID.run({
+								recordId: appsmith.store.selectedOS.record_id
+						});
+						storeValue("selectedOS", newData.fields)
+						showAlert("Fase da OS retornou para 'Agendamento de Serviço'", "success")
+					}
+					catch (error) {
+						showAlert("Falha em alterar a fase da OS para 'Agendamento de Serviço'", "error")
+						return;
+					}
+				}	
+			}
+			catch(error) {
+				showAlert("Falha ao alterar informações", "error")
+			}
 		}
 		
 		else {
