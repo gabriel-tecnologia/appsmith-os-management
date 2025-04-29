@@ -47,10 +47,10 @@ export default {
 				}
 			}
 
-			showAlert("Imagens comprimidas com sucesso", "success");
+			showAlert("Compressão de arquivos realizada com sucesso", "success");
 		} catch (error) {
-			console.error("Erro ao comprimir imagens:", error);
-			showAlert("Erro ao comprimir imagens", "error");
+			console.error("Erro ao comprimir arquivos:", error);
+			showAlert("Erro ao comprimir arquivos", "error");
 			await this.envia_arquivos_pra_nuvem(files); // Envia os arquivos originais, se falhar
 			return;
     }
@@ -151,24 +151,31 @@ export default {
 		
 		console.log(arquivos_para_envio)
 		
-		for (const arquivo of arquivos) {
-			const resposta = await Enviar_Arquivos_S3.run({
-				fileName: arquivo.name,
-				filesData: arquivo
-			});
-			const url = resposta.signedUrl;
-			arquivos_para_envio.push({"url": url});
-			storeValue('arquivo_para_nuvem', null);
+		try {
+			for (const arquivo of arquivos) {
+				const resposta = await Enviar_Arquivos_S3.run({
+					fileName: arquivo.name,
+					filesData: arquivo
+				});
+				const url = resposta.signedUrl;
+				arquivos_para_envio.push({"url": url});
+				storeValue('arquivo_para_nuvem', null);
+			}
+			showAlert("Arquivos enviados ao S3 com sucesso", "success")
 		}
+		catch(error) {
+			showAlert("Falha ao enviar arquivos para o S3", "error")
+		}
+		
 		
 		try {
 			await Enviar_Fotos_Airtable.run({
 				photosUrl: arquivos_para_envio
 			});
-			showAlert("Foto(s) enviada(s) com sucesso", "success")
+			showAlert("Arquivos enviados ao Airtable com sucesso", "success")
 		}
 		catch(error) {
-			showAlert("Falha ao enviar foto(s)", "error")
+			showAlert("Falha ao enviar arquivos para o Airtable", "error")
 		}
 
 		storeValue('arquivo_para_nuvem', null);
@@ -182,7 +189,7 @@ export default {
 		galery.model.data = newOS.fields["Foto do Serviço"]
 		
 		resetWidget("listaVideos", true)
-		},
+	},
 	
 	async enviarTermoS3(arquivos) {
 		storeValue("tipo_arquivo", "term")
