@@ -1,31 +1,39 @@
 export default {
 	
 	async compressAndUpload(files) {
-		
 		const scale = 0.5;
-		const quality = 0.9;
-		const compressedFiles = [];
-		
-		try {
-			for (const file of files) {
-				// Se for vídeo, dá bypass na compressão
-				if (file.type === "video/mp4") {
-					compressedFiles.push(file)
-				}
-				else {
-					// Logs para visibilidade
-					console.log("Arquivo recebido do FilePicker:", file);
+    const quality = 0.9;
+    const compressedFiles = [];
+    
+    try {
+			if (!Array.isArray(files)) {
+				throw new Error("O parâmetro 'files' não é um array válido");
+			}
 
+			for (const file of files) {
+				console.log("Iniciando processamento do arquivo:", file.name);
+
+				// Se for vídeo, adiciona diretamente à lista
+				if (file.type === "video/mp4") {
+					compressedFiles.push(file);
+					console.log("Arquivo de vídeo bypassado:", file.name);
+					continue;
+				}
+
+				try {
 					// Convertendo de base64 para Blob
 					const fileBlob = await this.base64ToBlob(file.data);
+					console.log("Blob criado para o arquivo:", file.name);
 
-					// Comprimindo cada imagem usando a lib
+					// Comprimindo a imagem
 					const compressedFile = await this.compressImage(fileBlob, scale, quality, file.name);
+					console.log("Imagem comprimida:", file.name);
 
-					// Reconverte de Blob para Base64
+					// Convertendo de Blob para Base64
 					const compressedBase64 = await this.blobToBase64(compressedFile);
+					console.log("Imagem convertida para Base64:", file.name);
 
-					// Pusha para a lista no formato base64
+					// Adicionando à lista final
 					compressedFiles.push({
 						data: compressedBase64,
 						id: file.id,
@@ -33,22 +41,28 @@ export default {
 						type: file.type,
 						size: compressedFile.size
 					});
-				}			
-			}		
-		}
-		catch (error) {
-			showAlert("Erro ao comprimir imagens", "error")
-			await this.envia_arquivos_pra_nuvem(files)
-			return
-		}
+				} catch (error) {
+					console.error("Erro ao processar o arquivo:", file.name, error);
+					throw error;
+				}
+			}
 
-		try {
-			await this.envia_arquivos_pra_nuvem(compressedFiles);
-			showAlert("Upload de arquivos finalizado com sucesso", "success")
-		}
-		catch(error) {
-			showAlert("Falha ao fazer upload de arquivos", "error")
-		}
+			showAlert("Imagens comprimidas com sucesso", "success");
+		} catch (error) {
+			console.error("Erro ao comprimir imagens:", error);
+			showAlert("Erro ao comprimir imagens", "error");
+			await this.envia_arquivos_pra_nuvem(files); // Envia os arquivos originais, se falhar
+			return;
+    }
+
+    try {
+        console.log("Iniciando upload de arquivos comprimidos...");
+        await this.envia_arquivos_pra_nuvem(compressedFiles);
+        showAlert("Upload de arquivos finalizado com sucesso", "success");
+    } catch (error) {
+        console.error("Erro ao fazer upload de arquivos:", error);
+        showAlert("Falha ao fazer upload de arquivos", "error");
+    }
 	},
 	
 	async compressImage(file, scale, quality, fileName) {
@@ -92,14 +106,35 @@ export default {
 	async blobToBase64(input) {
 		const blob = input.blob || input;
 
-		if (typeof blob.arrayBuffer !== "function") {
-			console.error("Objeto passado não é um Blob válido:", blob);
-			throw new Error("blob.arrayBuffer is not a function");
-		}
+    // Valida se o objeto é um Blob válido
+    if (!blob || typeof blob.arrayBuffer !== "function") {
+        console.error("Objeto passado não é um Blob válido:", blob);
+        throw new Error("Objeto não é um Blob válido");
+    }
 
-		const arrayBuffer = await blob.arrayBuffer();
-		const base64String = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
-		return `data:${blob.type};base64,${base64String}`;
+    console.log("Iniciando conversão de Blob para Base64, tamanho:", blob.size);
+
+    try {
+        // Converte o Blob em ArrayBuffer
+        const arrayBuffer = await blob.arrayBuffer();
+        const uint8Array = new Uint8Array(arrayBuffer);
+
+        // Processa o ArrayBuffer em pedaços menores
+        const chunkSize = 1024 * 1024; // 1 MB
+        let binaryString = "";
+
+        for (let i = 0; i < uint8Array.length; i += chunkSize) {
+            const chunk = uint8Array.slice(i, i + chunkSize);
+            binaryString += Array.from(chunk, byte => String.fromCharCode(byte)).join("");
+        }
+
+        // Converte a string binária para Base64
+        const base64String = btoa(binaryString);
+        return `data:${blob.type};base64,${base64String}`;
+    } catch (error) {
+        console.error("Erro ao converter Blob para Base64:", error);
+        throw new Error("Erro durante a conversão de Blob para Base64");
+    }
 	},
 	
 	async envia_arquivos_pra_nuvem(arquivos) {
@@ -118,6 +153,7 @@ export default {
 		
 		for (const arquivo of arquivos) {
 			const resposta = await Enviar_Arquivos_S3.run({
+				fileName: arquivo.name,
 				filesData: arquivo
 			});
 			const url = resposta.signedUrl;

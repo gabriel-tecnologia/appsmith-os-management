@@ -1,55 +1,68 @@
 export default {
 	
 	async compressAndUpload(files) {
-		
-		const scale = 0.5;
-		const quality = 0.9;
-		const compressedFiles = [];
-		
-		try {
-			for (const file of files) {
-				// Se for vídeo, dá bypass na compressão
-				if (file.type === "video/mp4") {
-					compressedFiles.push(file)
-				}
-				else {
-					// Logs para visibilidade
-					console.log("Arquivo recebido do FilePicker:", file);
+    const scale = 0.5;
+    const quality = 0.9;
+    const compressedFiles = [];
+    
+    try {
+        if (!Array.isArray(files)) {
+            throw new Error("O parâmetro 'files' não é um array válido");
+        }
+        
+        for (const file of files) {
+            console.log("Iniciando processamento do arquivo:", file.name);
+            
+            // Se for vídeo, adiciona diretamente à lista
+            if (file.type === "video/mp4") {
+                compressedFiles.push(file);
+                console.log("Arquivo de vídeo bypassado:", file.name);
+                continue;
+            }
 
-					// Convertendo de base64 para Blob
-					const fileBlob = await this.base64ToBlob(file.data);
+            try {
+                // Convertendo de base64 para Blob
+                const fileBlob = await this.base64ToBlob(file.data);
+                console.log("Blob criado para o arquivo:", file.name);
 
-					// Comprimindo cada imagem usando a lib
-					const compressedFile = await this.compressImage(fileBlob, scale, quality, file.name);
+                // Comprimindo a imagem
+                const compressedFile = await this.compressImage(fileBlob, scale, quality, file.name);
+                console.log("Imagem comprimida:", file.name);
 
-					// Reconverte de Blob para Base64
-					const compressedBase64 = await this.blobToBase64(compressedFile);
+                // Convertendo de Blob para Base64
+                const compressedBase64 = await this.blobToBase64(compressedFile);
+                console.log("Imagem convertida para Base64:", file.name);
 
-					// Pusha para a lista no formato base64
-					compressedFiles.push({
-						data: compressedBase64,
-						id: file.id,
-						name: file.name,
-						type: file.type,
-						size: compressedFile.size
-					});
-				}			
-			}
-			showAlert("Imagens comprimidas com sucesso", "success");
-		}
-		catch (error) {
-			showAlert("Erro ao comprimir imagens", "error")
-			await this.envia_arquivos_pra_nuvem(files)
-			return
-		}
+                // Adicionando à lista final
+                compressedFiles.push({
+                    data: compressedBase64,
+                    id: file.id,
+                    name: file.name,
+                    type: file.type,
+                    size: compressedFile.size
+                });
+            } catch (error) {
+                console.error("Erro ao processar o arquivo:", file.name, error);
+                throw error;
+            }
+        }
 
-		try {
-			await this.envia_arquivos_pra_nuvem(compressedFiles);
-			showAlert("Upload de arquivos finalizado com sucesso", "success")
-		}
-		catch(error) {
-			showAlert("Falha ao fazer upload de arquivos", "error")
-		}
+        showAlert("Imagens comprimidas com sucesso", "success");
+    } catch (error) {
+        console.error("Erro ao comprimir imagens:", error);
+        showAlert("Erro ao comprimir imagens", "error");
+        await this.envia_arquivos_pra_nuvem(files); // Envia os arquivos originais, se falhar
+        return;
+    }
+
+    try {
+        console.log("Iniciando upload de arquivos comprimidos...");
+        await this.envia_arquivos_pra_nuvem(compressedFiles);
+        showAlert("Upload de arquivos finalizado com sucesso", "success");
+    } catch (error) {
+        console.error("Erro ao fazer upload de arquivos:", error);
+        showAlert("Falha ao fazer upload de arquivos", "error");
+    }
 	},
 	
 	async compressImage(file, scale, quality, fileName) {
@@ -91,16 +104,37 @@ export default {
 	},
 	
 	async blobToBase64(input) {
-		const blob = input.blob || input;
+    const blob = input.blob || input;
 
-		if (typeof blob.arrayBuffer !== "function") {
-			console.error("Objeto passado não é um Blob válido:", blob);
-			throw new Error("blob.arrayBuffer is not a function");
-		}
+    // Valida se o objeto é um Blob válido
+    if (!blob || typeof blob.arrayBuffer !== "function") {
+        console.error("Objeto passado não é um Blob válido:", blob);
+        throw new Error("Objeto não é um Blob válido");
+    }
 
-		const arrayBuffer = await blob.arrayBuffer();
-		const base64String = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
-		return `data:${blob.type};base64,${base64String}`;
+    console.log("Iniciando conversão de Blob para Base64, tamanho:", blob.size);
+
+    try {
+        // Converte o Blob em ArrayBuffer
+        const arrayBuffer = await blob.arrayBuffer();
+        const uint8Array = new Uint8Array(arrayBuffer);
+
+        // Processa o ArrayBuffer em pedaços menores
+        const chunkSize = 1024 * 1024; // 1 MB
+        let binaryString = "";
+
+        for (let i = 0; i < uint8Array.length; i += chunkSize) {
+            const chunk = uint8Array.slice(i, i + chunkSize);
+            binaryString += Array.from(chunk, byte => String.fromCharCode(byte)).join("");
+        }
+
+        // Converte a string binária para Base64
+        const base64String = btoa(binaryString);
+        return `data:${blob.type};base64,${base64String}`;
+    } catch (error) {
+        console.error("Erro ao converter Blob para Base64:", error);
+        throw new Error("Erro durante a conversão de Blob para Base64");
+    }
 	},
 	
 	async envia_arquivos_pra_nuvem(arquivos) {
@@ -116,34 +150,6 @@ export default {
 		}
 		
 		console.log(arquivos_para_envio)
-		
-		// // Cria lista de arquivos para enviar ao S3
-    // const filesData = arquivos.map((arquivo) => ({
-        // data: arquivo.data, // Base64 
-        // type: arquivo.type, // MIME type (e.g., "image/jpeg") - A query requer type.
-        // name: arquivo.name, // File name - Para tentar garantir que não seja null
-    // }));
-// 
-    // console.log("Files prepared for upload:", filesData);
-// 
-    // try {
-        // // Envia a lista de arquivos para o S3
-        // const resposta = await Enviar_Arquivos_S3.run({
-            // filesData: filesData,
-        // });
-			// 
-				// console.log("Response from Enviar_Arquivos_S3:", resposta);
-// 
-        // // Pega a URL de cada arquivo
-        // resposta.forEach((res, index) => {
-            // const url = res.signedUrl; // 
-            // arquivos_para_envio.push({ "url": url });
-        // });
-		// }
-		// catch(error) {
-			// showAlert("Falha ao enviar arquivos para o S3", "error")
-		// }
-						// 
 		
 		for (const arquivo of arquivos) {
 			const resposta = await Enviar_Arquivo_S3.run({
@@ -182,7 +188,7 @@ export default {
 		
 		for (const arquivo of arquivos){
 			storeValue('arquivo_para_nuvem', arquivo);
-			const resposta = await Enviar_Arquivos_S3.run({
+			const resposta = await Enviar_Arquivo_S3.run({
 				filesData: arquivo
 			});
 			const url = resposta.signedUrl;
@@ -242,10 +248,21 @@ export default {
 			return;
 		}
 		console.log("Arquivo encontrado para remoção:", file);
+		
+		// Valida o deletedFilePath
+		const deletedFilePath = file.fileName;
+		if (!deletedFilePath) {
+			console.error("Caminho do arquivo inválido:", deletedFilePath);
+			showAlert("Caminho do arquivo inválido para remoção", "error");
+			return;
+		}
+		else {
+			console.log("Caminho do arquivo a ser deletado:", deletedFilePath)
+		}
 				
 		try {
 			await Remover_Arquivos_Servico_S3.run({
-				deletedFilePath: file
+				deletedFilePath
 			});
 			
 			showAlert(`Arquivo removido com sucesso '${galery.model.image.fileName}'`, "success")
@@ -255,8 +272,9 @@ export default {
 			});
 			storeValue('selectedOS', newOS.fields)
 			
-			galery.model.data = await Leitura_Fotos_Servico_S3.run();
-			
+			const updatedGalleryData = await Leitura_Fotos_Servico_S3.run();
+       galery.model.data = updatedGalleryData;
+
 		}
 		catch(error) {
 			showAlert("Falha ao remover arquivo", "error")
