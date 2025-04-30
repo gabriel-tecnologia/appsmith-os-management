@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "0.375rem",
   "borderWidth": "1",
-  "bottomRow": 437,
+  "bottomRow": 472,
   "boxShadow": "NONE",
   "children": [
     {
@@ -68,8 +68,8 @@
     "selectionBGCSSVar": "--on-canvas-ui-widget-selection",
     "selectionColorCSSVar": "--on-canvas-ui-widget-focus"
   },
-  "originalBottomRow": 436,
-  "originalTopRow": 408,
+  "originalBottomRow": 472,
+  "originalTopRow": 444,
   "parentColumnSpace": 3.65625,
   "parentId": "vcxpa7yivg",
   "parentRowSpace": 10,
@@ -87,7 +87,7 @@
     "Layout"
   ],
   "thumbnailSVG": "/static/media/thumbnail.6cb355b93146b5347bbb048a568ed446.svg",
-  "topRow": 409,
+  "topRow": 444,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "emyno44kqp",
