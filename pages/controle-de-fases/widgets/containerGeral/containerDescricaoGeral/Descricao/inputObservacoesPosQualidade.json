@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 136,
+  "bottomRow": 127,
   "boxShadow": "none",
   "defaultText": "{{appsmith.store.selectedOS[\"Observações Pós-Qualidade\"]??\"\"}}",
   "dynamicBindingPathList": [
@@ -68,7 +68,7 @@
   "shouldAllowAutofill": false,
   "showStepArrows": false,
   "tooltip": "",
-  "topRow": 126,
+  "topRow": 117,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "kskzcrfxkr",

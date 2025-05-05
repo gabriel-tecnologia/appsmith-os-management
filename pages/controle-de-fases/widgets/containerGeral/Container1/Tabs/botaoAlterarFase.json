@@ -70,7 +70,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "Concluído",
-      "onClick": "{{changePhaseFunctions.handleMoveToConcluded();}}",
+      "onClick": "{{showModal(modalConclusao.name);}}",
       "widgetId": ""
     },
     "menuItem2": {

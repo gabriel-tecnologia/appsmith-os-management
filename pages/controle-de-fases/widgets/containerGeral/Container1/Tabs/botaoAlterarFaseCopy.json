@@ -32,9 +32,6 @@
       "key": "menuItems.menuIteme6zd83xcs8.onClick"
     },
     {
-      "key": "menuItems.menuItem1.onClick"
-    },
-    {
       "key": "menuItems.menuItemw479k44jpm.onClick"
     },
     {
@@ -67,7 +64,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "Concluído",
-      "onClick": "{{changePhaseFunctions.handleMoveToConcluded();}}",
+      "onClick": "{{showModal(modalConclusao.name);}}",
       "widgetId": ""
     },
     "menuItem3": {
