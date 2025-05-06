@@ -38,7 +38,7 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "overflow": "SCROLL",
-  "parentId": "x9sy68wpev",
+  "parentId": "9s7eqjvd0r",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 63,
@@ -51,6 +51,6 @@
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "7um0a58txn",
+  "widgetId": "49sfimmc4s",
   "widgetName": "Text9CopyCopyCopy"
 }

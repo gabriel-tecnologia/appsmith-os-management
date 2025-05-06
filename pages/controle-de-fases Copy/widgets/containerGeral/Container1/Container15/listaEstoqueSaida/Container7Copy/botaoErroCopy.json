@@ -40,7 +40,7 @@
   "onClick": "{{storeValue('currentStock', currentItem.data);\nshowModal(modalEdicaoEstoque.name)}}",
   "originalBottomRow": 46,
   "originalTopRow": 42,
-  "parentId": "x9sy68wpev",
+  "parentId": "j9f4jhv3v0",
   "placement": "CENTER",
   "recaptchaType": "V3",
   "renderMode": "CANVAS",
@@ -51,6 +51,6 @@
   "topRow": 26,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "xj2ob9pfee",
-  "widgetName": "botaoErroCopyCopy"
+  "widgetId": "we37z0yv5y",
+  "widgetName": "botaoErroCopy"
 }

@@ -44,5 +44,10 @@ export default {
 		await renderFunctions.renderOSMotherInfo()
 		await renderFunctions.renderOSChildInfo()
 		
+		// Muitas OS's estão ficando sem OS filha, isso é uma gambiarra para testar:
+		if (appsmith.store.selectedOS["OS (Filha)"] == undefined) {
+			await Alterar_Campo_Especifico.run({Field: {"OS (Filha)": [appsmith.store.newOS.record_id]}})
+			showAlert('Campo OS(Filha) preenchida na coluna OS (Mãe)', 'success')
+		}
 	}
 }

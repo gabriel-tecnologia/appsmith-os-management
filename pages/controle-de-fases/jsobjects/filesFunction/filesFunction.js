@@ -6,9 +6,6 @@ export default {
     const compressedFiles = [];
     
     try {
-			if (!Array.isArray(files)) {
-				throw new Error("O parâmetro 'files' não é um array válido");
-			}
 
 			for (const file of files) {
 				console.log("Iniciando processamento do arquivo:", file.name);
