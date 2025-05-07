@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 44,
+  "bottomRow": 15,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -14,18 +14,13 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [
-    {
-      "key": "fontSize"
-    }
-  ],
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "1.30rem",
-  "fontStyle": "BOLD",
+  "fontSize": "1rem",
+  "fontStyle": "",
   "isLoading": false,
   "isVisible": true,
-  "key": "q6nqmsysmi",
+  "key": "rayf8ahevu",
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
@@ -35,21 +30,21 @@
   "mobileRightColumn": 41,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 44,
-  "originalTopRow": 40,
+  "originalBottomRow": 15,
+  "originalTopRow": 6,
   "overflow": "NONE",
-  "parentId": "e70v1hjnhi",
+  "parentId": "x8mu6cenn8",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 39,
+  "rightColumn": 63,
   "shouldTruncate": false,
-  "text": "Movimento de Estoque",
+  "text": "Se esse aviso está aparecendo, é porque o campo OS (Filha) não foi preenchido na coluna da OS (Mãe).\n\nTente novamente e, se não funcionar, contacte @Agra ou @Vaz",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 40,
+  "topRow": 6,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "kz5a5k9pwk",
-  "widgetName": "Text7Copy"
+  "widgetId": "mu0nsa465q",
+  "widgetName": "Text19Copy"
 }

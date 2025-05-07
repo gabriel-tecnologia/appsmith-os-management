@@ -32,8 +32,8 @@ export default {
 		// Cria nova OS
 		const newOS = await Criar_OS.run()
 		storeValue("newOS", newOS.fields)
-		await Alterar_Campo_Especifico.run({Field: {"OS (Filha)": [appsmith.store.newOS.record_id]}})
-		showAlert('Campo OS(Filha) preenchida na coluna OS (Mãe)', 'success')
+		
+		this.linkMotherAndChildOS()
 		
 		// Atualiza OS atual e renderiza os botões de OS mãe/filha
 		const newData = await Leitura_OS_Por_RecordID.run({
@@ -43,11 +43,17 @@ export default {
 		
 		await renderFunctions.renderOSMotherInfo()
 		await renderFunctions.renderOSChildInfo()
-		
-		// Muitas OS's estão ficando sem OS filha, isso é uma gambiarra para testar:
-		if (appsmith.store.selectedOS["OS (Filha)"] == undefined) {
+	},
+	
+	async linkMotherAndChildOS() {
+		try {
 			await Alterar_Campo_Especifico.run({Field: {"OS (Filha)": [appsmith.store.newOS.record_id]}})
 			showAlert('Campo OS(Filha) preenchida na coluna OS (Mãe)', 'success')
 		}
+		catch(error) {
+			showAlert('Falha ao preencher campo OS(Filha) preenchida na coluna OS (Mãe)', 'error')
+			showModal(modalErroOSFilha.name)
+		}
 	}
+	
 }
