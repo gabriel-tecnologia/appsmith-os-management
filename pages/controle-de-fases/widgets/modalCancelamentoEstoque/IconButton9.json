@@ -13,6 +13,11 @@
       "key": "borderRadius"
     }
   ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -31,7 +36,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{closeModal(modalCancelamentoEstoque.name);}}",
+  "onClick": "{{closeModal(modalCancelamentoEstoque.name);\n\nawait stockManagment.getStockRecords();\n\nawait Leitura_Movimento_Estoque.run()}}",
   "parentId": "5ijek0idjb",
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",

@@ -13,6 +13,11 @@
       "key": "borderRadius"
     }
   ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -31,7 +36,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{closeModal(modalEdicaoEstoque.name).then(() => {\n  stockManagment.getStockRecords();\n});}}",
+  "onClick": "{{closeModal(modalEdicaoEstoque.name);\n\nawait stockManagment.getStockRecords();\n\t\nawait Leitura_Movimento_Estoque.run()\n;}}",
   "parentId": "tshkt7hiy0",
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
