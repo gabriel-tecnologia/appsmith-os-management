@@ -37,7 +37,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{changePhaseFunctions.handleMoveToConcluded();\ncloseModal(modalConclusao.name);\n}}",
+  "onClick": "{{await changePhaseFunctions.handleMoveToConcluded();\n\ncloseModal(modalConclusao.name);\n}}",
   "originalBottomRow": 21,
   "originalTopRow": 17,
   "parentId": "8579zzjgs4",
