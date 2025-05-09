@@ -139,7 +139,8 @@ export default {
 				showAlert("Motivo de Improdutiva atualizado", "success")
 			}
 			catch (error) {
-				showAlert("Falha ao atualizar Motivo de Improdutiva", "error")			
+				showAlert("Falha ao atualizar Motivo de Improdutiva", "error")
+				return;
 			}
 		}
 		else if (selectImproductiveReason.selectedOptionLabel != "") {
@@ -148,7 +149,8 @@ export default {
 				showAlert("Motivo de Improdutiva atualizado", "success")
 			}
 			catch (error) {
-				showAlert("Falha ao atualizar Motivo de Improdutiva", "error")			
+				showAlert("Falha ao atualizar Motivo de Improdutiva", "error")	
+				return;
 			}
 		}
 		else if (selecaoMotivoCopy.selectedOptionLabel != "") {
@@ -157,7 +159,8 @@ export default {
 				showAlert("Motivo de Improdutiva atualizado", "success")
 			}
 			catch (error) {
-				showAlert("Falha ao atualizar Motivo de Improdutiva", "error")			
+				showAlert("Falha ao atualizar Motivo de Improdutiva", "error")
+				return;
 			}
 		}
 		else {
@@ -182,6 +185,7 @@ export default {
 			try {
 				await createOS.handleCreateOS()
 				showAlert("Nova OS criada com sucesso", "success")
+				
 				const newData = await Leitura_OS_Por_RecordID.run({
 						recordId: appsmith.store.selectedOS.record_id
 					});
