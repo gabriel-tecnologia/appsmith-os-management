@@ -29,7 +29,11 @@
       "isDefault": false
     },
     {
-      "id": "controle-de-fases Copy",
+      "id": "controle-de-fases-s3",
+      "isDefault": false
+    },
+    {
+      "id": "controle-de-fases-um-a-um",
       "isDefault": false
     }
   ],

@@ -1,0 +1,77 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 13,
+  "bottomRowBeforeCollapse": 13,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store.selectedOS[\"Motivo de Improdutiva\"]??\"\"))(selecaoMotivoCopy.options, selecaoMotivoCopy.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": false,
+  "key": "e5ahsma8r1",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Selecione o Motivo de Improdutiva",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{showModal(modalConfirmarMotivo.name);}}",
+  "optionLabel": "name",
+  "optionValue": "code",
+  "originalBottomRow": 13,
+  "originalTopRow": 6,
+  "parentColumnSpace": 8.824691951274872,
+  "parentId": "whkunja2jt",
+  "parentRowSpace": 10,
+  "placeholderText": "-- Selecionar Motivo --",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "serverSideFiltering": false,
+  "sourceData": "{{renderFunctions.renderImproductiveReasons.data}}",
+  "topRow": 6,
+  "topRowBeforeCollapse": 6,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "eoyxdl0pr9",
+  "widgetName": "selecaoMotivoCopy"
+}
