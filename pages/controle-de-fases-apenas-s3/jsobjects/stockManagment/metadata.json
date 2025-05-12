@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_a18a7806-abea-4ca8-803b-0f99cc8ca828",
+  "id": "controle-de-fases-apenas-s3_stockManagment",
+  "unpublishedCollection": {
+    "name": "stockManagment",
+    "pageId": "controle-de-fases-apenas-s3",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "exitStock",
+        "value": "[]"
+      },
+      {
+        "name": "returnStock",
+        "value": "[]"
+      }
+    ]
+  }
+}

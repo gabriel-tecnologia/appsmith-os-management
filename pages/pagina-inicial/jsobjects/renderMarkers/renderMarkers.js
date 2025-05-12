@@ -35,6 +35,6 @@ export default {
 		
 		storeValue('selectedOS', rec[0])
 		console.log(appsmith.store.selectedOS)
-		navigateTo('controle-de-fases', {}, 'SAME_WINDOW')		
+		navigateTo('controle-de-fases-um-a-um', {}, 'SAME_WINDOW')		
 	}
 }

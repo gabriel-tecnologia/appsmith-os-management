@@ -176,7 +176,7 @@ export default {
 		
 		stock["Nota de Remessa / Retorno"] ? text = text.concat("Nota de Remessa / Retorno: ", stock["Nota de Remessa / Retorno"], "\n\n") : ""
 		
-		stock["Movimento Criado por"] ? text = text.concat("Movimento Criado por: ", stock["Movimento Criado por"], "\n\n") : ""
+		stock["Movimento Criado por"] ? text = text.concat("Movimento Criado por: ", stock["Movimento Criado por"], "\n\n") : text = text.concat("Movimento Criado por Autaomação", "\n\n")
 		
 		stock.Camaleão ? text = text.concat(stock.Camaleão+" x Camaleão\n") : ""
 		

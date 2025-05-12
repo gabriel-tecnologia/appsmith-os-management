@@ -25,11 +25,11 @@
       "isDefault": true
     },
     {
-      "id": "controle-de-fases",
+      "id": "controle-de-fases-tudo-junto",
       "isDefault": false
     },
     {
-      "id": "controle-de-fases-s3",
+      "id": "controle-de-fases-apenas-s3",
       "isDefault": false
     },
     {
