@@ -1,11 +1,10 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 108,
+  "bottomRow": 44,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-  "buttonStyle": "PRIMARY_BUTTON",
-  "buttonVariant": "PRIMARY",
+  "buttonVariant": "SECONDARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
     {
@@ -15,38 +14,46 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
     }
   ],
+  "iconAlign": "left",
+  "iconName": "refresh",
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "b981u6h4zq",
-  "leftColumn": 47,
+  "key": "0drbwstywv",
+  "leftColumn": 51,
   "minWidth": 120,
-  "mobileBottomRow": 22,
-  "mobileLeftColumn": 47,
-  "mobileRightColumn": 63,
-  "mobileTopRow": 18,
+  "mobileBottomRow": 44,
+  "mobileLeftColumn": 39,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 40,
   "needsErrorInfo": false,
-  "onClick": "{{stockPatchErrors.handleReturnError();\nstockCreateMovement.handleCreateReturn();}}",
-  "originalBottomRow": 108,
-  "originalTopRow": 104,
-  "parentId": "2gx8mwyodc",
+  "onClick": "{{await stockManagment.getStockRecords();\n\nawait Leitura_Movimento_Estoque.run()}}",
+  "originalBottomRow": 44,
+  "originalTopRow": 40,
+  "parentColumnSpace": 8.505126953125,
+  "parentId": "e70v1hjnhi",
+  "parentRowSpace": 10,
   "placement": "CENTER",
   "recaptchaType": "V3",
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 63,
-  "text": "Confirmar",
-  "topRow": 104,
+  "rightColumn": 62,
+  "text": "Recarregar",
+  "topRow": 40,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "c2gujh4akf",
-  "widgetName": "Button4Copy"
+  "widgetId": "vhy4tqw1w7",
+  "widgetName": "Button21"
 }
