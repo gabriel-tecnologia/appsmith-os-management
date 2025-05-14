@@ -49,7 +49,7 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 62,
+  "rightColumn": 63,
   "text": "Recarregar",
   "topRow": 40,
   "type": "BUTTON_WIDGET",
