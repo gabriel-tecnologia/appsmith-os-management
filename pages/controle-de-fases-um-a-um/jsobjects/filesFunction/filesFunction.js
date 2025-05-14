@@ -56,7 +56,6 @@ export default {
 			try {
 					console.log("Iniciando upload de arquivos comprimidos...");
 					await this.envia_arquivo_pra_nuvem(finalCompressedFile);
-					showAlert(`Upload do arquivo '${finalCompressedFile.name}' finalizado com sucesso`, "success");
 			} catch (error) {
 					console.error("Erro ao fazer upload do arquivo", error);
 					showAlert(`Falha ao fazer upload o arquivo '${finalCompressedFile.name}'`, "error")

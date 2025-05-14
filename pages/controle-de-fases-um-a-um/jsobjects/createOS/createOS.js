@@ -30,8 +30,10 @@ export default {
 		}
 		
 		// Cria nova OS
-		const newOS = await Criar_OS.run()
-		storeValue("newOS", newOS.fields)
+		if (appsmith.store.selectedOS["OS (Filha)"] == undefined) {
+			const newOS = await Criar_OS.run()
+			storeValue("newOS", newOS.fields)
+		}		
 		
 		this.linkMotherAndChildOS()
 		
