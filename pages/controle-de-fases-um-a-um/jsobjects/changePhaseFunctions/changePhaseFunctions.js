@@ -40,10 +40,13 @@ export default {
 			storeValue("selectedOS", newData.fields)
 			showAlert("OS concluída com sucesso", "success")
 			await renderFunctions.renderPhaseState()
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch(error) {
 			showAlert("Erro ao concluir OS", "error")
 		}
+
 	},
 	
 	async handleMoveToSchedule() {
@@ -66,10 +69,13 @@ export default {
 			storeValue("selectedOS", newData.fields)
 			showAlert("OS movida para 'Agendamento' com sucesso", "success")
 			await renderFunctions.renderPhaseState()
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch(error) {
 			showAlert("Erro ao mudar a fase da OS para 'Agendamento'", "error")
 		}
+
 	},
 	
 	async handleMoveToReschedule() {
@@ -92,10 +98,14 @@ export default {
 			storeValue("selectedOS", newData.fields)
 			showAlert("OS movida para 'Reagendamento' com sucesso", "success")
 			await renderFunctions.renderPhaseState()
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch(error) {
 			showAlert("Erro ao mudar a fase da OS para 'Reagendamento'", "error")
 		}
+		
+		await changeOSFunctions.renderChangeHistory()
 	},
 	
 	async handleStartOS() { // Poderá fazer no novo fluxo?
@@ -113,12 +123,15 @@ export default {
 					});
 			storeValue("selectedOS", newData.fields)
 			await renderFunctions.renderPhaseState()
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch(error) {
 			console.log(error)
 			showAlert("Erro ao marcar momento de início", "error")
 			showAlert("Erro ao iniciar OS", "error")
 		}
+
 	},
 	
 	async handleConfirmMoveTo(){
@@ -176,6 +189,8 @@ export default {
 						recordId: appsmith.store.selectedOS.record_id
 					});
 			storeValue("selectedOS", newData.fields)
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch(error) {
 			showAlert("Falha ao alterar fase da OS para 'Improdutiva'", "error")
@@ -190,6 +205,7 @@ export default {
 						recordId: appsmith.store.selectedOS.record_id
 					});
 				storeValue("selectedOS", newData.fields)
+				
 			}
 			catch(error) {
 				showAlert("Falha ao criar uma nova OS", "error")
@@ -206,6 +222,7 @@ export default {
 				resetWidget("Tabs")
 			}
 		}
+
 	},
 	
 	async handleMoveToAdjust() {
@@ -247,10 +264,13 @@ export default {
 					});
 			storeValue("selectedOS", newData.fields)
 			resetWidget("Tabs")
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch(error){
 			showAlert("Falha ao alterar fase da OS para 'Ajuste'", "error")
-		}			
+		}
+
 	},
 	
 	async handleMoveToQualityControl() {
@@ -289,11 +309,14 @@ export default {
 			storeValue("selectedOS", newData.fields)
 			await renderFunctions.renderPhaseState()
 			resetWidget("Tabs")
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch (error) {
 			console.log(error)
 			showAlert("Falha ao mudar a fase da OS para 'Controle de Qualidade'", "error")
-		}		
+		}
+		
 	},
 	
 	async handleCancelOS() {
@@ -312,10 +335,13 @@ export default {
 					});
 			storeValue("selectedOS", newData.fields)
 			await renderFunctions.renderPhaseState()
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch (error) {
 			showAlert("Falha ao cancelar a OS", "error")
 		}
+		
 	},
 	
 	async handleMoveToServiceQueue() {
@@ -342,6 +368,9 @@ export default {
 				storeValue("selectedOS", newData.fields)
 				await renderFunctions.renderPhaseState()
 				resetWidget("Tabs")
+				
+			await changeOSFunctions.renderChangeHistory()
+				
 			}
 			catch(error) {
 				showAlert("Falha ao mudar a fase da OS para 'Fila de Serviço'", "error")
@@ -349,6 +378,6 @@ export default {
 		}
 		else {
 			showAlert("Falha ao mudar a fase da OS para 'Fila de Serviço'", "error")
-		}		
+		}
 	}
 }

@@ -21,6 +21,8 @@ export default {
 				Fields: fields
 			});
 			showAlert("Movimento de estoque criado com sucesso", "success")
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch (error) {
 			showAlert("Falha ao criar novo movimento de estoque", "error")
@@ -51,6 +53,8 @@ export default {
 				Fields: fields
 			});
 			showAlert("Movimento de estoque criado com sucesso", "success")
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch (error) {
 			showAlert("Falha ao criar novo movimento de estoque", "error")

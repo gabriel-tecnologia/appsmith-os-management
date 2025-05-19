@@ -7,6 +7,8 @@ export default {
 			recordId: recordId
 			});
 			showAlert("Erro de remessa adicionado com sucesso", "success")
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch (error) {
 			showAlert("Falha ao adicionar erro de remessa", "erro")

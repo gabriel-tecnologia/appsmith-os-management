@@ -159,6 +159,19 @@ export default {
 		}
 
 		return false
+	},
+	
+	async renderChangeHistory () {
+		const historicoAtual = appsmith.store.selectedOS["Histórico de Alterações"];
+		const email = appsmith.user.email;
+    const momento = moment().format("DD/MM/YYYY HH:mm");
+    const novaLinha = `${email} alterou essa OS em ${momento}.`;
+
+    const historicoConcat = historicoAtual ? `${historicoAtual}\n${novaLinha}` : novaLinha;
+		
+		await Alterar_Campo_Especifico.run({
+			Field: {"Histórico de Alterações": historicoConcat}
+			}) 
 	}
 
 }

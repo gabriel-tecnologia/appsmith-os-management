@@ -35,7 +35,7 @@
   "mobileRightColumn": 40,
   "mobileTopRow": 56,
   "needsErrorInfo": false,
-  "onClick": "{{changeOSFunctions.changeOSFields()}}",
+  "onClick": "{{await changeOSFunctions.changeOSFields();\n\nawait changeOSFunctions.renderChangeHistory()}}",
   "originalBottomRow": 59,
   "originalTopRow": 55,
   "parentColumnSpace": 1.8984375,

@@ -20,7 +20,6 @@ export default {
 					showAlert(`Falha ao enviar o arquivo de vídeo '${file.name}'`, 'error')
 				}
 				continue;
-
 			}
 
 			try {
@@ -168,6 +167,8 @@ export default {
 				photosUrl: arquivos_para_envio
 			});
 			showAlert(`Arquivo '${arquivo.name}' enviado ao Airtable com sucesso`, "success");
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch(error) {
 			showAlert(`Falha ao enviar o arquivo '${arquivo.name}' ao Airtable`, "error");
@@ -184,6 +185,7 @@ export default {
 		galery.model.data = newOS.fields["Foto do Serviço"]
 		
 		resetWidget("listaVideos", true)
+		resetWidget("List1", true)
 	},
 	
 	async enviarTermoS3(arquivos) {
@@ -205,6 +207,8 @@ export default {
 				term: arquivos_para_envio
 			});
 			showAlert("Termo enviado com sucesso", "success")
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch (error) {
 			showAlert("Falha ao enviar termo de finalização", "error")
@@ -235,6 +239,7 @@ export default {
 			resetWidget("listaVideos", true)
 			galery.model.data = newOS.fields["Foto do Serviço"]
 			showAlert(`Imagem removida com sucesso '${galery.model.image.filename}'`, "success")
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch(error) {
 			showAlert("Falha ao remover arquivo", "error")

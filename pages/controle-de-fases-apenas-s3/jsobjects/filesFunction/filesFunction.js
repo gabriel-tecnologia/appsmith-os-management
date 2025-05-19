@@ -2,67 +2,67 @@ export default {
 
 	async compressAndUpload(files) {
 		const scale = 0.5;
-		const quality = 0.9;
-		const compressedFiles = [];
+    const quality = 0.9;
+		
+		let finalCompressedFile;
+    
+		for (const file of files) {
+			console.log("Iniciando processamento do arquivo:", file.name);
 
-		try {
-			if (!Array.isArray(files)) {
-				throw new Error("O parâmetro 'files' não é um array válido");
-			}
-
-			for (const file of files) {
-				console.log("Iniciando processamento do arquivo:", file.name);
-
-				// Se for vídeo, adiciona diretamente à lista
-				if (file.type === "video/mp4") {
-					compressedFiles.push(file);
-					console.log("Arquivo de vídeo bypassado:", file.name);
-					continue;
-				}
-
+			// Se for vídeo, adiciona diretamente à lista
+			if (file.type === "video/mp4") {
 				try {
-					// Convertendo de base64 para Blob
-					const fileBlob = await this.base64ToBlob(file.data);
-					console.log("Blob criado para o arquivo:", file.name);
-
-					// Comprimindo a imagem
-					const compressedFile = await this.compressImage(fileBlob, scale, quality, file.name);
-					console.log("Imagem comprimida:", file.name);
-
-					// Convertendo de Blob para Base64
-					const compressedBase64 = await this.blobToBase64(compressedFile);
-					console.log("Imagem convertida para Base64:", file.name);
-
-					// Adicionando à lista final
-					compressedFiles.push({
-						data: compressedBase64,
-						id: file.id,
-						name: file.name,
-						type: file.type,
-						size: compressedFile.size
-					});
-				} catch (error) {
-					console.error("Erro ao processar o arquivo:", file.name, error);
-					throw error;
+					showAlert(`Arquivo de vídeo '${file.name}' enviado sem compressão`, 'success')
+					await this.envia_arquivo_pra_nuvem(file)
+					console.log("Arquivo de vídeo bypassado:", file.name);
 				}
+				catch(error) {
+					showAlert(`Falha ao enviar o arquivo de vídeo '${file.name}'`, 'error')
+				}
+				continue;
 			}
 
-			showAlert("Imagens comprimidas com sucesso", "success");
-		} catch (error) {
-			console.error("Erro ao comprimir imagens:", error);
-			showAlert("Erro ao comprimir imagens", "error");
-			await this.envia_arquivos_pra_nuvem(files); // Envia os arquivos originais, se falhar
-			return;
-		}
+			try {
+				// Convertendo de base64 para Blob
+				const fileBlob = await this.base64ToBlob(file.data);
+				console.log("Blob criado para o arquivo:", file.name);
 
-		try {
-			console.log("Iniciando upload de arquivos comprimidos...");
-			await this.envia_arquivos_pra_nuvem(compressedFiles);
-			showAlert("Upload de arquivos finalizado com sucesso", "success");
-		} catch (error) {
-			console.error("Erro ao fazer upload de arquivos:", error);
-			showAlert("Falha ao fazer upload de arquivos", "error");
-		}
+				// Comprimindo a imagem
+				const compressedFile = await this.compressImage(fileBlob, scale, quality, file.name);
+				console.log("Imagem comprimida:", file.name);
+
+				// Convertendo de Blob para Base64
+				const compressedBase64 = await this.blobToBase64(compressedFile);
+				console.log("Imagem convertida para Base64:", file.name);
+
+				// Formatando
+				finalCompressedFile = {
+					data: compressedBase64,
+					id: file.id,
+					name: file.name,
+					type: file.type,
+					size: compressedFile.size
+				};
+				
+				showAlert(`Arquivo '${finalCompressedFile.name}' foi comprimido com sucesso`, "success");
+
+			} catch (error) {
+				console.error("Erro ao processar o arquivo:", file.name, error);
+				showAlert(`Falha ao comprimir o arquivo '${finalCompressedFile.name}'`, "error")
+				await this.envia_arquivo_pra_nuvem(file); // Envia os arquivos originais, se falhar
+			}
+		
+			try {
+					console.log("Iniciando upload de arquivos comprimidos...");
+					await this.envia_arquivo_pra_nuvem(finalCompressedFile);
+					showAlert(`Arquivo '${finalCompressedFile.name}' enviado com sucesso`, "error")
+				await changeOSFunctions.renderChangeHistory()
+				
+			} catch (error) {
+					console.error("Erro ao fazer upload do arquivo", error);
+					showAlert(`Falha ao fazer upload o arquivo '${finalCompressedFile.name}'`, "error")
+			}
+		} 
 	},
 
 	async compressImage(file, scale, quality, fileName) {
@@ -137,7 +137,7 @@ export default {
 		}
 	},
 
-	async envia_arquivos_pra_nuvem(arquivos) {
+	async envia_arquivo_pra_nuvem(arquivo) {
 		storeValue("tipo_arquivo", "Foto do Servico")
 		let arquivos_para_envio;
 		let fotos = appsmith.store.selectedOS["Foto do Serviço"]
@@ -151,24 +151,13 @@ export default {
 
 		console.log(arquivos_para_envio)
 
-		for (const arquivo of arquivos) {
-			const resposta = await Enviar_Arquivo_S3.run({
-				fileName: arquivo.name,
-				filesData: arquivo
-			});
-			const url = resposta.signedUrl;
-			arquivos_para_envio.push({"url": url});			
-		}
-
-		try {
-			await Enviar_Fotos_Airtable.run({
-				photosUrl: arquivos_para_envio
-			});
-			showAlert("Foto(s) enviada(s) ao Airtable com sucesso", "success")
-		}
-		catch(error) {
-			showAlert("Falha ao enviar foto(s)", "error")
-		}
+		const resposta = await Enviar_Arquivo_S3.run({
+			fileName: arquivo.name,
+			filesData: arquivo
+		});
+		const url = resposta.signedUrl;
+		arquivos_para_envio.push({"url": url});			
+		
 
 		storeValue('arquivo_para_nuvem', null);
 		storeValue('arquivos_para_envio_airtable', null);
@@ -180,6 +169,8 @@ export default {
 		storeValue('selectedOS', newOS.fields)
 
 		galery.model.data = await Leitura_Fotos_Servico_S3.run();
+		
+		resetWidget("List1", true)
 	},
 
 	async enviarTermoS3(arquivos) {
@@ -201,6 +192,7 @@ export default {
 				term: arquivos_para_envio
 			});
 			showAlert("Termo enviado com sucesso", "success")
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch (error) {
 			showAlert("Falha ao enviar termo de finalização", "error")
@@ -248,37 +240,17 @@ export default {
 			return;
 		}
 		console.log("Arquivo encontrado para remoção:", file);
-
-		// Valida o deletedFilePath
-		const deletedFilePath = file.fileName;
-		if (!deletedFilePath) {
-			console.error("Caminho do arquivo inválido:", deletedFilePath);
-			showAlert("Caminho do arquivo inválido para remoção", "error");
-			return;
+		
+		try{
+			await Deletar_Fotos_Servico_S3.run({
+				fileName: file.fileName,
+				bucket: "os-pictures"
+			});
+			showAlert(`Arquivo removido com sucesso '${galery.model.image.fileName}'`, "success")
 		}
-		else {
-			console.log("Caminho do arquivo a ser deletado:", deletedFilePath)
+		catch(error) {
+			showAlert("Falha ao deletar arquivo")
 		}
-
-		const filePathSplit = deletedFilePath.split('/')
-
-		const deletedFileName = filePathSplit[filePathSplit.length - 1]
-
-		let errorState = null;
-
-		console.log('deletedFileName', deletedFileName)
-
-		await Remover_Arquivos_Servico_S3.run({deletedFileName},(error) => {
-			errorState = error
-		}); 
-
-		if(errorState){
-			showAlert("Falha ao remover arquivo", "error")
-			console.log(errorState)
-			return;
-		}
-
-		showAlert(`Arquivo removido com sucesso '${galery.model.image.fileName}'`, "success")
 
 		const newOS = await Leitura_OS_Por_RecordID.run({
 			recordId: appsmith.store.selectedOS.record_id

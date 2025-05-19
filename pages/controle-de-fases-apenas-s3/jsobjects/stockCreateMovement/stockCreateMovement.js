@@ -21,6 +21,7 @@ export default {
 				Fields: fields
 			});
 			showAlert("Movimento de estoque criado com sucesso", "success")
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch (error) {
 			showAlert("Falha ao criar novo movimento de estoque", "error")
@@ -46,11 +47,13 @@ export default {
 			"Cadastrar Remessa de Produto": true
 		}
     
-		try{
+		try {
 			await Criar_Movimento_Estoque.run({
 				Fields: fields
 			});
 			showAlert("Movimento de estoque criado com sucesso", "success")
+			
+			await changeOSFunctions.renderChangeHistory()
 		}
 		catch (error) {
 			showAlert("Falha ao criar novo movimento de estoque", "error")
