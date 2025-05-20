@@ -35,7 +35,8 @@ export default {
 			storeValue("newOS", newOS.fields)
 		}		
 		
-		this.linkMotherAndChildOS()
+		// Conecta OS mãe com OS filha
+		await this.linkMotherAndChildOS()
 		
 		// Atualiza OS atual e renderiza os botões de OS mãe/filha
 		const newData = await Leitura_OS_Por_RecordID.run({
@@ -54,7 +55,6 @@ export default {
 		}
 		catch(error) {
 			showAlert('Falha ao preencher campo OS(Filha) preenchida na coluna OS (Mãe)', 'error')
-			showModal(modalErroOSFilha.name)
 		}
 	}
 	

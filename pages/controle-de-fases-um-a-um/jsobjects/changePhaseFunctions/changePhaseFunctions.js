@@ -108,7 +108,7 @@ export default {
 		await changeOSFunctions.renderChangeHistory()
 	},
 	
-	async handleStartOS() { // Poderá fazer no novo fluxo?
+	async handleStartOS() {
 		try {
 			storeValue('hora_inicio',new Date())
 			await Alterar_Campo_Especifico.run({Field: {"Momento de Início": appsmith.store.hora_inicio}})
@@ -146,6 +146,10 @@ export default {
 	},
 	
 	async handleMoveToImproductive() {
+		
+		showModal(modalOsFilha.name)
+		
+		// Confirma se o Motivo de Improdutiva foi preenchido
 		if (selecaoMotivo.selectedOptionLabel != "") {
 			try {
 				await Alterar_Campo_Especifico.run({Field: {"Motivo de Improdutiva": selecaoMotivo.selectedOptionLabel}})
@@ -181,6 +185,7 @@ export default {
 			return
 		}
 		
+		// Muda a fase para Improdutiva
 		try {
 			storeValue("fase", "Improdutiva")
 			await Alterar_Campo_Especifico.run({Field: {"Fase": appsmith.store.fase}})
@@ -196,6 +201,7 @@ export default {
 			showAlert("Falha ao alterar fase da OS para 'Improdutiva'", "error")
 		}
 		
+		// Cria OS filha
 		if (appsmith.store.selectedOS.Fase == "Improdutiva" && appsmith.store.selectedOS["Motivo de Improdutiva"] != "Não foi necessário realizar o serviço" && appsmith.store.selectedOS["OS (Filha)"] == undefined) {
 			try {
 				await createOS.handleCreateOS()
@@ -222,6 +228,8 @@ export default {
 				resetWidget("Tabs")
 			}
 		}
+		
+		closeModal(modalOsFilha.name)
 
 	},
 	

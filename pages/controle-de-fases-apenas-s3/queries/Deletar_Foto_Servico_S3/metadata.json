@@ -1,6 +1,6 @@
 {
   "gitSyncId": "67d1a3872fb4f2700e437ea5_42dc5269-4f9e-43b2-a814-1a4cab490ea5",
-  "id": "controle-de-fases-apenas-s3_Deletar_Fotos_Servico_S3",
+  "id": "controle-de-fases-apenas-s3_Deletar_Foto_Servico_S3",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -24,7 +24,7 @@
       "path": "file/",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
       "queryParameters": [
@@ -58,7 +58,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "Deletar_Fotos_Servico_S3",
+    "name": "Deletar_Foto_Servico_S3",
     "pageId": "controle-de-fases-apenas-s3",
     "userSetOnLoad": false
   }

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 6,
+  "bottomRow": 5,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -20,8 +20,8 @@
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "00hofpz1u3",
-  "leftColumn": 0,
+  "key": "zaxy7raw2r",
+  "leftColumn": 11,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -30,21 +30,19 @@
   "mobileRightColumn": 41,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 6,
-  "originalTopRow": 0,
   "overflow": "NONE",
-  "parentId": "yafn7ckaq2",
+  "parentId": "5r83i57ufr",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 16,
+  "rightColumn": 51,
   "shouldTruncate": false,
-  "text": "Fotos do Serviço",
-  "textAlign": "LEFT",
+  "text": "Criando OS Filha",
+  "textAlign": "CENTER",
   "textColor": "#231F20",
-  "topRow": 0,
+  "topRow": 1,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "wpy4s06t3q",
-  "widgetName": "Text3Copy1"
+  "widgetId": "q21fvb1g20",
+  "widgetName": "Text17"
 }

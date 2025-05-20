@@ -39,7 +39,7 @@
         },
         {
           "key": "search",
-          "value": "{{appsmith.store.addressFilter||''}}"
+          "value": "''"
         }
       ],
       "timeoutInMillisecond": 10000
@@ -57,9 +57,6 @@
       },
       {
         "key": "queryParameters[0].value"
-      },
-      {
-        "key": "queryParameters[1].value"
       }
     ],
     "executeOnLoad": false,

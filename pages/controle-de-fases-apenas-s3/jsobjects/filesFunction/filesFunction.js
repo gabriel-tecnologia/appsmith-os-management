@@ -55,8 +55,8 @@ export default {
 			try {
 					console.log("Iniciando upload de arquivos comprimidos...");
 					await this.envia_arquivo_pra_nuvem(finalCompressedFile);
-					showAlert(`Arquivo '${finalCompressedFile.name}' enviado com sucesso`, "error")
-				await changeOSFunctions.renderChangeHistory()
+					showAlert(`Arquivo '${finalCompressedFile.name}' enviado com sucesso ao S3`, "success")
+				//await changeOSFunctions.renderChangeHistory()
 				
 			} catch (error) {
 					console.error("Erro ao fazer upload do arquivo", error);
@@ -192,7 +192,7 @@ export default {
 				term: arquivos_para_envio
 			});
 			showAlert("Termo enviado com sucesso", "success")
-			await changeOSFunctions.renderChangeHistory()
+			//await changeOSFunctions.renderChangeHistory()
 		}
 		catch (error) {
 			showAlert("Falha ao enviar termo de finalização", "error")
@@ -207,32 +207,10 @@ export default {
 		storeValue('selectedOS', newOS.fields)
 	},
 
-	async removerFotoAirtable() {
-		let fotos = appsmith.store.selectedOS["Foto do Serviço"]
-
-		fotos = fotos.filter(image => image.url != galery.model.image.url)
-
-		try {
-			await Enviar_Fotos_Airtable.run({
-				photosUrl: fotos
-			});
-			const newOS = await Leitura_OS_Por_RecordID.run({
-				recordId: appsmith.store.selectedOS.record_id
-			});
-			storeValue('selectedOS', newOS.fields)
-			resetWidget("listaVideos", true)
-			galery.model.data = newOS.fields["Foto do Serviço"]
-			showAlert(`Imagem removida com sucesso '${galery.model.image.filename}'`, "success")
-		}
-		catch(error) {
-			showAlert("Falha ao remover arquivo", "error")
-		}
-	},
-
 	async removerArquivoS3() {
 		let files = await Leitura_Fotos_Servico_S3.data;
 
-		let file = files.find(file => file.fileName == galery.model.image.fileName)
+		let file = files.find(f => f.url === galery.model.image.url);
 
 		if (!file) {
 			showAlert("Arquivo não encontrado para remoção", "error")
@@ -240,16 +218,17 @@ export default {
 			return;
 		}
 		console.log("Arquivo encontrado para remoção:", file);
-		
-		try{
-			await Deletar_Fotos_Servico_S3.run({
+				
+		try {
+			await Deletar_Foto_Servico_S3.run({
 				fileName: file.fileName,
 				bucket: "os-pictures"
 			});
 			showAlert(`Arquivo removido com sucesso '${galery.model.image.fileName}'`, "success")
 		}
 		catch(error) {
-			showAlert("Falha ao deletar arquivo")
+			showAlert("Falha ao deletar arquivo", "error")
+			console.log(error)
 		}
 
 		const newOS = await Leitura_OS_Por_RecordID.run({
