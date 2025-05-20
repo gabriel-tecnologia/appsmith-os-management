@@ -31,6 +31,10 @@
     {
       "id": "controle-de-fases-um-a-um",
       "isDefault": false
+    },
+    {
+      "id": "controle-de-fases-final",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

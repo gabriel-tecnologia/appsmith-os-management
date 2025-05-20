@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "0.375rem",
   "borderWidth": "1",
-  "bottomRow": 332,
+  "bottomRow": 334,
   "boxShadow": "NONE",
   "children": [
     {
@@ -87,7 +87,7 @@
     "Layout"
   ],
   "thumbnailSVG": "/static/media/thumbnail.6cb355b93146b5347bbb048a568ed446.svg",
-  "topRow": 304,
+  "topRow": 306,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "emyno44kqp",

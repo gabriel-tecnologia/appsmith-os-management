@@ -1,0 +1,79 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 78,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store.selectedOS[\"Solução\"]??\"\"))(selectSolucao.options, selectSolucao.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "labelText"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "561pea48k0",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "BOLD",
+  "labelText": "{{inputFormatter.onDiffIcon(\nselectSolucao.selectedOptionLabel,\tappsmith.store.selectedOS[\"Solução\"],\t\nselectSolucao.isValid\n)}}\n\nSolução",
+  "labelTextColor": "{{inputFormatter.onDiffColor(\nselectSolucao.selectedOptionLabel,\nappsmith.store.selectedOS[\"Solução\"],\nselectSolucao.isValid\n)}}",
+  "labelTextSize": "0.875rem",
+  "labelTooltip": "",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 3,
+  "mobileRightColumn": 23,
+  "mobileTopRow": 8,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "code",
+  "originalBottomRow": 78,
+  "originalTopRow": 71,
+  "parentColumnSpace": 8.28125,
+  "parentId": "vcxpa7yivg",
+  "parentRowSpace": 10,
+  "placeholderText": "Selecione a Solução",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "serverSideFiltering": false,
+  "sourceData": "{{renderFunctions.renderSolutions()}}",
+  "topRow": 71,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "s6szogecs2",
+  "widgetName": "selectSolucao"
+}

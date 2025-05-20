@@ -1,0 +1,70 @@
+{
+  "allowZoom": true,
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 72,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultMarkers": "{{renderMarkers.setLocation()}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "defaultMarkers"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "mapCenter"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "mapCenter"
+    },
+    {
+      "key": "onCreateMarker"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onMarkerClick"
+    },
+    {
+      "key": "onCreateMarker"
+    }
+  ],
+  "enableCreateMarker": true,
+  "enableMapTypeControl": false,
+  "enablePickLocation": false,
+  "enableSearch": true,
+  "flexVerticalAlignment": "start",
+  "isClickedMarkerCentered": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "urhhxchlig",
+  "leftColumn": 2,
+  "mapCenter": "{{renderMarkers.defaultLocation()}}",
+  "minWidth": 450,
+  "mobileBottomRow": 47,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 7,
+  "needsErrorInfo": false,
+  "onCreateMarker": "{{renderMarkers.createMarker()}}",
+  "onMarkerClick": "",
+  "parentColumnSpace": 8.875,
+  "parentId": "vgv9x2n53h",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "topRow": 6,
+  "type": "MAP_WIDGET",
+  "version": 1,
+  "widgetId": "c9810x770i",
+  "widgetName": "map",
+  "zoomLevel": 80
+}

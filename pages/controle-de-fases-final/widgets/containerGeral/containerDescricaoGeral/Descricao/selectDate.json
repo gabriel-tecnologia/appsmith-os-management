@@ -1,0 +1,87 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 45,
+  "boxShadow": "none",
+  "closeOnSelection": true,
+  "dateFormat": "YYYY-MM-DD",
+  "datePickerType": "DATE_PICKER",
+  "defaultDate": "{{appsmith.store.selectedOS[\"Data Agendada para o Serviço\"]}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultDate"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "labelTooltip"
+    },
+    {
+      "key": "label"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "defaultDate"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "firstDayOfWeek": 0,
+  "isDisabled": "{{changeOSFunctions.handleEditPermissions()}}",
+  "isLoading": false,
+  "isRequired": true,
+  "isVisible": true,
+  "key": "cb3u44ssdp",
+  "label": "{{inputFormatter.onDiffIcon(selectDate.formattedDate, appsmith.store.selectedOS[\"Data Agendada para o Serviço\"], selectDate.formattedDate)}}\n\nData Agendada",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "BOLD",
+  "labelTextColor": "{{\ninputFormatter.onDiffColor(\nselectDate.formattedDate,\nappsmith.store.selectedOS[\"Data Agendada para o Serviço\"],\nselectDate.formattedDate\n)\n}}",
+  "labelTextSize": "0.875rem",
+  "labelTooltip": "{{selectDate.isDisabled ? \"Campo desativado se a fase da OS for diferente de Agendamento, Fila de Serviço ou Ajuste, e se a Prioridade for Cliente VIP, Vandalismo, Retenção ou Canal Problemas\" : \"\"}}",
+  "labelWidth": 5,
+  "leftColumn": 32,
+  "maxDate": "2121-12-31T00:00:00.000-03:00",
+  "maxDynamicHeight": 9000,
+  "minDate": "1990-03-20T00:00:00.000-03:00",
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 33,
+  "mobileRightColumn": 53,
+  "mobileTopRow": 8,
+  "needsErrorInfo": false,
+  "originalBottomRow": 45,
+  "originalTopRow": 38,
+  "parentColumnSpace": 8.28125,
+  "parentId": "vcxpa7yivg",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "shortcuts": false,
+  "timePrecision": "None",
+  "topRow": 38,
+  "type": "DATE_PICKER_WIDGET2",
+  "version": 2,
+  "widgetId": "ga1nvsjxjh",
+  "widgetName": "selectDate"
+}
