@@ -1,6 +1,6 @@
 {
   "gitSyncId": "67d1a3872fb4f2700e437ea5_460cf702-fda6-4012-a62d-77e20d4ba7c9",
-  "id": "controle-de-fases-final_Deletar_Foto_Servico_S3",
+  "id": "controle-de-fases-final_Deletar_Arquivo_S3",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -58,7 +58,7 @@
       }
     ],
     "executeOnLoad": false,
-    "name": "Deletar_Foto_Servico_S3",
+    "name": "Deletar_Arquivo_S3",
     "pageId": "controle-de-fases-final",
     "userSetOnLoad": false
   }

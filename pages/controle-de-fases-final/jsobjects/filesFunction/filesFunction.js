@@ -174,7 +174,7 @@ export default {
 		console.log("Arquivo encontrado para remoção:", file);
 				
 		try {
-			await Deletar_Foto_Servico_S3.run({
+			await Deletar_Arquivo_S3.run({
 				fileName: file.fileName,
 				bucket: "bifrost-os-pictures-prod"
 			});
@@ -203,5 +203,38 @@ export default {
 		else {
 			return 'imagem'
 		}
+	},
+	
+	async removerTermoS3() {
+		await Leitura_OS_Por_RecordID.run({
+					recordId: appsmith.store.selectedOS.record_id
+				});
+
+		try {
+			// Remove do S3
+			// await Deletar_Arquivo_S3.run({
+				// fileName: fileName,
+				// bucket: "bifrost-os-terms-prod" // ajuste o bucket se necessário
+			// });
+
+			// Remove do Airtable (envia array vazio para remover todos os termos)
+			await Enviar_Termo.run({
+				term: []
+			});
+
+			showAlert(`Termo removido com sucesso`, "success");
+		} catch (error) {
+			showAlert("Falha ao deletar termo", "error");
+			console.log(error);
+		}
+
+		const newOS = await Leitura_OS_Por_RecordID.run({
+			recordId: appsmith.store.selectedOS.record_id
+		});
+		storeValue('selectedOS', newOS.fields);
+
+		resetWidget("termDocumentViewer", true);
+
+		await changeOSFunctions.renderChangeHistory();
 	}
 }

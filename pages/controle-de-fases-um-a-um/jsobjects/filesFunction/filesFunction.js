@@ -233,5 +233,31 @@ export default {
 	
 	renderImagens(list) {
 		return list.filter(file => file.type == "image/jpeg" || file.type == "image/png")
+	},
+	
+	async removerTermoAirtable() {
+		try {
+			await Leitura_OS_Por_RecordID.run({
+				recordId: appsmith.store.selectedOS.record_id
+			});
+
+			await Enviar_Termo.run({
+				term: []
+			});
+
+			showAlert("Termo removido com sucesso", "success");
+
+			// Atualiza o store e qualquer interface relacionada
+			const newOS = await Leitura_OS_Por_RecordID.run({
+				recordId: appsmith.store.selectedOS.record_id
+			});
+			storeValue('selectedOS', newOS.fields);
+
+			resetWidget("termoDocumentViewer", true);
+
+			await changeOSFunctions.renderChangeHistory();
+		} catch (error) {
+			showAlert("Falha ao remover termo de finalização", "error");
+		}
 	}
 }
