@@ -1,5 +1,0 @@
-{
-	"fields": {
-		"Termo de Finalização": {{this.params.term}}
-	}
-}

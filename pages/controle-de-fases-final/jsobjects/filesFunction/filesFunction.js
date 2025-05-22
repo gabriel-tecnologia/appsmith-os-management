@@ -1,70 +1,60 @@
 export default {
 
 	async compressAndUpload(files) {
-		const scale = 0.5;
+    const scale = 0.5;
     const quality = 0.9;
-		
-		let finalCompressedFile;
-    
-		for (const file of files) {
-			console.log("Iniciando processamento do arquivo:", file.name);
+    let statusEnvio = true;
 
-			// Se for vídeo, adiciona diretamente à lista
-			if (file.type === "video/mp4") {
-				try {
-					showAlert(`Arquivo de vídeo '${file.name}' enviado sem compressão`, 'success')
-					await this.envia_arquivo_pra_nuvem(file)
-					console.log("Arquivo de vídeo bypassado:", file.name);
-				}
-				catch(error) {
-					showAlert(`Falha ao enviar o arquivo de vídeo '${file.name}'`, 'error')
-				}
-				continue;
-			}
+    showModal(modalCarregamentoArquivos.name);
 
-			try {
-				// Convertendo de base64 para Blob
-				const fileBlob = await this.base64ToBlob(file.data);
-				console.log("Blob criado para o arquivo:", file.name);
+    for (const file of files) {
+      let finalCompressedFile = file;
 
-				// Comprimindo a imagem
-				const compressedFile = await this.compressImage(fileBlob, scale, quality, file.name);
-				console.log("Imagem comprimida:", file.name);
+      // Se for vídeo, dá bypass na compressão
+      if (file.type !== "video/mp4") {
+        try {
+          const fileBlob = await this.base64ToBlob(file.data);
+          const compressedFile = await this.compressImage(fileBlob, scale, quality, file.name);
+          const compressedBase64 = await this.blobToBase64(compressedFile);
 
-				// Convertendo de Blob para Base64
-				const compressedBase64 = await this.blobToBase64(compressedFile);
-				console.log("Imagem convertida para Base64:", file.name);
+          finalCompressedFile = {
+            data: compressedBase64,
+            id: file.id,
+            name: file.name,
+            type: file.type,
+            size: compressedFile.size
+          };
 
-				// Formatando
-				finalCompressedFile = {
-					data: compressedBase64,
-					id: file.id,
-					name: file.name,
-					type: file.type,
-					size: compressedFile.size
-				};
-				
-				showAlert(`Arquivo '${finalCompressedFile.name}' foi comprimido com sucesso`, "success");
+          showAlert(`Arquivo '${finalCompressedFile.name}' foi comprimido com sucesso`, "success");
+        } catch (error) {
+          showAlert(`Falha ao comprimir o arquivo '${file.name}', enviando original`, "error");
+        }
+      }
 
-			} catch (error) {
-				console.error("Erro ao processar o arquivo:", file.name, error);
-				showAlert(`Falha ao comprimir o arquivo '${finalCompressedFile.name}'`, "error")
-				await this.envia_arquivo_pra_nuvem(file); // Envia os arquivos originais, se falhar
-			}
-		
-			try {
-					console.log("Iniciando upload de arquivos comprimidos...");
-					await this.envia_arquivo_pra_nuvem(finalCompressedFile);
-					showAlert(`Arquivo '${finalCompressedFile.name}' enviado com sucesso ao S3`, "success")
-				//await changeOSFunctions.renderChangeHistory()
-				
-			} catch (error) {
-					console.error("Erro ao fazer upload do arquivo", error);
-					showAlert(`Falha ao fazer upload o arquivo '${finalCompressedFile.name}'`, "error")
-			}
-		} 
-	},
+      // Upload S3
+      try {
+        await Enviar_Arquivo_S3.run({
+          fileName: finalCompressedFile.name,
+          filesData: finalCompressedFile
+        });
 
+        showAlert(`Arquivo '${finalCompressedFile.name}' enviado com sucesso ao S3`, "success");
+      } catch (error) {
+        showAlert(`Falha ao enviar o arquivo '${file.name}' ao S3`, "error");
+        statusEnvio = false;
+      }
+    }
+
+    galery.model.data = await Leitura_Arquivos_S3.run();
+    resetWidget("List1", true);
+
+    closeModal(modalCarregamentoArquivos.name);
+
+    if (!statusEnvio) {
+      showModal(modalFalhaEnvioArquivos.name);
+    }
+  },
+	
 	async compressImage(file, scale, quality, fileName) {
 		const options = {
 			maxSizeMB: 1,
@@ -137,42 +127,6 @@ export default {
 		}
 	},
 
-	async envia_arquivo_pra_nuvem(arquivo) {
-		storeValue("tipo_arquivo", "Foto do Servico")
-		let arquivos_para_envio;
-		let fotos = appsmith.store.selectedOS["Foto do Serviço"]
-		console.log(fotos)
-		if(fotos == undefined){
-			arquivos_para_envio = [];
-		}
-		else{
-			arquivos_para_envio = fotos.map(foto => ({"url": foto.url}));
-		}
-
-		console.log(arquivos_para_envio)
-
-		const resposta = await Enviar_Arquivo_S3.run({
-			fileName: arquivo.name,
-			filesData: arquivo
-		});
-		const url = resposta.signedUrl;
-		arquivos_para_envio.push({"url": url});			
-		
-
-		storeValue('arquivo_para_nuvem', null);
-		storeValue('arquivos_para_envio_airtable', null);
-
-		const newOS = await Leitura_OS_Por_RecordID.run({
-			recordId: appsmith.store.selectedOS.record_id
-		});
-
-		storeValue('selectedOS', newOS.fields)
-
-		galery.model.data = await Leitura_Arquivos_S3.run();
-		
-		resetWidget("List1", true)
-	},
-
 	async enviarTermoS3(arquivos) {
 		storeValue("tipo_arquivo", "term")
 		let arquivos_para_envio = [];
@@ -222,7 +176,7 @@ export default {
 		try {
 			await Deletar_Foto_Servico_S3.run({
 				fileName: file.fileName,
-				bucket: "os-pictures"
+				bucket: "bifrost-os-pictures-prod"
 			});
 			showAlert(`Arquivo removido com sucesso '${galery.model.image.fileName}'`, "success")
 		}
@@ -238,6 +192,8 @@ export default {
 
 		const updatedGalleryData = await Leitura_Arquivos_S3.run();
 		galery.model.data = updatedGalleryData;
+		
+		//await changeOSFunctions.renderChangeHistory()
 	},
 
 	renderFile(fileName) {

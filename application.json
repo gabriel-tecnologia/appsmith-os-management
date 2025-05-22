@@ -25,10 +25,6 @@
       "isDefault": true
     },
     {
-      "id": "controle-de-fases-apenas-s3",
-      "isDefault": false
-    },
-    {
       "id": "controle-de-fases-um-a-um",
       "isDefault": false
     },

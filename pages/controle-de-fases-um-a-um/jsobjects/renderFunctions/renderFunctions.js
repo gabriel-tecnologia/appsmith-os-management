@@ -464,6 +464,13 @@ export default {
 			else {
 				return ""
 			}
+	},
+	
+	async updateOS () {
+		const newOS = await Leitura_OS_Por_RecordID.run({
+				recordId: appsmith.store.selectedOS.record_id
+			});
+			storeValue('selectedOS', newOS.fields)
 	}
 }
 
