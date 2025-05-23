@@ -33,6 +33,8 @@ export default {
 
       // Upload S3
       try {
+				storeValue("tipo_arquivo", "Foto do Servico")
+				
         await Enviar_Arquivo_S3.run({
           fileName: finalCompressedFile.name,
           filesData: finalCompressedFile
