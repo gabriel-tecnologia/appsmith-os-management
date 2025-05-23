@@ -5,7 +5,7 @@ export default {
     const data = await Leitura_OS_Por_RecordID.run({
       recordId: appsmith.store.selectedOS.record_id
     });
-    let fotos = data["Foto do Serviço"] ? [...data["Foto do Serviço"]] : [];
+    let fotos = data.fields["Foto do Serviço"] ? [...data.fields["Foto do Serviço"]] : [];
 
     const scale = 0.5;
     const quality = 0.75;

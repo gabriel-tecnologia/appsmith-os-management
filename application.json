@@ -25,11 +25,11 @@
       "isDefault": true
     },
     {
-      "id": "controle-de-fases-um-a-um",
+      "id": "controle-de-fases-final",
       "isDefault": false
     },
     {
-      "id": "controle-de-fases-final",
+      "id": "controle-de-fases-um-a-um",
       "isDefault": false
     }
   ],
