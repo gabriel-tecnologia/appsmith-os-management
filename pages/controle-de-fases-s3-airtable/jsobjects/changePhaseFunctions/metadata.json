@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_97b514a4-1e2b-4e64-b794-8270fb9bef95",
+  "id": "controle-de-fases-s3-airtable_changePhaseFunctions",
+  "unpublishedCollection": {
+    "name": "changePhaseFunctions",
+    "pageId": "controle-de-fases-s3-airtable",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

@@ -25,11 +25,11 @@
       "isDefault": true
     },
     {
-      "id": "controle-de-fases-final",
+      "id": "controle-de-fases-s3-airtable",
       "isDefault": false
     },
     {
-      "id": "controle-de-fases-um-a-um",
+      "id": "controle-de-fases-s3",
       "isDefault": false
     }
   ],

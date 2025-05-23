@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_50a72d09-86b1-46ab-aee0-17066de7ce30",
+  "id": "controle-de-fases-s3_stockCreateMovement",
+  "unpublishedCollection": {
+    "name": "stockCreateMovement",
+    "pageId": "controle-de-fases-s3",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

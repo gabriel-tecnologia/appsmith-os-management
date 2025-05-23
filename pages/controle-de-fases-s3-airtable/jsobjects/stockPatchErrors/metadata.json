@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "67d1a3872fb4f2700e437ea5_27566aaa-bf2a-4f93-9f40-4410e4578b3d",
+  "id": "controle-de-fases-s3-airtable_stockPatchErrors",
+  "unpublishedCollection": {
+    "name": "stockPatchErrors",
+    "pageId": "controle-de-fases-s3-airtable",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
