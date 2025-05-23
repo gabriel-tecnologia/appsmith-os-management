@@ -471,6 +471,7 @@ export default {
 				recordId: appsmith.store.selectedOS.record_id
 			});
 			storeValue('selectedOS', newOS.fields)
+			galery.model.data = newOS.fields["Foto do Serviço"]
 	}
 }
 
