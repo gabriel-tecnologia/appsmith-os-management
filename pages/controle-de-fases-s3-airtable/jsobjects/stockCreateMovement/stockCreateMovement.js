@@ -1,7 +1,16 @@
 export default {
-	async handleCreateMovement() {	
+	async handleCreateMovement() {
+		
+		if (appsmith.store.currentStock["Tipo de Movimento"] == "Saída") {
+			storeValue('saída_material', ["Sim"])
+		}
+		else {
+			storeValue('saída_material', [])
+		}
+		
 		const fields = {
 			"Tipo de Movimento": appsmith.store.currentStock["Tipo de Movimento"],
+			"Saída de Material": appsmith.store.saída_material,
 			"Ordem de Servico": appsmith.store.currentStock["Ordem de Servico"],
 			"Camaleão": Number(inputKitsCamaleao.text) || 0,
 			"Sistema Nervoso 2": Number(inputSistemaNervoso2.text) || 0,
@@ -32,6 +41,13 @@ export default {
 	async handleCreateNewMovement() {
 		let fields = "";
 		
+		if (Select1.selectedOptionValue == "Saída") {
+			storeValue('saída_material', ["Sim"])
+		}
+		else {
+			storeValue('saída_material', [])
+		}
+		
 		fields = {
 			"Ordem de Servico": [appsmith.store.selectedOS["record_id"]],
 			"Camaleão": Number(inputKitsCamaleaoCopyCopy.text) || 0,
@@ -45,7 +61,8 @@ export default {
 			"Placa Bolacha": Number(inputPlacaBolachaCopyCopy.text) || 0,
 			"MAC Address do Roteador": inputMacAddressRoteador.text || "",
 			"Cancelar Remessa de Produto": false,
-			"Cadastrar Remessa de Produto": true
+			"Cadastrar Remessa de Produto": true,
+			"Saída de Material": appsmith.store.saída_material
 		}
     
 		try{
