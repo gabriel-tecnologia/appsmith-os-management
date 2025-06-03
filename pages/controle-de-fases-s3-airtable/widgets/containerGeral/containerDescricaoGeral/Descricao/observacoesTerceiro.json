@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 116,
+  "bottomRow": 118,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -33,8 +33,8 @@
   "mobileLeftColumn": 0,
   "mobileRightColumn": 16,
   "mobileTopRow": 9,
-  "originalBottomRow": 107,
-  "originalTopRow": 103,
+  "originalBottomRow": 116,
+  "originalTopRow": 105,
   "overflow": "NONE",
   "parentColumnSpace": 6.84375,
   "parentId": "vcxpa7yivg",
@@ -55,7 +55,7 @@
   "text": "<b>Observações (do Terceiro para Gabriel)</b>: {{appsmith.store.selectedOS[\"Observações (do Terceiro para Gabriel)\"]??\"\"}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 105,
+  "topRow": 114,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
