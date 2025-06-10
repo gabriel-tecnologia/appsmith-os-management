@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 146,
+  "bottomRow": 150,
   "boxShadow": "none",
   "defaultText": "{{appsmith.store.selectedOS[\"Justificativa de Valor a Cobrar\"]??\"\"}}",
   "dynamicBindingPathList": [
@@ -85,7 +85,7 @@
   "shouldAllowAutofill": false,
   "showStepArrows": false,
   "tooltip": "{{inputJustifValorACobrar.isDisabled ? \"Campo desativado se o Valor a Cobrar (do Cliente) não estiver preenchido\" : \"\"}}",
-  "topRow": 136,
+  "topRow": 140,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "64tcm7mrcg",

@@ -11,7 +11,7 @@
           "data": "{\n\t\"data\": \"{{this.params.filesData}}\"\n}"
         },
         "bucket": {
-          "data": "os-pictures"
+          "data": "bifrost-os-pictures-prod"
         },
         "command": {
           "data": "UPLOAD_FILE_FROM_BODY"
