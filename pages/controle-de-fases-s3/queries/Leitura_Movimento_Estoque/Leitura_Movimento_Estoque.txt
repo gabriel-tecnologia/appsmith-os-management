@@ -9,6 +9,7 @@
 			"Kit Poste Canguru",
 			"Kit Poste 2.0 (Piso)",
 			"Kit Poste 2.0 (Parede)",
+			"Kit Boas Vindas",
 			"Placa de Sinalização - Gravata - 0800 GAB-RIEL",
 			"Placa de Sinalização - Gravata 2- 0800 GAB-RIEL",
 			"Placa Bolacha"

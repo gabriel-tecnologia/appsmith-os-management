@@ -18,6 +18,9 @@
   "dynamicPropertyPathList": [
     {
       "key": "isVisible"
+    },
+    {
+      "key": "onClick"
     }
   ],
   "dynamicTriggerPathList": [

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 41,
+  "bottomRow": 5,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -14,18 +14,12 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [
-    {
-      "key": "fontSize"
-    }
-  ],
-  "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "1.30rem",
+  "fontSize": "1.25rem",
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "q6nqmsysmi",
+  "key": "00hd1oqb2r",
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
@@ -35,21 +29,19 @@
   "mobileRightColumn": 41,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 41,
-  "originalTopRow": 37,
   "overflow": "NONE",
-  "parentId": "e70v1hjnhi",
+  "parentId": "5xb6lxhhga",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 31,
+  "rightColumn": 41,
   "shouldTruncate": false,
-  "text": "Movimento de Estoque",
+  "text": "Modal Title",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 37,
+  "topRow": 1,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "kz5a5k9pwk",
-  "widgetName": "Text7Copy"
+  "widgetId": "vr6mlpwnzz",
+  "widgetName": "Text42"
 }

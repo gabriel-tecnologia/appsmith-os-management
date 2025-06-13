@@ -33,18 +33,18 @@ export default {
 				return []
 		}
 	},
-	
+
 	renderAdjustReasons(){
 		return [
-								{
-									"name": "Termo de finalização não assinado",
-									"code": "Termo de finalização não assinado"
-								},
-								{
-									"name": "Controle de Qualidade Sistêmico Reprovado",
-									"code": "Controle de Qualidade Sistêmico Reprovado"
-								}
-							]
+			{
+				"name": "Termo de finalização não assinado",
+				"code": "Termo de finalização não assinado"
+			},
+			{
+				"name": "Controle de Qualidade Sistêmico Reprovado",
+				"code": "Controle de Qualidade Sistêmico Reprovado"
+			}
+		]
 	},
 	renderImproductiveReasons(){
 		return [
@@ -107,10 +107,14 @@ export default {
 			{
 				"name": "Não foi necessário realizar o serviço",
 				"code": "Não foi necessário realizar o serviço"
-			}										
+			},
+			{
+				"name": "Instalação parcialmente concluída",
+				"code": "Instalação parcialmente concluída"
+			}	
 		]	
 	},
-	
+
 	renderReasonsOptions(){
 		if (appsmith.store.improductiveMotive) {
 			return appsmith.store.improductiveMotive
@@ -146,11 +150,11 @@ export default {
 			"[EXT] T7 Solutions",
 			"[EXT] Telebit"
 		]
-		
+
 		const partner = PARTNER.map((partner) =>({name: partner, code: partner}))		
 		return partner
 	},
-	
+
 	renderSolutions() {
 		return [
 			{"name": "Remoção ou troca de equipamento ou componente", "code": "Remoção ou troca de equipamento ou componente"},
@@ -166,39 +170,39 @@ export default {
 			{"name": "Envio de placas da Gabriel", "code": "Envio de placas da Gabriel"}
 		]
 	},
-	
+
 	formatStockText(stock) {
-    let text = ""
-		
+		let text = ""
+
 		stock["Status da Remessa"] ? text = text.concat("Status: ", stock["Status da Remessa"], "\n\n") : ""
-		
+
 		stock["Saída de Material"] ? text = text.concat("Saída de Material: ", stock["Saída de Material"], "\n\n") : ""
-		
+
 		stock["Nota de Remessa / Retorno"] ? text = text.concat("Nota de Remessa / Retorno: ", stock["Nota de Remessa / Retorno"], "\n\n") : ""
-		
+
 		stock["Movimento Criado por"] ? text = text.concat("Movimento Criado por: ", stock["Movimento Criado por"], "\n\n") : text = text.concat("Movimento Criado por Automação no Airtable", "\n\n")
-		
+
 		stock.Camaleão ? text = text.concat(stock.Camaleão+" x Camaleão\n") : ""
-		
+
 		stock["Sistema Nervoso 2"] ? text = text.concat(stock["Sistema Nervoso 2"]+" x Sistema Nervoso 2\n") : ""
-		
+
 		stock["Kit Poste Canguru"] ? text = text.concat(stock["Kit Poste Canguru"] + " x Kit Poste Canguru\n") : ""
-		
+
 		stock["Kit Poste 2.0 (Piso)"] ? text = text.concat(stock["Kit Poste 2.0 (Piso)"] + " x Kit Poste 2.0 (Piso)\n") : ""
-		
+
 		stock["Kit Poste 2.0 (Parede)"] ? text = text.concat(stock["Kit Poste 2.0 (Parede)"]+" x Kit Poste 2.0 (Parede)\n") : ""
-		
+
 		stock["Kit Boas Vindas"] ? text = text.concat(stock["Kit Boas Vindas"]+" x Kit Boas Vindas\n") : ""
-		
+
 		stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"] ? text = text.concat(stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"]+" x Placa Gravata Gen1 (Verde)\n") : ""
-		
+
 		stock["Placa de Sinalização - Gravata 2- 0800 GAB-RIEL"] ? text = text.concat(stock["Placa de Sinalização - Gravata 2- 0800 GAB-RIEL"]+" x Placa Gravata Gen2 (Branca)\n") : ""
-		
+
 		stock["Placa Bolacha"] ? text = text.concat(stock["Placa Bolacha"]+" x Placa Bolacha Nova\n") : ""
-		
+
 		return text
 	},
-	
+
 	renderPeriod() {
 		switch (appsmith.store.selectedOS["Tipo de Ordem de Serviço"]){
 			case "Manutenção":
@@ -259,7 +263,7 @@ export default {
 						"code": "18h"
 					}
 				]
-				case "Desinstalação":
+			case "Desinstalação":
 				return [
 					{
 						"name": "Horário comercial",
@@ -368,117 +372,117 @@ export default {
 						"code": "16h"
 					}
 				]
-				case "Adesão":
-					return [
-						{
-							"name": "Horário comercial",
-							"code": "Horário comercial"
-						},
-						{
-							"name": "Manhã",
-							"code": "Manhã"
-						},
-						{
-							"name": "08h",
-							"code": "08h"
-						},
-						{
-							"name": "09h",
-							"code": "09h"
-						},
-						{
-							"name": "10h",
-							"code": "10h"
-						},
-						{
-							"name": "11h",
-							"code": "11h"
-						},
-						{
-							"name": "Tarde",
-							"code": "Tarde"
-						},
-						{
-							"name": "12h",
-							"code": "12h"
-						},
-						{
-							"name": "13h",
-							"code": "13h"
-						},
-						{
-							"name": "14h",
-							"code": "14h"
-						},
-						{
-							"name": "15h",
-							"code": "15h"
-						},
-						{
-							"name": "16h",
-							"code": "16h"
-						}
-					]
-			}
-		},
-		handleURLformat(url) {
-			if (url == null || url == "" || url == undefined) {
-				return ""
-			}
-			else {
-				return url[0]
-			}
-		},
-		handleItensFormat(itens) {
-			if (itens == null || itens == "" || itens == undefined) {
-				return ""
-			}
-			else {
-				return itens.join('\n')
-			}
-		},
-	
-		async renderOSMotherInfo() {
-			if (appsmith.store.selectedOS["OS (Mãe)"] != undefined) {
-				let relativeOS = await Leitura_OS_Por_RecordID.run({
-					recordId: appsmith.store.selectedOS["OS (Mãe)"][0]
-				});
-			
-				let fields = relativeOS.fields
-
-				return fields["id_os"]
-			}
-			else{
-				return ""
-			}
-		},
-	
-		async renderOSChildInfo() {
-				if (appsmith.store.selectedOS["OS (Filha)"] != undefined) {
-				let relativeOS = await Leitura_OS_Por_RecordID.run({
-					recordId: appsmith.store.selectedOS["OS (Filha)"][0]
-				});
-			
-				let fields = relativeOS.fields
-
-				return fields["id_os"]
-			}
-			else {
-				return ""
-			}
+			case "Adesão":
+				return [
+					{
+						"name": "Horário comercial",
+						"code": "Horário comercial"
+					},
+					{
+						"name": "Manhã",
+						"code": "Manhã"
+					},
+					{
+						"name": "08h",
+						"code": "08h"
+					},
+					{
+						"name": "09h",
+						"code": "09h"
+					},
+					{
+						"name": "10h",
+						"code": "10h"
+					},
+					{
+						"name": "11h",
+						"code": "11h"
+					},
+					{
+						"name": "Tarde",
+						"code": "Tarde"
+					},
+					{
+						"name": "12h",
+						"code": "12h"
+					},
+					{
+						"name": "13h",
+						"code": "13h"
+					},
+					{
+						"name": "14h",
+						"code": "14h"
+					},
+					{
+						"name": "15h",
+						"code": "15h"
+					},
+					{
+						"name": "16h",
+						"code": "16h"
+					}
+				]
+		}
 	},
-	
+	handleURLformat(url) {
+		if (url == null || url == "" || url == undefined) {
+			return ""
+		}
+		else {
+			return url[0]
+		}
+	},
+	handleItensFormat(itens) {
+		if (itens == null || itens == "" || itens == undefined) {
+			return ""
+		}
+		else {
+			return itens.join('\n')
+		}
+	},
+
+	async renderOSMotherInfo() {
+		if (appsmith.store.selectedOS["OS (Mãe)"] != undefined) {
+			let relativeOS = await Leitura_OS_Por_RecordID.run({
+				recordId: appsmith.store.selectedOS["OS (Mãe)"][0]
+			});
+
+			let fields = relativeOS.fields
+
+			return fields["id_os"]
+		}
+		else{
+			return ""
+		}
+	},
+
+	async renderOSChildInfo() {
+		if (appsmith.store.selectedOS["OS (Filha)"] != undefined) {
+			let relativeOS = await Leitura_OS_Por_RecordID.run({
+				recordId: appsmith.store.selectedOS["OS (Filha)"][0]
+			});
+
+			let fields = relativeOS.fields
+
+			return fields["id_os"]
+		}
+		else {
+			return ""
+		}
+	},
+
 	async updateOS () {
 		const newOS = await Leitura_OS_Por_RecordID.run({
-				recordId: appsmith.store.selectedOS.record_id
-			});
-			storeValue('selectedOS', newOS.fields)
-			galery.model.data = newOS.fields["Foto do Serviço"]
+			recordId: appsmith.store.selectedOS.record_id
+		});
+		storeValue('selectedOS', newOS.fields)
+		galery.model.data = newOS.fields["Foto do Serviço"]
 	}
 }
 
 
-	
-	
-	
-	
+
+
+
+

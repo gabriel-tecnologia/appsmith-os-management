@@ -107,7 +107,11 @@ export default {
 			{
 				"name": "Não foi necessário realizar o serviço",
 				"code": "Não foi necessário realizar o serviço"
-			}										
+			},
+			{
+				"name": "Instalação parcialmente concluída",
+				"code": "Instalação parcialmente concluída"
+			}											
 		]	
 	},
 	
@@ -187,6 +191,8 @@ export default {
 		stock["Kit Poste 2.0 (Piso)"] ? text = text.concat(stock["Kit Poste 2.0 (Piso)"] + " x Kit Poste 2.0 (Piso)\n") : ""
 		
 		stock["Kit Poste 2.0 (Parede)"] ? text = text.concat(stock["Kit Poste 2.0 (Parede)"]+" x Kit Poste 2.0 (Parede)\n") : ""
+		
+		stock["Kit Boas Vindas"] ? text = text.concat(stock["Kit Boas Vindas"]+" x Kit Boas Vindas\n") : ""
 		
 		stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"] ? text = text.concat(stock["Placa de Sinalização - Gravata - 0800 GAB-RIEL"]+" x Placa Gravata Gen1 (Verde)\n") : ""
 		

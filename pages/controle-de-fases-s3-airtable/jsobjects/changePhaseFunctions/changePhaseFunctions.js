@@ -31,6 +31,16 @@ export default {
 			return;
 		}
 		
+		if (appsmith.store.selectedOS.Fase == "Ajuste" && !appsmith.store.selectedOS["Motivo do Ajuste"]) {
+			showAlert("Preencha o motivo de ajuste para concluir", "error")
+			return;
+		}
+		
+		if (appsmith.store.selectedOS.Fase == "Improdutiva" && !appsmith.store.selectedOS["Motivo de Improdutiva"]) {
+			showAlert("Preencha o motivo de improdutiva para concluir", "error")
+			return;
+		}
+		
 		try {
 			storeValue("fase", "Concluído")
 			await Alterar_Campo_Especifico.run({Field: {"Fase": appsmith.store.fase}})
