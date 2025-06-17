@@ -97,6 +97,10 @@ export default {
 				"code": "[GABRIEL] Necessidade de cabeamento de internet"
 			},
 			{
+				"name": "[GABRIEL] Produto não se adequa ao local",
+				"code": "[GABRIEL] Produto não se adequa ao local"
+			},
+			{
 				"name": "[GABRIEL] Equipamento com defeito (SN/Camaleão)",
 				"code": "[GABRIEL] Equipamento com defeito (SN/Camaleão)"
 			},

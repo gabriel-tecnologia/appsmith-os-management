@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 41,
+  "bottomRow": 36,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "SECONDARY",
@@ -51,7 +51,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 63,
   "text": "Recarregar",
-  "topRow": 37,
+  "topRow": 32,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "vhy4tqw1w7",
