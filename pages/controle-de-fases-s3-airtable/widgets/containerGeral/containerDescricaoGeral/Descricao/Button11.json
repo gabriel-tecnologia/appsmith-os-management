@@ -59,7 +59,7 @@
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
   "rightColumn": 26,
-  "text": "{{renderFunctions.renderOSMotherInfo.data??\"Sem OS Mãe\"}}",
+  "text": "{{renderFunctions.renderOSMotherInfo.data}}",
   "topRow": 22,
   "type": "BUTTON_WIDGET",
   "version": 1,

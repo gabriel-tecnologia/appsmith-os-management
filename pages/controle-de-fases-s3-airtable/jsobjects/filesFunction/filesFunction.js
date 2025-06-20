@@ -37,7 +37,6 @@ export default {
         }
       }
 
-      // Upload S3
       try {
         const resposta = await Enviar_Arquivo_S3.run({
 					installationIdBifrost: appsmith.store.selectedOS["installationIdBifrost (from id_assinatura)"][0],
@@ -52,6 +51,8 @@ export default {
 			}
 			catch(error){
 				showAlert(`Falha ao enviar arquivo '${finalCompressedFile.name}' ao S3`, "error");
+				console.log(error)
+				continue;
 			}
 			try {
         // Upload Airtable
