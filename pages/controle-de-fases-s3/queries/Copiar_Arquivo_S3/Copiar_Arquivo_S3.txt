@@ -1,0 +1,5 @@
+{
+  "bucket": {{this.params.bucket}},
+  "sourceKey": {{this.params.sourceKey}},
+  "destinationKey": {{this.params.destinationKey}}
+}

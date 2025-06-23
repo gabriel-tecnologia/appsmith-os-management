@@ -31,7 +31,6 @@ export default {
         }
       }
 
-      // Upload S3
       try {
         const resposta = await Enviar_Arquivo_S3.run({
 					installationIdBifrost: appsmith.store.selectedOS["installationIdBifrost (from id_assinatura)"][0],
@@ -213,17 +212,17 @@ export default {
 		}
 	},
 	
-	async removerTermoS3() {
+	async removerTermoS3(arquivo) {
 		await Leitura_OS_Por_RecordID.run({
 					recordId: appsmith.store.selectedOS.record_id
 				});
 
 		try {
 			// Remove do S3
-			// await Deletar_Arquivo_S3.run({
-				// fileName: fileName,
-				// bucket: "bifrost-os-terms-prod" 
-			// });
+			await Deletar_Arquivo_S3.run({
+				fileName: arquivo.fileName,
+				bucket: "bifrost-os-pictures-prod" 
+			});
 
 			// Remove do Airtable (envia array vazio para remover todos os termos)
 			await Enviar_Termo.run({
@@ -243,7 +242,7 @@ export default {
 
 		resetWidget("termDocumentViewer", true);
 
-		await changeOSFunctions.renderChangeHistory();
+		//await changeOSFunctions.renderChangeHistory();
 	}
 	
 }

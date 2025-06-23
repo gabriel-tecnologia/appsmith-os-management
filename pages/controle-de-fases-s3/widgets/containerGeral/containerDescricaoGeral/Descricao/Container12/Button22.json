@@ -40,7 +40,7 @@
   "mobileRightColumn": 59,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{filesFunction.removerTermoS3()}}",
+  "onClick": "{{filesFunction.removerTermoS3(envioTermo.files)}}",
   "originalBottomRow": 4,
   "originalTopRow": 0,
   "parentColumnSpace": 7.947900176048279,

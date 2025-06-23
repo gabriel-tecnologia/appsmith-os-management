@@ -1,39 +1,139 @@
 export default {
 	
+	async copyFileToChildOs(fileName) {
+		
+		// Troca o installationIdBifrost e o idOs do arquivo original para cópia
+		const destinationKey = fileName.replace(
+      /^([^\/]+)\/([^\/]+)/, 
+      appsmith.store.selectedOS["installationIdBifrost (from id_assinatura)"][0] + '/' + appsmith.store.selectedOS.id_os
+    );
+		
+		await Copiar_Arquivo_S3.run({
+			bucket: "bifrost-os-pictures-prod",
+			sourceKey: fileName,
+			destinationKey: destinationKey
+		});	
+		
+	},
+	
 	async handleCreateOS(){
-		
-		// Gambiarra para manter as Instruções (Foto) na nova OS
-		storeValue('instructionPhotosURL', "")
-		
-		if (appsmith.store.selectedOS["Instruções (Foto)"] != undefined) {
-			let fotos = appsmith.store.selectedOS["Instruções (Foto)"]
-			let arquivos_para_envio = fotos.map(foto => ({"url": foto.url}))
-			storeValue('instructionPhotosURL', arquivos_para_envio)			
-		}
-		
-		// Gambiarra para manter as Fotos de Serviço na nova OS
-		storeValue('servicePhotosUrl', "")
-		
-		if (appsmith.store.selectedOS["Foto do Serviço"] != undefined) {
-			let fotos = appsmith.store.selectedOS["Foto do Serviço"]
-			let arquivos_para_envio = fotos.map(foto => ({"url": foto.url}))
-			storeValue('servicePhotosUrl', arquivos_para_envio)
-		}
-		
-		// Gambiarra para manter o Termo de Finalização na nova OS
-		storeValue('termPdf', "")
-		
-		if (appsmith.store.selectedOS["Termo de Finalização"] != undefined) {
-			let term = appsmith.store.selectedOS["Termo de Finalização"]
-			let arquivos_para_envio = term.map(term => ({"url": term.url}))
-			storeValue('termPdf', arquivos_para_envio)
-		}
-		
+				
 		// Cria nova OS
 		if (appsmith.store.selectedOS["OS (Filha)"] == undefined) {
-			const newOS = await Criar_OS.run()
+			const newOS = await Criar_OS_V2.run()
 			storeValue("newOS", newOS.fields)
-		}		
+		}
+		
+		// Passando as Fotos de Serviço na nova OS
+		storeValue('servicePhotosUrl', "")
+		
+		const serviceFiles = await Leitura_Arquivos_S3.run({
+			installationIDBifrost: appsmith.store.selectedOS["installationIdBifrost (from id_assinatura)"][0],
+			idOs: appsmith.store.selectedOS.id_os,
+			tipo_arquivo: "service_pictures"
+		});
+		
+		// Copia cada foto da OS mae para a filha no s3
+		if(serviceFiles) {
+			for (const arquivo of serviceFiles) {
+				try {
+					await this.copyFileToChildOs(arquivo.fileName)
+				}
+				catch (error) {
+					console.log(error)
+				}
+			}
+		}
+				
+		const newServiceFiles = await Leitura_Arquivos_S3.run({
+			installationIdBifrost: appsmith.store.newOS["installationIdBifrost (from id_assinatura)"][0],
+			idOs: appsmith.store.selectedOS.id_os,
+			tipo_arquivo: "service_pictures"
+		})
+		
+		// Upload Airtable
+		for (const file of newServiceFiles) {
+			let service_file = [];
+			const url = file.url
+			service_file.push({ url }); 
+
+			await Enviar_Fotos_Airtable.run({ 
+				recordId: appsmith.store.newOS.record_id,
+				photosUrl: service_file
+			});
+		}
+					
+		const instructionFiles = await Leitura_Arquivos_S3.run({
+			installationIDBifrost: appsmith.store.selectedOS["installationIdBifrost (from id_assinatura)"][0],
+			idOs: appsmith.store.selectedOS.id_os,
+			tipo_arquivo: "instruction_pictures"
+		});
+		
+		// Copia cada foto da OS mae para a filha no s3
+		if(instructionFiles) {
+			for (const arquivo of appsmith.store.instructionPhotosUrl) {
+				try {
+					await this.copyFileToChildOs(arquivo.fileName)
+				}
+				catch(error) {
+					console.log(error)
+				}
+			}
+		}
+		
+		const newInstructionFiles = await Leitura_Arquivos_S3.run({
+			installationIdBifrost: appsmith.store.newOS["installationIdBifrost (from id_assinatura)"][0],
+			idOs: appsmith.store.selectedOS.id_os,
+			tipo_arquivo: "instruction_pictures"
+		})
+		
+		// Upload Airtable
+		for (const file of newInstructionFiles) {
+			let instruction_file = [];
+			const url = file.url
+			instruction_file.push({ url });
+
+			await Enviar_Fotos_Airtable.run({ 
+				recordId: appsmith.store.newOS.record_id,
+				photosUrl: instruction_file
+			});
+		}
+		
+		const termFiles = await Leitura_Arquivos_S3.run({
+			installationIDBifrost: appsmith.store.selectedOS["installationIdBifrost (from id_assinatura)"][0],
+			idOs: appsmith.store.selectedOS.id_os,
+			tipo_arquivo: "finalization_term"
+		});
+		
+		//Copia termo da OS mae para a filha no s3
+		if(termFiles) {
+			for (const arquivo of appsmith.store.term) {
+				try {
+					await this.copyFileToChildOs(arquivo.fileName)
+				}
+				catch(error) {
+					console.log(error)
+				}
+			}
+		}
+		
+		const newTermFiles = await Leitura_Arquivos_S3.run({
+			installationIdBifrost: appsmith.store.newOS["installationIdBifrost (from id_assinatura)"][0],
+			idOs: appsmith.store.selectedOS.id_os,
+			tipo_arquivo: "finalization_term"
+		})
+		
+		// Upload Airtable
+		for (const file of newTermFiles) {
+			let term = [];
+			const url = file.url
+			term.push({ url });
+
+			await Enviar_Termo.run({ 
+					recordId: appsmith.store.newOS.record_id,
+					term: term
+			});
+		}
 		
 		// Conecta OS mãe com OS filha
 		await this.linkMotherAndChildOS()
