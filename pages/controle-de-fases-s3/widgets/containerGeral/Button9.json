@@ -35,7 +35,7 @@
   "mobileRightColumn": 17,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('pagina-inicial', {}, 'SAME_WINDOW');\nclearStore();\n}}",
+  "onClick": "{{navigateTo('pagina-inicial', {}, 'SAME_WINDOW');\n}}",
   "parentColumnSpace": 16.31005859375,
   "parentId": "ce0ttp9mro",
   "parentRowSpace": 10,
