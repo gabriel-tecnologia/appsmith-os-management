@@ -27,10 +27,10 @@
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
-      "key": "isVisible"
+      "key": "removeButtonClick"
     },
     {
-      "key": "removeButtonClick"
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -44,7 +44,7 @@
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
-  "isVisible": "{{appsmith.store.selectedOS[\"Foto do Serviço\"] != undefined}}",
+  "isVisible": "{{Leitura_Arquivos_S3.data.length > 0}}",
   "key": "pi9kaamdyp",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
@@ -59,7 +59,7 @@
   "parentColumnSpace": 18.8125,
   "parentId": "yafn7ckaq2",
   "parentRowSpace": 10,
-  "removeButtonClick": "{{filesFunction.removerFotoAirtable();}}",
+  "removeButtonClick": "{{filesFunction.removerArquivoS3();}}",
   "renderMode": "CANVAS",
   "rightColumn": 64,
   "shouldScrollContents": true,
