@@ -80,6 +80,8 @@ export default {
 			galery.model.data = newOS.fields["Foto do Serviço"]
 			
 			await changeOSFunctions.renderChangeHistory()
+		
+		await renderFunctions.updateOS()
 
     closeModal(modalCarregamentoArquivos.name);
 
@@ -223,8 +225,7 @@ export default {
 		});
 		storeValue('selectedOS', newOS.fields)
 
-		const updatedGalleryData = await Leitura_Arquivos_S3.run();
-		galery.model.data = updatedGalleryData;
+		await renderFunctions.updateOS()
 		
 		//await changeOSFunctions.renderChangeHistory()
 	},
