@@ -472,12 +472,14 @@ export default {
 			}
 	},
 	
-	async updateOS () {
-		const newOS = await Leitura_OS_Por_RecordID.run({
-				recordId: appsmith.store.selectedOS.record_id
+	async updateOS () {		
+			const serviceFiles = await Leitura_Arquivos_S3.run({
+				installationIDBifrost: appsmith.store.selectedOS["installationIdBifrost (from id_assinatura)"][0],
+				idOs: appsmith.store.selectedOS.id_os,
+				tipo_arquivo: "service_pictures"
 			});
-			storeValue('selectedOS', newOS.fields)
-			galery.model.data = newOS.fields["Foto do Serviço"]
+		
+			galery.model.data = serviceFiles
 	}
 }
 

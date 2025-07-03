@@ -29,7 +29,7 @@
             "data": "5"
           },
           "prefix": {
-            "data": "{{appsmith.store.selectedOS[\"installationIdBifrost (from id_assinatura)\"][0]}}/{{appsmith.store.selectedOS.id_os}}/service_pictures"
+            "data": "{{this.params.installationIDBifrost}}/{{this.params.idOs}}/{{this.params.tipo_arquivo}}"
           },
           "signedUrl": {
             "data": "YES"
