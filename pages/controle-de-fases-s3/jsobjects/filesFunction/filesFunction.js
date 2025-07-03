@@ -39,7 +39,7 @@ export default {
       }
 
       try {
-        const resposta = await Enviar_Arquivo_S3.run({
+        await Enviar_Arquivo_S3.run({
 					installationIdBifrost: appsmith.store.selectedOS["installationIdBifrost (from id_assinatura)"][0],
 					idOs: appsmith.store.selectedOS.id_os,
 					tipo_arquivo: "service_pictures",
@@ -47,8 +47,8 @@ export default {
           filesData: finalCompressedFile
         });
 				
-				const url = resposta.signedUrl;
-        fotos.push({ url }); // Acumula url para enviar ao Airtable
+				//const url = resposta.signedUrl;
+        //fotos.push({ url }); // Acumula url para enviar ao Airtable
 				
 				showAlert(`Arquivo '${finalCompressedFile.name}' enviado ao S3 com sucesso`, "success");
 			}

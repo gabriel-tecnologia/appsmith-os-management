@@ -480,6 +480,7 @@ export default {
 			});
 		
 			galery.model.data = serviceFiles
+			resetWidget(galery, true)
 	}
 }
 
