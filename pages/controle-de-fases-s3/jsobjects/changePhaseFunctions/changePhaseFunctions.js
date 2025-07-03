@@ -1,6 +1,13 @@
 export default {
 	async handleMoveToConcluded(){
-		if (!appsmith.store.selectedOS["Foto do Serviço"]){
+		
+		const serviceFiles = await Leitura_Arquivos_S3.run({
+				installationIDBifrost: appsmith.store.selectedOS["installationIdBifrost (from id_assinatura)"][0],
+				idOs: appsmith.store.selectedOS.id_os,
+				tipo_arquivo: "service_pictures"
+			});
+		
+		if (!serviceFiles){
 			showAlert("Falta incluir Fotos do Serviço", "error")
 			return;
 		}
