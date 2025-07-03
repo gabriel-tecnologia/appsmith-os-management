@@ -52,7 +52,7 @@ export default {
 				
 				showAlert(`Arquivo '${finalCompressedFile.name}' enviado ao S3 com sucesso`, "success");
 			}
-			catch(error){
+			catch(error) {
 				showAlert(`Falha ao enviar arquivo '${finalCompressedFile.name}' ao S3`, "error");
 				continue;
 			}

@@ -1,0 +1,53 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 72,
+  "boxShadow": "none",
+  "defaultImage": "{{galery.model.selectedFile}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultImage"
+    },
+    {
+      "key": "image"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableDownload": false,
+  "enableRotation": false,
+  "flexVerticalAlignment": "start",
+  "image": "{{galery.model.selectedFile}}",
+  "imageShape": "RECTANGLE",
+  "isLoading": false,
+  "isVisible": "{{!galery.model.selectedFile.includes('.mp4')}}",
+  "key": "3zfpxaps3a",
+  "leftColumn": 0,
+  "maxZoomLevel": 1,
+  "mobileBottomRow": 18,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 10,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "objectFit": "contain",
+  "parentColumnSpace": 15.875,
+  "parentId": "i0ix3tezb9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "topRow": 5,
+  "type": "IMAGE_WIDGET",
+  "version": 1,
+  "widgetId": "wwcuck030h",
+  "widgetName": "Image2"
+}
