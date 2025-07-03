@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "fullyQualifiedName": "renderFunctions.updateOS",
     "name": "updateOS",
     "pageId": "controle-de-fases-s3",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

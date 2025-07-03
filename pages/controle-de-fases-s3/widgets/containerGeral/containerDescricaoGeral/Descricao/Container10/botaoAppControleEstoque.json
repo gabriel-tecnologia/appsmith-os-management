@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 16,
+  "bottomRow": 54,
   "bottomRowBeforeCollapse": 16,
   "boxShadow": "none",
   "buttonColor": "#00ce7c",
@@ -55,7 +55,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 63,
   "text": "App de Controle de Estoque",
-  "topRow": 12,
+  "topRow": 50,
   "topRowBeforeCollapse": 12,
   "type": "BUTTON_WIDGET",
   "version": 1,

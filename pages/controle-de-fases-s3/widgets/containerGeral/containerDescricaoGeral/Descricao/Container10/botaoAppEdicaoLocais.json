@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 11,
+  "bottomRow": 49,
   "boxShadow": "none",
   "buttonColor": "#00ce7c",
   "buttonVariant": "SECONDARY",
@@ -54,7 +54,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 63,
   "text": "App de Edição de Locais",
-  "topRow": 7,
+  "topRow": 45,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "qv2nggdvpy",

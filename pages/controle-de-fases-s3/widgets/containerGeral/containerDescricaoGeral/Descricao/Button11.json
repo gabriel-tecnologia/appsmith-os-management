@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 26,
+  "bottomRow": 35,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "TERTIARY",
@@ -60,7 +60,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 26,
   "text": "{{renderFunctions.renderOSMotherInfo.data??\"Sem OS Mãe\"}}",
-  "topRow": 22,
+  "topRow": 31,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "80sx16iplp",

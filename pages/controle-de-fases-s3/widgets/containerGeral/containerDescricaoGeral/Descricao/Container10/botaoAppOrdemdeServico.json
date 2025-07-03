@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 26,
+  "bottomRow": 64,
   "bottomRowBeforeCollapse": 26,
   "boxShadow": "none",
   "buttonColor": "#00ce7c",
@@ -55,7 +55,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 63,
   "text": "App de Ordem de Serviço",
-  "topRow": 22,
+  "topRow": 60,
   "topRowBeforeCollapse": 22,
   "type": "BUTTON_WIDGET",
   "version": 1,
