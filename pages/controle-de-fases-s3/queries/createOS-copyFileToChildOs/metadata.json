@@ -9,6 +9,12 @@
       "jsArguments": [
         {
           "name": "fileName"
+        },
+        {
+          "name": "childInstallationIdBifrost"
+        },
+        {
+          "name": "childIdOs"
         }
       ],
       "paginationType": "NONE",
