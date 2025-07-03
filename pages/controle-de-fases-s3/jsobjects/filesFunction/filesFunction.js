@@ -3,10 +3,10 @@ export default {
   async compressAndUpload(files) {
 		
 		// Enquanto não cortamos a comunicação com Airtable:
-		const data = await Leitura_OS_Por_RecordID.run({
-      recordId: appsmith.store.selectedOS.record_id
-    });
-    let fotos = data.fields["Foto do Serviço"] ? [...data.fields["Foto do Serviço"]] : [];
+		// const data = await Leitura_OS_Por_RecordID.run({
+      // recordId: appsmith.store.selectedOS.record_id
+    // });
+    // let fotos = data.fields["Foto do Serviço"] ? [...data.fields["Foto do Serviço"]] : [];
 		
     const scale = 0.5;
     const quality = 0.75;
@@ -57,29 +57,26 @@ export default {
 				continue;
 			}
 			
-			try {
-        // Upload Airtable
-        await Enviar_Fotos_Airtable.run({ 
-					recordId: appsmith.store.selectedOS.record_id,
-					photosUrl: fotos 
-				});
-        storeValue("service_pictures", fotos);
-
-        showAlert(`Arquivo '${finalCompressedFile.name}' enviado ao Airtable com sucesso`, "success");
-      } catch (error) {
-        showAlert(`Falha ao enviar o arquivo '${file.name}' ao Airtable`, "error");
-        statusEnvio = false;
-      }
+			// try {
+        // await Enviar_Fotos_Airtable.run({ 
+					// recordId: appsmith.store.selectedOS.record_id,
+					// photosUrl: fotos 
+				// });
+        // storeValue("service_pictures", fotos);
+// 
+        // showAlert(`Arquivo '${finalCompressedFile.name}' enviado ao Airtable com sucesso`, "success");
+      // } catch (error) {
+        // showAlert(`Falha ao enviar o arquivo '${file.name}' ao Airtable`, "error");
+        // statusEnvio = false;
+      // }
     }
 
-    const newOS = await Leitura_OS_Por_RecordID.run({
-				recordId: appsmith.store.selectedOS.record_id
-			});
-			storeValue('selectedOS', newOS.fields)
-			resetWidget("listaVideos", true)
-			galery.model.data = newOS.fields["Foto do Serviço"]
+    // const newOS = await Leitura_OS_Por_RecordID.run({
+				// recordId: appsmith.store.selectedOS.record_id
+			// });
+		// storeValue('selectedOS', newOS.fields)
 			
-			await changeOSFunctions.renderChangeHistory()
+		await changeOSFunctions.renderChangeHistory()
 		
 		await renderFunctions.updateOS()
 

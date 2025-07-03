@@ -342,6 +342,8 @@ export default {
 			showAlert("Falha ao mudar a fase da OS para 'Controle de Qualidade'", "error")
 		}
 		
+		closeModal(modalConfirmacaoControleQualid)
+		
 	},
 	
 	async handleCancelOS() {
