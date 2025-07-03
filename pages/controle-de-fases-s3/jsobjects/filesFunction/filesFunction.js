@@ -184,6 +184,17 @@ export default {
 		catch (error) {
 			showAlert("Falha ao enviar Termo de Finalização para o S3", "error")
 		}
+		
+		try {
+        await Enviar_Fotos_Airtable.run({ 
+					recordId: appsmith.store.selectedOS.record_id,
+					photosUrl: arquivos_para_envio 
+				});
+
+        showAlert(`Arquivo enviado ao Airtable com sucesso`, "success");
+      } catch (error) {
+        showAlert(`Falha ao enviar o arquivo ao Airtable`, "error");
+      }
 				
 		await changeOSFunctions.renderChangeHistory()
 
