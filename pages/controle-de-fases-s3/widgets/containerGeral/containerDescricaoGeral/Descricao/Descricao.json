@@ -8,7 +8,7 @@
   "boxShadow": "none",
   "children": [
     {
-      "bottomRow": 3020,
+      "bottomRow": 3280,
       "canExtend": false,
       "containerStyle": "none",
       "detachFromLayout": true,

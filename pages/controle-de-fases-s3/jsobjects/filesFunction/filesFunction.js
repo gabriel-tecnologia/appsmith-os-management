@@ -183,9 +183,9 @@ export default {
 		}
 		
 		try {
-        await Enviar_Fotos_Airtable.run({ 
+        await Enviar_Termo.run({ 
 					recordId: appsmith.store.selectedOS.record_id,
-					photosUrl: arquivos_para_envio 
+					term: arquivos_para_envio 
 				});
 
         showAlert(`Arquivo enviado ao Airtable com sucesso`, "success");
@@ -278,6 +278,16 @@ export default {
 		resetWidget("termDocumentViewer", true);
 
 		//await changeOSFunctions.renderChangeHistory();
+	},
+	
+	async leituraTermoS3 () {
+		const data = await Leitura_Arquivos_S3.run({
+			installationIDBifrost: appsmith.store.selectedOS["installationIdBifrost (from id_assinatura)"][0],
+			idOs: appsmith.store.selectedOS.id_os,
+			tipo_arquivo: "finalization_term"
+		})
+		
+		return data
 	}
 	
 }
