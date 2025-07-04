@@ -222,7 +222,7 @@ export default {
 		if (appsmith.store.selectedOS.Fase == "Improdutiva" && appsmith.store.selectedOS["Motivo de Improdutiva"] != "Não foi necessário realizar o serviço" && appsmith.store.selectedOS["OS (Filha)"] == undefined) {
 			try {
 				await createOS.handleCreateOS()
-				showAlert("Nova OS criada com sucesso", "success")
+				
 				
 				const newData = await Leitura_OS_Por_RecordID.run({
 						recordId: appsmith.store.selectedOS.record_id

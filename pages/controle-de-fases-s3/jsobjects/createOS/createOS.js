@@ -1,5 +1,5 @@
 export default {
-	
+		
 	async copyFileToChildOs(fileName, childInstallationIdBifrost, childIdOs) {
 		
 		const parts = fileName.split('/');
@@ -19,9 +19,17 @@ export default {
 	async handleCreateOS() {
 		
 		// Cria nova OS filha, se não existir
+		
 		if (!appsmith.store.selectedOS["OS (Filha)"]) {
-			const newOS = await Criar_OS_V2.run();
-			storeValue("newOS", newOS.fields);
+			try {
+				const newOS = await Criar_OS_V2.run();
+				storeValue("newOS", newOS.fields);
+				showAlert("Nova OS criada com sucesso", "success")
+			}
+			catch (error) {
+				showAlert("Falha ao criar OS filha", "error")
+				return;
+			}
 		} else {
 			showAlert("Essa OS já possui uma OS filha!", "error");
 			return;
@@ -48,23 +56,6 @@ export default {
 			}
 		}
 
-		const newServiceFiles = await Leitura_Arquivos_S3.run({
-			installationIDBifrost: childInstallationIdBifrost,
-			idOs: childIdOs,
-			tipo_arquivo: "service_pictures"
-		});
-
-		for (const file of newServiceFiles || []) {
-			try {
-				await Enviar_Fotos_Airtable.run({ 
-					recordId: childRecordId,
-					photosUrl: [{ url: file.url }]
-				});
-			} catch (error) {
-				console.log(error);
-			}
-		}
-
 		// --- INSTRUCTION PICTURES ---
 		const instructionFiles = await Leitura_Arquivos_S3.run({
 			installationIDBifrost: appsmith.store.selectedOS["installationIdBifrost (from id_assinatura)"][0],
@@ -82,23 +73,6 @@ export default {
 			}
 		}
 
-		const newInstructionFiles = await Leitura_Arquivos_S3.run({
-			installationIDBifrost: childInstallationIdBifrost,
-			idOs: childIdOs,
-			tipo_arquivo: "instruction_pictures"
-		});
-
-		for (const file of newInstructionFiles || []) {
-			try {
-				await Enviar_Fotos_Airtable.run({ 
-					recordId: childRecordId,
-					photosUrl: [{ url: file.url }]
-				});
-			} catch (error) {
-				console.log(error);
-			}
-		}
-
 		// --- FINALIZATION TERM ---
 		const termFiles = await Leitura_Arquivos_S3.run({
 			installationIDBifrost: appsmith.store.selectedOS["installationIdBifrost (from id_assinatura)"][0],
@@ -113,23 +87,6 @@ export default {
 				} catch (error) {
 					console.log(error);
 				}
-			}
-		}
-
-		const newTermFiles = await Leitura_Arquivos_S3.run({
-			installationIDBifrost: childInstallationIdBifrost,
-			idOs: childIdOs,
-			tipo_arquivo: "finalization_term"
-		});
-
-		for (const file of newTermFiles || []) {
-			try {
-				await Enviar_Termo.run({ 
-					recordId: childRecordId,
-					term: [{ url: file.url }]
-				});
-			} catch (error) {
-				console.log(error);
 			}
 		}
 
