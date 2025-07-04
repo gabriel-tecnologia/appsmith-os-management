@@ -6,14 +6,21 @@
   "dynamicBindingPathList": [
     {
       "key": "docUrl"
+    },
+    {
+      "key": "isVisible"
     }
   ],
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "start",
   "isCanvas": false,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{appsmith.store.selectedOS.termo[\"Termo de Finalização\"]}}",
   "key": "t7k2w7lkww",
   "leftColumn": 0,
   "mobileBottomRow": 47,

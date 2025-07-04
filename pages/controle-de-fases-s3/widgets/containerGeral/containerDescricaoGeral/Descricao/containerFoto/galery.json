@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "0",
-  "bottomRow": 31,
+  "bottomRow": 43,
   "bottomRowBeforeCollapse": 72,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{{\n\t\"data\": Leitura_Arquivos_S3.data\n}}}",

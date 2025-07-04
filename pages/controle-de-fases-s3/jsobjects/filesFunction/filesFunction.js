@@ -202,6 +202,9 @@ export default {
 			recordId: appsmith.store.selectedOS.record_id
 		});
 		storeValue('selectedOS', newOS.fields)
+		
+		resetWidget("termoDocumentViewer", true)
+		
 	},
 	
 	async removerArquivoS3() {
@@ -261,6 +264,7 @@ export default {
 
 			// Remove do Airtable (envia array vazio para remover todos os termos)
 			await Enviar_Termo.run({
+				recordId: appsmith.store.selectedOS.record_id,
 				term: []
 			});
 
