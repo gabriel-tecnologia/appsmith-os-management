@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 84,
+  "bottomRow": 44,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,7 +30,7 @@
   "mobileRightColumn": 17,
   "mobileTopRow": 44,
   "needsErrorInfo": false,
-  "originalBottomRow": 52,
+  "originalBottomRow": 84,
   "originalTopRow": 48,
   "overflow": "NONE",
   "parentColumnSpace": 8.505126953125,
@@ -43,7 +43,7 @@
   "text": "- Retorno de Estoque -",
   "textAlign": "CENTER",
   "textColor": "#231f20",
-  "topRow": 48,
+  "topRow": 40,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

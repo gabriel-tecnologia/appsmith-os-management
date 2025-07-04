@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "bottomRow": 83,
+  "bottomRow": 75,
   "capSide": 0,
   "capType": "nc",
   "dividerColor": "#858282",
@@ -27,7 +27,7 @@
   "rightColumn": 35,
   "strokeStyle": "solid",
   "thickness": "1",
-  "topRow": 55,
+  "topRow": 47,
   "type": "DIVIDER_WIDGET",
   "version": 1,
   "widgetId": "c8599rcw0i",
