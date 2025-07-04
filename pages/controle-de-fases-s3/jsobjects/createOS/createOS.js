@@ -89,6 +89,23 @@ export default {
 				}
 			}
 		}
+		
+		const newTermFiles = await Leitura_Arquivos_S3.run({
+			installationIDBifrost: childInstallationIdBifrost,
+			idOs: childIdOs,
+			tipo_arquivo: "finalization_term"
+		});
+
+		for (const file of newTermFiles || []) {
+			try {
+				await Enviar_Termo.run({ 
+					recordId: childRecordId,
+					term: [{ url: file.url }]
+				});
+			} catch (error) {
+				console.log(error);
+			}
+		}
 
 		// Conecta OS mãe com OS filha
 		await this.linkMotherAndChildOS();
