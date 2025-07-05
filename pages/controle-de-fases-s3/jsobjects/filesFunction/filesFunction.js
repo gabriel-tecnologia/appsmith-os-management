@@ -54,6 +54,7 @@ export default {
 			}
 			catch(error) {
 				showAlert(`Falha ao enviar arquivo '${finalCompressedFile.name}' ao S3`, "error");
+				statusEnvio = false;
 				continue;
 			}
 			

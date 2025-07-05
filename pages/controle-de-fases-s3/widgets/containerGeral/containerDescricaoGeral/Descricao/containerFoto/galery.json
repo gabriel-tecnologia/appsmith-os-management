@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "0",
-  "bottomRow": 43,
+  "bottomRow": 73,
   "bottomRowBeforeCollapse": 72,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{{\n\t\"data\": Leitura_Arquivos_S3.data\n}}}",
@@ -19,18 +19,12 @@
     },
     {
       "key": "defaultModel"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "removeButtonClick"
-    },
-    {
-      "key": "isVisible"
     },
     {
       "key": "onFileClick"
@@ -51,7 +45,7 @@
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
-  "isVisible": "{{Leitura_Arquivos_S3.data.length > 0}}",
+  "isVisible": true,
   "key": "pi9kaamdyp",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
@@ -62,7 +56,7 @@
   "mobileTopRow": 7,
   "needsErrorInfo": false,
   "onFileClick": "{{showModal(modal_see_file.name)}}",
-  "originalBottomRow": 31,
+  "originalBottomRow": 43,
   "originalTopRow": 9,
   "parentColumnSpace": 18.8125,
   "parentId": "yafn7ckaq2",

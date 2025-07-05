@@ -20,7 +20,7 @@
   "flexVerticalAlignment": "start",
   "isCanvas": false,
   "isLoading": false,
-  "isVisible": "{{appsmith.store.selectedOS.termo[\"Termo de Finalização\"]}}",
+  "isVisible": "{{appsmith.store.selectedOS[\"Termo de Finalização\"].length != 0}}",
   "key": "t7k2w7lkww",
   "leftColumn": 0,
   "mobileBottomRow": 47,
