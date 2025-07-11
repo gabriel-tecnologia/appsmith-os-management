@@ -93,6 +93,10 @@ export default {
 				"code": "[GABRIEL] Sem sinal de 4G"
 			},
 			{
+				"name": "[GABRIEL] Produto não se adequa ao local",
+				"code": "[GABRIEL] Produto não se adequa ao local"
+			},
+			{
 				"name": "[GABRIEL] Necessidade de cabeamento de internet",
 				"code": "[GABRIEL] Necessidade de cabeamento de internet"
 			},
