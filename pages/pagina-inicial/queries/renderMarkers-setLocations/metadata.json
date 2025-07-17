@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "renderMarkers.setLocations",
     "name": "setLocations",
     "pageId": "pagina-inicial",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

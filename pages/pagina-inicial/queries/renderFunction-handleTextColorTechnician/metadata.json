@@ -26,10 +26,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "renderFunction.handleTextColorTechnician",
     "name": "handleTextColorTechnician",
     "pageId": "pagina-inicial",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

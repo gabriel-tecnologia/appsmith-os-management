@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "osListHook.handleSearch",
     "name": "handleSearch",
     "pageId": "pagina-inicial",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

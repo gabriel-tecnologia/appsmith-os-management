@@ -79,9 +79,9 @@
       "pluginId": "amazons3-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": false,
     "name": "Query1",
     "pageId": "pagina-inicial",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

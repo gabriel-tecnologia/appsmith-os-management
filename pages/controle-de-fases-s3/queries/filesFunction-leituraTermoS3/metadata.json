@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
     "fullyQualifiedName": "filesFunction.leituraTermoS3",
     "name": "leituraTermoS3",
     "pageId": "controle-de-fases-s3",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

@@ -42,9 +42,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
     "name": "Leitura_parceiros_por_empresa",
     "pageId": "pagina-inicial",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }
 }

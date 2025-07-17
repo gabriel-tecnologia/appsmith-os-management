@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
     "fullyQualifiedName": "stockManagment.getStockRecords",
     "name": "getStockRecords",
     "pageId": "controle-de-fases-s3-airtable",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

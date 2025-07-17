@@ -26,10 +26,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "filesFunction.enviarTermoS3",
     "name": "enviarTermoS3",
     "pageId": "controle-de-fases-s3",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

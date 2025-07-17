@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "renderMarkers.storesOS",
     "name": "storesOS",
     "pageId": "pagina-inicial",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

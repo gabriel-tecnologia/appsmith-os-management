@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "stockPatchErrors.handleMovementError",
     "name": "handleMovementError",
     "pageId": "controle-de-fases-s3",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

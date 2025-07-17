@@ -45,9 +45,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "Atualizar_Empresa_Usuario",
     "pageId": "pagina-inicial",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

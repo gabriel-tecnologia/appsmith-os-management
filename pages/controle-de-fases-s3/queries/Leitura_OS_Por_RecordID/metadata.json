@@ -37,9 +37,9 @@
         "key": "path"
       }
     ],
-    "executeOnLoad": false,
     "name": "Leitura_OS_Por_RecordID",
     "pageId": "controle-de-fases-s3",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

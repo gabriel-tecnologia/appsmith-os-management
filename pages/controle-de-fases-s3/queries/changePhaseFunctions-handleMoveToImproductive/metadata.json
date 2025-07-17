@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "changePhaseFunctions.handleMoveToImproductive",
     "name": "handleMoveToImproductive",
     "pageId": "controle-de-fases-s3",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

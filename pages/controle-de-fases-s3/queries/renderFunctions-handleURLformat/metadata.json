@@ -26,10 +26,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "renderFunctions.handleURLformat",
     "name": "handleURLformat",
     "pageId": "controle-de-fases-s3",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

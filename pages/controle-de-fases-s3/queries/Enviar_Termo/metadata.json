@@ -45,9 +45,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "Enviar_Termo",
     "pageId": "controle-de-fases-s3",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

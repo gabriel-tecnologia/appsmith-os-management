@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "stockCreateMovement.handleCreateNewMovement",
     "name": "handleCreateNewMovement",
     "pageId": "controle-de-fases-s3-airtable",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

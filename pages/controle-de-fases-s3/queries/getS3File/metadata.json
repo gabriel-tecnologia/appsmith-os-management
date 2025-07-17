@@ -83,9 +83,9 @@
         "key": "formData.path.data"
       }
     ],
-    "executeOnLoad": false,
     "name": "getS3File",
     "pageId": "controle-de-fases-s3",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

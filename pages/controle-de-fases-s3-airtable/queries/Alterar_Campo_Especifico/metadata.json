@@ -45,9 +45,9 @@
         "key": "path"
       }
     ],
-    "executeOnLoad": false,
     "name": "Alterar_Campo_Especifico",
     "pageId": "controle-de-fases-s3-airtable",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

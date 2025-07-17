@@ -42,9 +42,9 @@
         "key": "path"
       }
     ],
-    "executeOnLoad": false,
     "name": "Adicionar_Erro_de_Remessa",
     "pageId": "controle-de-fases-s3-airtable",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

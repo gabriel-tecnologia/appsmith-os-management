@@ -50,9 +50,9 @@
         "key": "queryParameters[0].value"
       }
     ],
-    "executeOnLoad": true,
     "name": "Record_ID_UserEmail",
     "pageId": "pagina-inicial",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

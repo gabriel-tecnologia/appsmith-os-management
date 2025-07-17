@@ -42,9 +42,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "Leitura_OS",
     "pageId": "pagina-inicial",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }

@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
     "fullyQualifiedName": "renderFunctions.renderAdjustReasons",
     "name": "renderAdjustReasons",
     "pageId": "controle-de-fases-s3",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }
 }

@@ -86,9 +86,9 @@
         "key": "formData.body.data"
       }
     ],
-    "executeOnLoad": false,
     "name": "Enviar_Arquivo_S3",
     "pageId": "controle-de-fases-s3-airtable",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "filesFunction.removerTermoAirtable",
     "name": "removerTermoAirtable",
     "pageId": "controle-de-fases-s3-airtable",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

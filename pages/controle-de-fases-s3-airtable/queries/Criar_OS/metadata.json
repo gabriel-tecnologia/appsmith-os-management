@@ -42,9 +42,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "Criar_OS",
     "pageId": "controle-de-fases-s3-airtable",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

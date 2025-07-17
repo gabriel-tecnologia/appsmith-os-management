@@ -45,9 +45,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "Alterar_Tecnico",
     "pageId": "pagina-inicial",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
